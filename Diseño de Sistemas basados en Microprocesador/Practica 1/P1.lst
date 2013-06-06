@@ -1,0 +1,475 @@
+MPASM  5.01                            P1.ASM   3-30-2011  13:22:31         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001                 List    p=16f84
+                      00002                 include "P16F84.INC"
+                      00001         LIST
+                      00002 ; P16F84.INC  Standard Header File, Version 2.00    Microchip Technology, Inc.
+                      00136         LIST
+                      00003 
+Warning[205]: Found directive in column 1. (__CONFIG)
+2007   3FFB           00004 __CONFIG _WDT_OFF & _RC_OSC
+                      00005 
+  0000000D            00006 Prm             equ     0x0d
+  0000000E            00007 Tmp             equ     0x0e
+  0000000F            00008 Cont    equ     0x0f
+  00000010            00009 Vuelta  equ     0x10
+  00000011            00010 Viejo   equ     0x11
+  00000012            00011 Print   equ     0x12
+  00000013            00012 Incr    equ     0x13
+  00000014            00013 Ctrl    equ     0x14
+  00000015            00014 Rts             equ 0x15
+  00000016            00015 Wold    equ     0x16
+  00000017            00016 STold   equ     0x17
+  00000018            00017 CTimer  equ     0x18
+  00000019            00018 BTimer  equ     0x19
+  0000001A            00019 NTimer  equ     0x1a
+  0000001B            00020 BTimer2 equ     0x1b
+  0000001C            00021 BTimer3 equ     0x1c
+                      00022 
+0000                  00023                 org     0x00
+0000   285F           00024                 goto    Inicio
+                      00025 
+0004                  00026                 org             0x04
+                      00027 
+                      00028                 ; Salvamos el contexto
+0004   0096           00029                 movwf   Wold
+0005   0E03           00030                 swapf   STATUS,w
+0006   0097           00031                 movwf   STold
+                      00032 
+                      00033                 ; Rutina de timer
+0007   3001           00034                 movlw   1
+0008   0798           00035                 addwf   CTimer,1
+0009   3040           00036                 movlw   40
+000A   0218           00037                 subwf   CTimer,0
+000B   1D03           00038                 btfss   STATUS, Z
+000C   2829           00039                 goto    Retu
+000D   3000           00040                 movlw   0
+000E   0098           00041                 movwf   CTimer
+                      00042 
+                      00043                 ; Parpadeos
+000F   3003           00044                 movlw   3
+0010   0099           00045                 movwf   BTimer
+                      00046                 
+0011                  00047 BucleP: ; "Apagamos" el Display 
+0011   0806           00048                 movf    PORTB, 0
+0012   009A           00049                 movwf   NTimer          
+MPASM  5.01                            P1.ASM   3-30-2011  13:22:31         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00050 
+0013   3000           00051                 movlw   b'00000000'
+0014   0086           00052                 movwf   PORTB
+                      00053 
+                      00054                 ; Retardo interno
+0015   30FA           00055                 movlw   0fah
+0016   009B           00056                 movwf   BTimer2
+                      00057 
+0017   3040           00058 BucleP2:movlw   40
+0018   009C           00059                 movwf   BTimer3
+                      00060 
+0019   0B9C           00061 BucleP3:decfsz  BTimer3,1
+001A   2819           00062                 goto    BucleP3
+                      00063 
+001B   0B9B           00064                 decfsz  BTimer2,1
+001C   2817           00065                 goto    BucleP2         
+                      00066                 
+                      00067                 ; Fin Retardo
+                      00068                 ; "Encendemos" el Display
+001D   081A           00069                 movf    NTimer,0
+001E   0086           00070                 movwf   PORTB
+                      00071 
+001F   30FA           00072                 movlw   0fah
+0020   009B           00073                 movwf   BTimer2
+                      00074 
+0021   3040           00075 BucleP4:movlw   40
+0022   009C           00076                 movwf   BTimer3
+                      00077 
+0023   0B9C           00078 BucleP5:decfsz  BTimer3,1
+0024   2823           00079                 goto    BucleP5
+                      00080 
+0025   0B9B           00081                 decfsz  BTimer2,1
+0026   2821           00082                 goto    BucleP4 
+                      00083 
+0027   0B99           00084                 decfsz  BTimer,1
+0028   2811           00085                 goto    BucleP
+                      00086                 ; Fin parpadeos
+                      00087                 ; Fin de rutina
+                      00088 
+                      00089                 ; Restituimos el contexto
+0029   110B           00090 Retu:   bcf             INTCON, 2
+002A   0E17           00091                 swapf   STold, w
+002B   0083           00092                 movwf   STATUS
+002C   0E96           00093                 swapf   Wold, f
+002D   0E16           00094                 swapf   Wold, w 
+                      00095                 
+002E   0009           00096                 retfie
+                      00097 
+                      00098 ; Nos creamos una tabla
+002F   0782           00099 Tabla   addwf   PCL, F
+0030   34FC           00100                 retlw   b'11111100'
+0031   3460           00101                 retlw   b'01100000'
+0032   34DA           00102                 retlw   b'11011010'
+MPASM  5.01                            P1.ASM   3-30-2011  13:22:31         PAGE  3
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0033   34F2           00103                 retlw   b'11110010'
+0034   3466           00104                 retlw   b'01100110'
+0035   34B6           00105                 retlw   b'10110110'
+0036   34BE           00106                 retlw   b'10111110'
+0037   34E0           00107                 retlw   b'11100000'
+0038   34FE           00108                 retlw   b'11111110'
+0039   34F6           00109                 retlw   b'11110110'     
+                      00110 
+                      00111 
+003A   1811           00112 Comp    btfsc   Viejo, 0
+003B   2855           00113                 goto    Sigu
+                      00114 
+003C   1414           00115                 bsf             Ctrl, 0
+003D   1411           00116                 bsf             Viejo, 0
+003E   2855           00117                 goto    Sigu
+                      00118 
+003F   1891           00119 Comp2   btfsc   Viejo, 1
+0040   2858           00120                 goto    Sigu2
+                      00121 
+0041   1894           00122                 btfsc   Ctrl, 1
+0042   2845           00123                 goto    c2
+                      00124                 
+0043   1494           00125                 bsf             Ctrl, 1
+0044   2846           00126                 goto    c3
+                      00127 
+0045   1094           00128 c2              bcf             Ctrl, 1
+                      00129                         
+0046   1491           00130 c3              bsf             Viejo, 1
+0047   2858           00131                 goto    Sigu2
+                      00132 
+                      00133 
+0048   3005           00134 Retardo         movlw   05h
+0049   0095           00135                         movwf   Rts
+004A   0000           00136                         nop
+004B   0000           00137                         nop
+004C   0000           00138                         nop
+                      00139 
+004D   0B95           00140 Retard2         decfsz  Rts, 1
+004E   2850           00141                         goto    Retard
+004F   285E           00142                         goto    final
+                      00143 
+0050   30FF           00144 Retard          movlw   0ffh
+0051   008E           00145                         movwf   Tmp
+                      00146                 
+                      00147                         ; Comprobación del pulsador de reseteo          
+0052   1805           00148                         btfsc   PORTA, 0
+0053   283A           00149                         goto    Comp ; Comprobamos el bit viejo
+0054   1011           00150                         bcf             Viejo, 0
+                      00151                         
+                      00152                         ; Comprobación del pulsador de pausa            
+0055   1885           00153 Sigu            btfsc   PORTA, 1
+0056   283F           00154                         goto    Comp2 ; Comprobamos el bit viejo
+0057   1091           00155                         bcf             Viejo, 1
+MPASM  5.01                            P1.ASM   3-30-2011  13:22:31         PAGE  4
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00156 
+                      00157 
+                      00158 
+0058   0B8D           00159 Sigu2           decfsz  Prm, 1
+0059   285B           00160                         goto    continua
+005A   284D           00161                         goto    Retard2
+                      00162 
+005B   0B8E           00163 continua        decfsz  Tmp, 1
+005C   285B           00164                         goto    continua
+005D   2850           00165                         goto    Retard
+                      00166 
+005E   0008           00167 final           return
+                      00168 
+                      00169 
+005F                  00170 Inicio
+005F   3000           00171                 movlw   0
+0060   0098           00172                 movwf   CTimer
+                      00173                 ; Habilitamos las interrupciones a nivel GLOBAL
+0061   178B           00174                 bsf             INTCON, 7
+0062   168B           00175                 bsf             INTCON, 5
+                      00176                 ; Configuramos el TMR0
+0063   1683           00177                 bsf             STATUS, RP0     ; Vamos al banco 1 
+0064   3007           00178                 movlw   b'00000111'             ; Seleccionamos la configuración del timer
+                      00179                                                                 ; 0 -> PSA: El preescaler se asigna a TM
+                            R0
+                      00180                                                                 ; 0 -> TOSE: El incremento es por flanco
+                             ascendente
+                      00181                                                                 ; 0 -> TOCS: La entrada del reloj es por
+                             ciclo del relojo interno
+                      00182                                                                 ; 111 -> PSX: El preescaler está a 1:256
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0065   0081           00183                 movwf   OPTION_REG              ; La guardamos en OPTION
+0066   1283           00184                 bcf             STATUS,RP0              ; Volvemos al banco 0
+0067   1683           00185                 bsf             STATUS, RP0
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0068   0186           00186                 clrf    TRISB
+                      00187 
+0069   1283           00188                 bcf             STATUS, RP0
+                      00189 
+006A   0186           00190                 clrf    PORTB
+                      00191                 
+                      00192                 ; Ponemos el contador a 0
+006B   3000           00193                 movlw   0
+006C   008F           00194                 movwf   Cont
+                      00195                 
+                      00196                 ; Ponemos vuelta a 0
+006D   0090           00197                 movwf   Vuelta
+                      00198 
+                      00199                 ; Ponemos los flags de los pulsadores a 0
+006E   0094           00200                 movwf   Ctrl
+                      00201 
+                      00202                 ; Ponemos ambos bits de viejo a 1 (posicion por defecto del pulsador)
+006F   3003           00203                 movlw   3
+MPASM  5.01                            P1.ASM   3-30-2011  13:22:31         PAGE  5
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0070   0091           00204                 movwf   Viejo
+                      00205                 
+                      00206                 ; Ponemos Incr a 1 por defecto
+0071   3001           00207                 movlw   1
+0072   0093           00208                 movwf   Incr
+                      00209         
+                      00210 
+0073   080F           00211 Bucle   movf    Cont,0
+                      00212 
+0074   202F           00213                 call    Tabla ;Cada CALL Tabla vale por 3 Ciclos
+                      00214                 
+                      00215                 ; Comprobamos si hay que imprimir
+0075   1894           00216                 btfsc   Ctrl, 1
+0076   2879           00217                 goto    Aum
+                      00218 
+                      00219                 ; Sumamos la vuelta para añadir el punto
+0077   0710           00220                 addwf   Vuelta, 0
+0078   0086           00221                 movwf   PORTB           
+                      00222 
+                      00223                 ; Aumentamos el contador
+0079   0813           00224 Aum             movf    Incr,0
+007A   078F           00225                 addwf   Cont, 1
+                      00226 
+                      00227 ;;;;;;;;;;;;;;;;;, Comienzo de retardo con las comprobaciones de límite
+                      00228 
+007B   30FF           00229                         movlw   0ffh
+007C   020F           00230                         subwf   Cont, 0
+                      00231         
+007D   1D03           00232                         btfss   STATUS, Z
+007E   2886           00233                         goto    Sigue  ; No hemos llegado a 0 (decrementando)
+                      00234 
+                      00235                         ; HASTA AQUI, 13 CICLOS IGNORANDO LA ESCRITURA EN EL PUERTO
+                      00236         
+007F   3001           00237                         movlw   1
+0080   078F           00238                         addwf   Cont, 1
+                      00239                         ; Indicamos que aumentamos el iterador
+0081   3001           00240                         movlw   1
+0082   0093           00241                         movwf   Incr
+                      00242         
+                      00243                         ; No mostramos el punto
+0083   3000           00244                         movlw   0
+0084   0090           00245                         movwf   Vuelta
+0085   2890           00246                         goto    Reta
+                      00247 
+                      00248                         ; SI ES -1 TENDREMOS UNA PENALIZACION DE 3 CICLOS
+                      00249 
+0086   300A           00250 Sigue           movlw   0Ah
+0087   020F           00251                         subwf   Cont, 0
+                      00252                         
+0088   1D03           00253                         btfss   STATUS, Z       
+0089   2890           00254                         goto    Reta   ; No hemos llegado a 10
+                      00255                         
+                      00256                         ; clrf  Cont
+MPASM  5.01                            P1.ASM   3-30-2011  13:22:31         PAGE  6
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00257         
+                      00258                         ; NO HACER CASO
+                      00259                         ; Aplicamos una máscara para quedarnos con el 1er bit de vuelta
+                      00260                         ; movf  Vuelta, 0
+                      00261                         ; addlw 1
+                      00262                         ; andlw 1
+                      00263                         ; movwf Vuelta
+                      00264 
+                      00265                         ; Ponemos el valor a 9
+008A   3001           00266                         movlw   1
+008B   028F           00267                         subwf   Cont, 1
+                      00268                         ; Indicamos que disminuimos el iterador
+008C   30FF           00269                         movlw   -1
+008D   0093           00270                         movwf   Incr
+                      00271                         ; Indicamos que hay que poner el punto
+008E   3001           00272                         movlw   1
+008F   0090           00273                         movwf   Vuelta
+                      00274                         
+                      00275                         ; SI ES 11 TENDREMOS UNA PENALIZACION DE 6 CICLOS
+                      00276 
+                      00277 
+0090   30FF           00278 Reta            movlw   0ffh
+0091   008D           00279                         movwf   Prm
+0092   2048           00280                         call    Retardo
+                      00281                 
+                      00282                 ; Comprobamos si se activó el boton de reseteo
+0093   1C14           00283                 btfss   Ctrl, 0
+0094   289A           00284                 goto    c1
+                      00285 
+                      00286                 ; Se resetea la cuenta
+0095   018F           00287                 clrf    Cont
+0096   0190           00288                 clrf    Vuelta
+0097   1014           00289                 bcf             Ctrl, 0
+0098   3001           00290                 movlw   1
+0099   0093           00291                 movwf   Incr
+                      00292 
+                      00293                 ; SI SE RESETEA, TENEMOS UNA PENALIZACION DE 5 CICLOS
+                      00294 
+009A   2873           00295 c1              goto    Bucle   
+                      00296 
+                      00297                 ; EL CASO ESTANDARD, ES DE 23 CICLOS
+                      00298                 end
+MPASM  5.01                            P1.ASM   3-30-2011  13:22:31         PAGE  7
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+Aum                               00000079
+BTimer                            00000019
+BTimer2                           0000001B
+BTimer3                           0000001C
+Bucle                             00000073
+BucleP                            00000011
+BucleP2                           00000017
+BucleP3                           00000019
+BucleP4                           00000021
+BucleP5                           00000023
+C                                 00000000
+CTimer                            00000018
+Comp                              0000003A
+Comp2                             0000003F
+Cont                              0000000F
+Ctrl                              00000014
+DC                                00000001
+EEADR                             00000009
+EECON1                            00000088
+EECON2                            00000089
+EEDATA                            00000008
+EEIE                              00000006
+EEIF                              00000004
+F                                 00000001
+FSR                               00000004
+GIE                               00000007
+INDF                              00000000
+INTCON                            0000000B
+INTE                              00000004
+INTEDG                            00000006
+INTF                              00000001
+IRP                               00000007
+Incr                              00000013
+Inicio                            0000005F
+NOT_PD                            00000003
+NOT_RBPU                          00000007
+NOT_TO                            00000004
+NTimer                            0000001A
+OPTION_REG                        00000081
+PCL                               00000002
+PCLATH                            0000000A
+PORTA                             00000005
+PORTB                             00000006
+PS0                               00000000
+PS1                               00000001
+PS2                               00000002
+PSA                               00000003
+Print                             00000012
+Prm                               0000000D
+RBIE                              00000003
+RBIF                              00000000
+RD                                00000000
+RP0                               00000005
+MPASM  5.01                            P1.ASM   3-30-2011  13:22:31         PAGE  8
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+RP1                               00000006
+Reta                              00000090
+Retard                            00000050
+Retard2                           0000004D
+Retardo                           00000048
+Retu                              00000029
+Rts                               00000015
+STATUS                            00000003
+STold                             00000017
+Sigu                              00000055
+Sigu2                             00000058
+Sigue                             00000086
+T0CS                              00000005
+T0IE                              00000005
+T0IF                              00000002
+T0SE                              00000004
+TMR0                              00000001
+TRISA                             00000085
+TRISB                             00000086
+Tabla                             0000002F
+Tmp                               0000000E
+Viejo                             00000011
+Vuelta                            00000010
+W                                 00000000
+WR                                00000001
+WREN                              00000002
+WRERR                             00000003
+Wold                              00000016
+Z                                 00000002
+_CP_OFF                           00003FFF
+_CP_ON                            0000000F
+_HS_OSC                           00003FFE
+_LP_OSC                           00003FFC
+_PWRTE_OFF                        00003FFF
+_PWRTE_ON                         00003FF7
+_RC_OSC                           00003FFF
+_WDT_OFF                          00003FFB
+_WDT_ON                           00003FFF
+_XT_OSC                           00003FFD
+__16F84                           00000001
+c1                                0000009A
+c2                                00000045
+c3                                00000046
+continua                          0000005B
+final                             0000005E
+MPASM  5.01                            P1.ASM   3-30-2011  13:22:31         PAGE  9
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+
+0000 : X---XXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0040 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0080 : XXXXXXXXXXXXXXXX XXXXXXXXXXX----- ---------------- ----------------
+2000 : -------X-------- ---------------- ---------------- ----------------
+
+All other memory blocks unused.
+
+Program Memory Words Used:   152
+Program Memory Words Free:   872
+
+
+Errors   :     0
+Warnings :     1 reported,     0 suppressed
+Messages :     2 reported,     0 suppressed
+
+

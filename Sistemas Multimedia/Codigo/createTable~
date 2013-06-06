@@ -1,0 +1,24 @@
+create table comics(id integer not null,
+		    nombre varchar(255) primary key,
+		    fecha datetime not null,
+		    comic_small varchar(255),
+		    comic_medium varchar(255),
+		    comic_big varchar(255),
+		    tags varchar(255),
+		    descripcion text);
+create table comentarios(id integer not null auto_increment,
+			 comic varchar(255) not null,
+                         autor varchar(255),
+                         fecha datetime not null,
+                         texto text,
+			 primary key (id),
+			 foreign key (comic) references comics(nombre));
+create table administracion(id integer not null auto_increment,
+							texto_autor text,
+							imagen_autor1 varchar(255),
+							imagen_autor2 varchar(255),
+							facebook varchar(255),
+							twitter varchar(255),
+							deviantart varchar(255),
+							rss varchar(255)
+							primary key (id));

@@ -1,0 +1,66 @@
+
+.enlaces
+{
+	position: absolute;
+	right: 10%;
+	left: 30%;
+	top: 5%;
+}
+
+.facebook
+{
+	position: absolute;
+	top: 340px;
+}
+
+.facebook img
+{
+	width: 200px;
+	height: 70px;
+}
+
+.deviantart
+{
+	position: absolute;
+	top: 340px;
+	left: 350px;
+}
+
+.deviantart img
+{
+	width: 200px;
+	height: 70px;
+}
+
+.twitter
+{
+	position: absolute;
+	top: 500px;
+}
+
+.twitter img
+{
+	width: 200px;
+	height: 70px;
+}
+
+.rss
+{
+	position: absolute;
+	top: 500px;
+	left: 350px;
+}
+
+.rss img
+{
+	width: 200px;
+	height: 70px;
+}
+
+.base2
+{
+	position: relative;
+	background-image:url(../background-bottom.png);
+	background-repeat: repeat-x;
+	top: 440px;
+}

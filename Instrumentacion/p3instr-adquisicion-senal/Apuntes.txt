@@ -1,0 +1,41 @@
+Limitaciones LabJack
+
+Fmax = 8KHz
+Fmin = 400 Hz
+MaxData = 4096
+
+Programar LabJack para tomar u
+Comando aiburst(Fs, Nsamples, C, G, TimeOut)
+Fs: Frecuencia de muestreo 
+Nsamples: Nº total de muestras
+C: Canal donde se pincha la señal
+G: Ganancia (canales diferenciales)
+TimeOut: Tiempo antes de dar un error de TimeOut
+
+
+1. Qué frecuencia de muestreo y número de muestras necesitas para obtener 3 ciclos exactos de una señal de entrada de 10*4 Hz, tomando 80 muestras por ciclo?. Y si el número de muestras por ciclo exigido pasa a 40?.
+
+80:
+Duración del ciclo: 1/40 = s
+Frecuencia de muestreo: 40*80 ? 3200 Hz
+Tiempo de muestreo: 1/3200 s
+ 
+Fs = 3200 Hz
+Nsamples = 80 * 3 = 240
+C = 8
+G = ?
+Timeout = (1/3200)*(240)*1'25
+
+40:
+Duración del ciclo: 1/40 = s
+Frecuencia de muestreo: 40*40 ? 1600 Hz
+Tiempo de muestreo: 1/1600 s
+ 
+Fs = 1600 Hz
+Nsamples = 40 * 3 = 120
+C = 8
+G = ?
+Timeout = (1/1600)*(120)*1'25
+
+
+

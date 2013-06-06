@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="match_parent" android:weightSum="1" android:background="@drawable/fondo">
+    <TextView android:id="@+id/TextViewEuclideNumbers"
+		android:layout_width="wrap_content"
+		android:layout_height= "wrap_content"
+		android:text="@string/TextViewEuclideNumbers"
+		android:textSize="17.5sp">
+	</TextView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.42"
+        android:orientation="vertical" >
+
+    </LinearLayout>
+
+<LinearLayout 
+  	android:orientation="horizontal"
+  	android:layout_width="fill_parent"
+  	android:layout_height="wrap_content" android:weightSum="1">
+  	
+    <EditText android:id="@+id/EditTextEuclideNumberA" 
+    	android:layout_height="wrap_content" 
+    	android:layout_width="fill_parent"
+    	android:weightSum="1"
+		android:inputType="number" 
+		android:layout_weight="0.50"
+		android:text = "0"
+	>
+	</EditText>
+	
+	<EditText android:id="@+id/EditTextEuclideNumberB" 
+    	android:layout_height="wrap_content" 
+    	android:layout_width="fill_parent"
+    	android:weightSum="1"
+		android:inputType="number" 
+		android:layout_weight="0.50"
+		android:text = "0"
+	>
+	</EditText>
+
+  </LinearLayout>
+
+<LinearLayout
+    android:id="@+id/linearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_weight="0.40"
+    android:orientation="vertical" >
+
+</LinearLayout>
+ 
+  <Button android:id="@+id/ButtonEuclideanOk"
+        android:layout_height="wrap_content"
+        android:text="@string/ButtonMainEuclide" 
+        android:layout_width="fill_parent">
+  </Button>
+  <Button android:id="@+id/ButtonEuclideExtended"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ButtonEuclideExtended" /> 
+    <Button android:id="@+id/ButtonEuclideInverted"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ButtonEuclideInverted" />
+</LinearLayout>

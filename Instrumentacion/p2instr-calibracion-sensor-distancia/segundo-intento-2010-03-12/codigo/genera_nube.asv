@@ -1,0 +1,27 @@
+% genera_nube.m
+%
+% genera_nube(valoresX, valoresY)
+%
+% Genera una nube de puntos de 'valoresY' frente a 'valoresX' y guarda la
+% gráfica en un fichero con un nombre autogenerado usando las variables
+% globales.
+%
+% Necesita las siguientes variables globales:
+%     * contador
+%     * inicio
+%     * figuras
+% Todas estas variables se definen ejecutando el script 'inicializa.m'.
+%
+
+function [] = genera_nube (valoresx, valoresy)
+    global contador inicio figuras
+    
+    f = figure('Visible',  'off');
+    set(f, 'Name', sprintf('Nube de puntos para d=%icm', contador * inicio));
+    set(f, 'FileName', sprintf('%02i_nube_puntos_%icm', contador, contador * inicio));
+    plot(valoresx, valoresy, '.');
+    figuras = [figuras [f]];
+    %saveas(f, get(f, 'FileName'), 'jpg');
+    %saveas(f, get(f, 'FileName'), 'png');
+    %saveas(f, get(f, 'FileName'), 'tif');
+end

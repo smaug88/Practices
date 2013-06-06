@@ -1,0 +1,84 @@
+MPLINK 4.01, Linker
+Linker Map File - Created Thu Apr 28 12:40:01 2011
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000002
+                   .org_1       code   0x000005    program   0x00006a
+                   .cinit    romdata   0x00003a    program   0x000004
+                      lcd       code   0x00003c    program   0x00008e
+                  .config       code   0x002007    program   0x000002
+                 lcd_data      udata   0x00000c       data   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000000      
+                            0x000005    0x000082      
+                            0x002007    0x002007      
+            128 out of 1093 program addresses used, program memory utilization is 11%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     Aqui   0x000039    program     static F:\DSBM\P2\P2_84.asm     
+             BORRA_Y_HOME   0x00006f    program     extern F:\DSBM\P2\lcd.asm       
+             DISPLAY_CONF   0x000072    program     extern F:\DSBM\P2\lcd.asm       
+              Delay_start   0x00007c    program     static F:\DSBM\P2\lcd.asm       
+                  Imprime   0x000027    program     static F:\DSBM\P2\P2_84.asm     
+                 Imprime2   0x000031    program     static F:\DSBM\P2\P2_84.asm     
+                   Inicio   0x000025    program     static F:\DSBM\P2\P2_84.asm     
+                 LCD_BUSY   0x000043    program     static F:\DSBM\P2\lcd.asm       
+                 LCD_DATO   0x000057    program     extern F:\DSBM\P2\lcd.asm       
+                LCD_DELAY   0x00007b    program     static F:\DSBM\P2\lcd.asm       
+              LCD_DELAY_1   0x00007e    program     static F:\DSBM\P2\lcd.asm       
+              LCD_DELAY_2   0x00007a    program     static F:\DSBM\P2\lcd.asm       
+                    LCD_E   0x000052    program     static F:\DSBM\P2\lcd.asm       
+                  LCD_INI   0x000063    program     extern F:\DSBM\P2\lcd.asm       
+                LCD_INI_2   0x000063    program     static F:\DSBM\P2\lcd.asm       
+                  LCD_REG   0x00005c    program     extern F:\DSBM\P2\lcd.asm       
+                LCD_REG_2   0x000060    program     static F:\DSBM\P2\lcd.asm       
+                    Menu1   0x000005    program     static F:\DSBM\P2\P2_84.asm     
+                    Menu2   0x000015    program     static F:\DSBM\P2\P2_84.asm     
+                  Segundo   0x00002f    program     static F:\DSBM\P2\P2_84.asm     
+                   UP_LCD   0x00003c    program     static F:\DSBM\P2\lcd.asm       
+                _lcd_000F   0x00004b    program     static F:\DSBM\P2\lcd.asm       
+               Lcd_Temp_1   0x00000c       data     static F:\DSBM\P2\lcd.asm       
+               Lcd_Temp_2   0x00000d       data     static F:\DSBM\P2\lcd.asm       
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    Menu1   0x000005    program     static F:\DSBM\P2\P2_84.asm     
+                    Menu2   0x000015    program     static F:\DSBM\P2\P2_84.asm     
+                   Inicio   0x000025    program     static F:\DSBM\P2\P2_84.asm     
+                  Imprime   0x000027    program     static F:\DSBM\P2\P2_84.asm     
+                  Segundo   0x00002f    program     static F:\DSBM\P2\P2_84.asm     
+                 Imprime2   0x000031    program     static F:\DSBM\P2\P2_84.asm     
+                     Aqui   0x000039    program     static F:\DSBM\P2\P2_84.asm     
+                   UP_LCD   0x00003c    program     static F:\DSBM\P2\lcd.asm       
+                 LCD_BUSY   0x000043    program     static F:\DSBM\P2\lcd.asm       
+                _lcd_000F   0x00004b    program     static F:\DSBM\P2\lcd.asm       
+                    LCD_E   0x000052    program     static F:\DSBM\P2\lcd.asm       
+                 LCD_DATO   0x000057    program     extern F:\DSBM\P2\lcd.asm       
+                  LCD_REG   0x00005c    program     extern F:\DSBM\P2\lcd.asm       
+                LCD_REG_2   0x000060    program     static F:\DSBM\P2\lcd.asm       
+                  LCD_INI   0x000063    program     extern F:\DSBM\P2\lcd.asm       
+                LCD_INI_2   0x000063    program     static F:\DSBM\P2\lcd.asm       
+             BORRA_Y_HOME   0x00006f    program     extern F:\DSBM\P2\lcd.asm       
+             DISPLAY_CONF   0x000072    program     extern F:\DSBM\P2\lcd.asm       
+              LCD_DELAY_2   0x00007a    program     static F:\DSBM\P2\lcd.asm       
+                LCD_DELAY   0x00007b    program     static F:\DSBM\P2\lcd.asm       
+              Delay_start   0x00007c    program     static F:\DSBM\P2\lcd.asm       
+              LCD_DELAY_1   0x00007e    program     static F:\DSBM\P2\lcd.asm       
+               Lcd_Temp_1   0x00000c       data     static F:\DSBM\P2\lcd.asm       
+               Lcd_Temp_2   0x00000d       data     static F:\DSBM\P2\lcd.asm       
+
+

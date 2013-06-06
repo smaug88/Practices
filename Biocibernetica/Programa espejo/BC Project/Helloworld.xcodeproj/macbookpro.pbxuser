@@ -1,0 +1,85 @@
+// !$*UTF8*$!
+{
+	520D521613965BBA008ADEE1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F222A16B1327DB0200579D62 /* BC.nxc */;
+		name = "BC.nxc: 135";
+		rLen = 0;
+		rLoc = 2322;
+		rType = 0;
+		vrLen = 664;
+		vrLoc = 1699;
+	};
+	52C22C931396604F00AE7DBE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F222A16B1327DB0200579D62 /* BC.nxc */;
+		name = "BC.nxc: 115";
+		rLen = 0;
+		rLoc = 2033;
+		rType = 0;
+		vrLen = 647;
+		vrLoc = 1679;
+	};
+	52EBD5D11354728400D23342 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	52EBD5D21354728400D23342 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	5BB3CD8509AA56AD00B01DCE /* Project object */ = {
+		activeBuildConfigurationName = Release;
+		activeTarget = 5BFFA23709AA57D9008DF6E9 /* Helloworld */;
+		codeSenseManager = 52EBD5D21354728400D23342 /* Code sense */;
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					993,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 328621715;
+			PBXWorkspaceStateSaveDate = 328621715;
+		};
+		perUserProjectItems = {
+			520D521613965BBA008ADEE1 /* PBXTextBookmark */ = 520D521613965BBA008ADEE1 /* PBXTextBookmark */;
+			52C22C931396604F00AE7DBE /* PBXTextBookmark */ = 52C22C931396604F00AE7DBE /* PBXTextBookmark */;
+		};
+		sourceControlManager = 52EBD5D11354728400D23342 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	5BFFA23709AA57D9008DF6E9 /* Helloworld */ = {
+		activeExec = 0;
+	};
+	F222A16B1327DB0200579D62 /* BC.nxc */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1171, 1716}}";
+			sepNavSelRange = "{2033, 0}";
+			sepNavVisRange = "{1679, 647}";
+		};
+	};
+}

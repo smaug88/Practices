@@ -1,0 +1,11 @@
+task Move() {
+     while(true) {
+         OnFwdSync(OUT_AC, 75, 0);
+         Wait(500);
+     }
+}
+
+
+task main() {
+     Precedes(Move);
+}

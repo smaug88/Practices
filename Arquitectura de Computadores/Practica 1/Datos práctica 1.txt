@@ -1,0 +1,26 @@
+			PRÁCTICA 1 AC
+			
+			
+			
+	- Ejercicio 1
+
+Complejidad de la CLB -> 49 out of 4096  (1 %)
+Timing -> Maximum frequency: 50.196 MHz
+			Minimum period: 19.922
+			
+			
+			
+	- Ejercicio 2
+
+Cuestiones
+
+	1. La entrada 0 tiene el PC+4 (la siguiente instrucción en orden secuencial)
+		y la entrada 1 tendría la dirección calculada en la etapa de ejecución 
+		por la ALU.
+	
+	2. La complejidad ha aumentado de 49 hasta 50 y la frecuencia también ha
+		aumentado de 50.196 a 52.482 MHz.
+		
+	3. Al ejecutar las dos sentencias primero, la CLB y la frecuencia se mantienen.
+	
+	4. Mínimo periodo: 19.054 ms y la máxima frecuencia: 52.482 MHz.

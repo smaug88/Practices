@@ -1,0 +1,99 @@
+##############################################################
+# ficheroq.txt:						     #
+# Este fichero contiene los tokens a reconocer por el léxico #
+# y algunos casos en los que ha de fallar		     #
+##############################################################
+
+# Programa de prueba
+BEGIN
+L 0:    R0 = 0;
+        R1 = 1;
+L 1:    R2 = 4 * R0;
+        I(R2+R7) = R1;
+        R0 = R0 + 1;
+        R1 = R1 * R0;
+        IF (R0 < 10) GT(1);
+        GT(-1);
+        GT(-2);
+END
+# Números reconocibles
+	# Flotantes
+	RR0 = 12398.789787;
+	RR1 = 12398.789787e+23;
+	RR2 = 12398.789787e-23;
+	RR3 = 0123.98e-4;
+	.45645E234;
+	R2 = 0123;	# Octal
+	R3 = 123;	# Decimal
+	R4 = 0x123;	# Hexadecimal
+	R5 = 0X123;	# Hexadecimal (X mayúscula)
+# Palabras reservadas
+	STAT
+	CODE
+	MEM
+	FIL
+	DAT
+	STR
+	IF
+	GT
+	GO
+	P
+	U
+	S
+	I
+	J
+	F
+	D
+
+
+
+	E
+# Caracteres especiales
+	/
+	//
+	<
+	<<
+	<=
+	>
+	>>
+	>=
+	=
+	==
+	*
+	/* */
+	&
+	&&
+	|
+	||
+	!
+	!=
+	( )
+	:
+	+ - 
+	%
+	^
+# Tokens que no reconoce
+	a
+	i
+	o
+	u
+# Errores
+	R7=R7-40WWW;	# No pillará las W
+	RR4 = .23e-5a;	# Fallará el registro y la 'a' en el exponente
+	R6 = 0x;	# Fallo hexadecimal
+	STATE		# Pilla 'STAT' y 'E'
+	BEGAN		# Begin
+	ENF		# End
+	STAF		# Stat
+	CODF		# Code
+	MEF		# Mem
+	FIG		# Fil
+	DAF		# Dat
+	STF		# Str (Stat)
+	GF		# Gt
+	R8		# Registros enteros 0..7, no 8
+	RR8		# Registros flotantes 0..3, no 8
+	0.12e;		# Después de exponente siempre va un número
+'M' 'g' "uyu ty";
+
+

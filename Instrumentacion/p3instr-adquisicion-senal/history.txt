@@ -1,0 +1,199 @@
+%%-- 9/04/10 8:42 --%
+[voltages1 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 0, 3200, 0, 0, 0, 240, 1, 0);
+voltages1
+plot(0:length(voltages1), voltages1)
+plot(1:length(voltages1), voltages1)
+plot(1:length(voltages1), voltages1, '.-')
+plot(1:length(voltages1), voltages1, '.')
+plot(1:length(voltages1), voltages1)
+[voltages1 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 0, 3200, 0, 0, 0, 240, 1, 0);
+cd P:
+[voltages1 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 0, 3200, 0, 0, 0, 240, 1, 0);
+[voltages2 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 0, 1600, 0, 0, 0, 120, 1, 0);
+fig = figure;
+a = 1/3200;
+b = 1/1600;
+plot(0:a:240*a, voltages1)
+hold on;
+plot(0:b:120*b, voltages2)
+hold off;
+saveas(fig, 'cuestion1', 'jpg');
+[voltages1 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 0, 3200, 0, 0, 0, 240, 1, 0);
+[voltages2 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 0, 1600, 0, 0, 0, 120, 1, 0);
+fig = figure;
+a = 1/3200;
+b = 1/1600;
+plot(0:a:240*a-1, voltages1)
+hold on;
+plot(0:b:120*b-1, voltages2)
+hold off;
+saveas(fig, 'cuestion1', 'jpg')
+length(voltages1)
+[voltages1 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 0, 3200, 0, 0, 0, 240, 1, 0);
+[voltages2 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 0, 1600, 0, 0, 0, 120, 1, 0);
+fig = figure;
+a = 1/3200;
+b = 1/1600;
+plot(0:a:239, voltages1)
+hold on;
+plot(0:b:119, voltages2)
+hold off;
+saveas(fig, 'cuestion1', 'jpg'
+[voltages1 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 0, 3200, 0, 0, 0, 240, 1, 0);
+[voltages2 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 0, 1600, 0, 0, 0, 120, 1, 0);
+fig = figure;
+a = 1/3200;
+b = 1/1600;
+plot(0:239, voltages1)
+hold on;
+plot(0:119, voltages2)
+hold off;
+saveas(fig, 'cuestion1', 'jpg')
+[voltages1 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 0, 3200, 0, 0, 0, 240, 1, 0);
+[voltages2 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 0, 1600, 0, 0, 0, 120, 1, 0);
+fig = figure;
+a = 1/3200;
+b = 1/1600;
+plot(0:239, voltages1)
+hold on;
+plot(0:119, voltages2, 'r')
+hold off;
+saveas(fig, 'cuestion1', 'jpg');
+help aiburst
+[voltages5 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 0, 500, 0, 0, 0, 4000, 15, 0)
+fig = figure;
+a = 1/500;
+plot(0:a:4000*a, voltages5)
+saveas(fig, 'cuestion3', 'jpg');
+[voltages5 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 0, 500, 0, 0, 0, 4000, 15, 0)
+fig = figure;
+a = 1/500;
+plot(0:4000-1, voltages5)
+saveas(fig, 'cuestion3', 'jpg');
+[voltages6 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 0, 500, 0, 0, 0, 4000, 15, 0)
+a = 1/500;
+hold on;
+plot(0:4000-1, voltages6, 'r')
+hold off;
+saveas(fig, 'cuestion3', 'jpg');
+[voltages7 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 0, 500, 0, 0, 0, 167, 1, 0)
+% [voltages7 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 0, 250, 0, 0, 0, 83, 1, 0)
+fig = figure;
+a = 1/500;
+% b = 1/250; % NO SE PUEDE HACER, PORQUE LAS FRECUENCIAS DE MUESTREO SON MENORES QUE LAS PERMITIDAS POR EL LABJACK
+plot(0:166, voltages7)
+% plot(0:b:83*b, voltages7) % --> NO SE PUEDE
+saveas(fig, 'cuestion4', 'jpg');
+help guide
+guide(handleList)
+guide(HandleList)
+help guide(HandleList)
+[voltages8 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 0, 400, 0, 0, 0, 200, 1, 0)
+[voltages9 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 0, 400, 0, 0, 0, 400, 1, 0)
+fig = figure;
+a = 1/400;
+plot(0:a:200*a, voltages8)
+hold on;
+plot(0:a:400*a, voltages9, 'r')
+hold off;
+saveas(fig, 'cuestion6', 'jpg');
+[voltages8 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 0, 400, 0, 0, 0, 200, 1, 0)
+[voltages9 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 0, 400, 0, 0, 0, 400, 1, 0)
+fig = figure;
+a = 1/400;
+plot(0:200-1, voltages8)
+hold on;
+plot(0:400-1, voltages9, 'r')
+hold off;
+saveas(fig, 'cuestion6', 'jpg');
+[voltages8 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 0, 400, 0, 0, 0, 200, 1, 0)
+[voltages9 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 0, 400, 0, 0, 0, 400, 1, 0)
+fig = figure;
+a = 1/400;
+plot(0:200-1, voltages8)
+hold on;
+plot(0:400-1, voltages9, 'r')
+hold off;
+saveas(fig, 'cuestion6', 'jpg');
+doc save
+save('voltajes.mat', 'voltages1', 'voltages2','voltages5','voltages6','voltages7','voltages8','voltages9')
+ls
+[voltages8 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 7, 400, 0, 0, 0, 200, 1, 0)
+[voltages9 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 7, 400, 0, 0, 0, 400, 1, 0)
+fig = figure;
+a = 1/400;
+plot(0:200-1, voltages8)
+hold on;
+plot(0:400-1, voltages9, 'r')
+hold off;
+saveas(fig, 'cuestion6', 'jpg');
+%[voltages8 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 7, 400, 0, 0, 0, 200, 1, 0)
+[voltages9 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 7, 400, 0, 0, 0, 400, 2, 0)
+fig = figure;
+a = 1/400;
+%plot(0:200-1, voltages8)
+hold on;
+plot(0:400-1, voltages9, 'r')
+hold off;
+[voltages8 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 7, 400, 0, 0, 0, 200, 1, 0)
+%[voltages9 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 7, 400, 0, 0, 0, 400, 2, 0)
+%fig = figure;
+hold on;
+plot(0:200-1, voltages8)
+%plot(0:400-1, voltages9, 'r')
+hold off;
+help plot
+[voltages8 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 7, 400, 0, 0, 0, 200, 1, 0)
+%[voltages9 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 7, 400, 0, 0, 0, 400, 2, 0)
+%fig = figure;
+hold on;
+plot(0:200-1, voltages8)
+%plot(0:400-1, voltages9, 'r')
+hold off;
+[voltages9 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 7, 400, 0, 0, 0, 400, 2, 0)
+%fig = figure;
+hold on;
+%plot(0:200-1, voltages8)
+plot(0:400-1, voltages9, 'r')
+hold off;
+pwd
+saveas(fig, 'cuestion6', 'jpg');
+[voltages7 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 6, 500, 0, 0, 0, 167, 1, 0)
+% [voltages7 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 0, 250, 0, 0, 0, 83, 1, 0)
+fig = figure;
+a = 1/500;
+% b = 1/250; % NO SE PUEDE HACER, PORQUE LAS FRECUENCIAS DE MUESTREO SON MENORES QUE LAS PERMITIDAS POR EL LABJACK
+plot(0:166, voltages7)
+% plot(0:b:83*b, voltages7) % --> NO SE PUEDE
+saveas(fig, 'cuestion4', 'jpg');
+[voltages5 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 6, 500, 0, 0, 0, 4000, 15, 0)
+fig = figure;
+a = 1/500;
+plot(0:4000-1, voltages5)
+saveas(fig, 'cuestion3', 'jpg');
+[voltages6 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 6, 500, 0, 0, 0, 4000, 15, 0)
+a = 1/500;
+hold on;
+plot(0:4000-1, voltages6, 'r')
+hold off;
+saveas(fig, 'cuestion3', 'jpg');
+[voltages1 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 7, 3200, 0, 0, 0, 240, 1, 0);
+[voltages2 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 7, 1600, 0, 0, 0, 120, 1, 0);
+fig = figure;
+a = 1/3200;
+b = 1/1600;
+plot(0:239, voltages1)
+hold on;
+plot(0:119, voltages2, 'r')
+hold off;
+saveas(fig, 'cuestion1', 'jpg');
+[voltages1 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 7, 3200, 0, 0, 0, 240, 1, 0);
+[voltages2 stateIOout scanRate overVoltage errorcode idnum] = aiburst(-1, 0, 0, 0, 1, 1, [8], 7, 1600, 0, 0, 0, 120, 1, 0);
+fig = figure;
+a = 1/3200;
+b = 1/1600;
+plot(0:239, voltages1)
+hold on;
+plot(0:119, voltages2, 'r')
+hold off;
+saveas(fig, 'cuestion1', 'jpg');

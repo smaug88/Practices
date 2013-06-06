@@ -1,0 +1,30 @@
+THelloworld
+v7
+r0
+t328621739.779801
+cCheck dependencies
+cExternalBuildToolExecution Helloworld
+
+N/usr/bin/make
+c000000004CC3DBA400000000000556E0
+t1287904164
+s349920
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies328621737#328621737#0(0"0(0#1#0"9007697477435492#0"0#
+
+CExternalBuildToolExecution Helloworld
+s328621737.509239
+e328621739.779671
+r1
+xExternalBuildToolExecution
+xHelloworld
+ocd source;                    \
+o	../nxt/nbc -O=../build/BC.rxe \
+o				-Z2 \
+o		        BC.nxc
+ocd build;  \
+o	../nxt/nxtcom -U BC.rxe
+lSLF07#2@23"Run external build tool328621737#328621739#0(130"cd source;                    \	../nxt/nbc -O=../build/BC.rxe \				-Z2 \		        BC.nxccd build;  \	../nxt/nxtcom -U BC.rxe6(13@32"cd source;                    \328621737#0#32#0(1@0"0(13@33"	../nxt/nbc -O=../build/BC.rxe \328621737#32#33#0(1@0"0(13@10"				-Z2 \328621737#65#10#0(1@0"0(13@17"		        BC.nxc328621737#75#17#0(1@0"0(13@13"cd build;  \328621739#92#13#0(1@0"0(13@25"	../nxt/nxtcom -U BC.rxe328621739#105#25#0(1@0"0(0#0#0"9007615873712224#116"    cd "/Users/macbookpro/Dropbox/David-Alberto/BC/Programa espejo/BC Project"    setenv ACTION     /usr/bin/make0#
+

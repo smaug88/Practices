@@ -1,0 +1,8 @@
+(defun lee-aima()
+  (defparameter *aima-root* (truename "/Users/macbookpro/Dropbox/Universidad/IA/Practicas/Practica_7/code/"))
+  (cd "/Users/macbookpro/Dropbox/Universidad/IA/Practicas/Practica_7/code/")
+  (load "aima")
+  (aima-load 'search)
+  (aima-compile 'search)
+  (test 'all)
+)

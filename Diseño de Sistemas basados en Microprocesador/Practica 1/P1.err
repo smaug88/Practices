@@ -1,0 +1,3 @@
+Warning[205] C:\DOCUMENTS AND SETTINGS\ITIS-DSM\ESCRITORIO\DSBM\P1.ASM 4 : Found directive in column 1. (__CONFIG)
+Message[302] C:\DOCUMENTS AND SETTINGS\ITIS-DSM\ESCRITORIO\DSBM\P1.ASM 183 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\DOCUMENTS AND SETTINGS\ITIS-DSM\ESCRITORIO\DSBM\P1.ASM 186 : Register in operand not in bank 0.  Ensure that bank bits are correct.

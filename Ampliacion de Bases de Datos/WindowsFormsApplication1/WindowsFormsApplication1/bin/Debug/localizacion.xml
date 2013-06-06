@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<localizacion>
+  <en>
+    <ventanaconexion>
+		<ventana>Conexion</ventana>
+		<botonConectOut>Connect</botonConectOut>
+		<botonCancelOut>Cancel</botonCancelOut>
+		<textServer>Server</textServer>
+		<textPort>Port</textPort>
+		<textDatabase>Database</textDatabase>
+		<textUser>User</textUser>
+		<textPass>Password</textPass>
+		<errorBBDD1>Please, set the Database where you want to connect.</errorBBDD1>
+		<errorUsuario1>Please, set the user with you want to connect.</errorUsuario1>
+		<errorServidor1>Please, set the server address where you want to connect.</errorServidor1>
+		<errorBBDD2>Error with the Database</errorBBDD2>
+		<errorUsuario2>Error with the User</errorUsuario2>
+		<errorServidor2>Error with the Server</errorServidor2>
+    </ventanaconexion>
+	<ventanaprincipal>
+		<botonConectar>Connect</botonConectar>
+		<botonDesconectar>Disconnect</botonDesconectar>
+		<estado>State</estado>
+		<layout1>Database Connection</layout1>
+		<ConsTabla>Make Table</ConsTabla>
+		<CrearTabla>Query Table</CrearTabla>
+		<ModTabla>Modify Table</ModTabla>
+		<DelTabla>Delete Table</DelTabla>
+		<ConsUsuario>Query Users</ConsUsuario>
+		<CrearUsuario>Make User</CrearUsuario>
+		<ModUsuario>Modify Users</ModUsuario>
+		<DelUsuario>Delete User</DelUsuario>
+		<layout2>Choose an operation</layout2>
+		<layout3>Choose a Table</layout3>
+		<Exec>Execute</Exec>
+		<Guardar>Save</Guardar>
+		<Eliminar>Delete Row</Eliminar>
+		<ConexionEstablecida>Connection established. User's Table's Name recovered.</ConexionEstablecida>
+		<ErrorConexion>Error with the database</ErrorConexion>
+		<FinConexion>Connection Ended</FinConexion>
+		<ConsultaOK>The Query is done.</ConsultaOK>
+		<ElimTabla1>The </ElimTabla1>
+		<ElimTabla2>'s Table deleted.</ElimTabla2>
+		<RecTabla>The table has been recovered, please, modify it as you wish and save the changes.</RecTabla>
+		<CreateTabla>The Table is created correctly.</CreateTabla>
+		<CreateUsuario>The User is created correctly.</CreateUsuario>
+		<ElimUsuario1>The User </ElimUsuario1>
+		<ElimUsuario2> has been removed.</ElimUsuario2>
+		<CambGuardado>The changes has been saved correctly.</CambGuardado>
+		<errorSeleccion1>Please, choose a table to operate with it.</errorSeleccion1>
+		<errorSeleccion2>Error in the table's selection</errorSeleccion2>
+	</ventanaprincipal>
+	<ventanaCreaTabla>
+		<ventana>Create Table</ventana>
+		<layout1>Name</layout1>
+		<texto1>Set the table's name</texto1>
+		<layout2>Fields</layout2>
+		<texto2>Set the field's data and click in 'Set Field' to set it and be able to set the next.</texto2>
+		<nombre>Name</nombre>
+		<tipo>Type</tipo>
+		<tam>Size</tam>
+		<Restricciones>Constraints</Restricciones>
+		<ClavePrim>Primary Key</ClavePrim>
+		<ClaveSec>Alternative Key</ClaveSec>
+		<ClaveExtern>Extern Key</ClaveExtern>
+		<FijarCampo>Set Field</FijarCampo>
+		<botonCancelar>Cancel</botonCancelar>
+		<botonAceptar>Accept</botonAceptar>
+	</ventanaCreaTabla>
+	<ventanaCreaUsuario>
+		<ventana>Create User</ventana>
+		<layout1>Name</layout1>
+		<label1>Set the user's name</label1>
+		<label2>Set the user's password</label2>
+		<label3>Set the user's privileges</label3>
+		<permisos>Privileges</permisos>
+		<agregarPermiso>Add privilege</agregarPermiso>
+		<cancelar>Cancel</cancelar>
+		<aceptar>Accept</aceptar>
+	</ventanaCreaUsuario>
+  </en>
+  <es>
+    <ventanaconexion>
+		<ventana>Conexión</ventana>
+		<botonConectOut>Conectar</botonConectOut>
+		<botonCancelOut>Cancelar</botonCancelOut>
+		<textServer>Servidor</textServer>
+		<textPort>Puerto</textPort>
+		<textDatabase>Base de Datos</textDatabase>
+		<textUser>Usuario</textUser>
+		<textPass>Contraseña</textPass>
+		<errorBBDD1>Por favor, inserte la Base de datos a la que se desea conectar.</errorBBDD1>
+		<errorUsuario1>Por favor, inserte el usuario con el que se desea conectar.</errorUsuario1>
+		<errorServidor1>Por favor, inserte la dirección del servidor al que desea conectar.</errorServidor1>
+		<errorBBDD2>Error con la base de datos</errorBBDD2>
+		<errorUsuario2>Error con el usuario</errorUsuario2>
+		<errorServidor2>Error con el servidor</errorServidor2>
+    </ventanaconexion>
+	<ventanaprincipal>
+		<botonConectar>Conectar</botonConectar>
+		<botonDesconectar>Desconectar</botonDesconectar>
+		<estado>Estado</estado>
+		<layout1>Conexión con la Base de Datos</layout1>
+		<ConsTabla>Consultar Tabla</ConsTabla>
+		<CrearTabla>Crear Tabla</CrearTabla>
+		<ModTabla>Modificar datos Tabla</ModTabla>
+		<DelTabla>Eliminar Tabla</DelTabla>
+		<ConsUsuario>Consultar Usuarios</ConsUsuario>
+		<CrearUsuario>Crear Usuario</CrearUsuario>
+		<ModUsuario>Modificar Usuarios</ModUsuario>
+		<DelUsuario>Eliminar Usuario</DelUsuario>
+		<layout2>Seleccione una operación</layout2>
+		<layout3>Seleccionar Tabla</layout3>
+		<Exec>Ejecutar</Exec>
+		<Guardar>Guardar Cambios</Guardar>
+		<Eliminar>Eliminar Fila</Eliminar>
+		<ConexionEstablecida>Conexión Establecida. Nombre de tablas del usuario recuperadas.</ConexionEstablecida>
+		<ErrorConexion>Error con la base de datos</ErrorConexion>
+		<FinConexion>Conexión Finalizada</FinConexion>
+		<ConsultaOK>Consulta realizada correctamente</ConsultaOK>
+		<ElimTabla1>Tabla </ElimTabla1>
+		<ElimTabla2> eliminada correctamente</ElimTabla2>
+		<RecTabla>Tabla recuperada correctamente, realice las modificaciones y guarde los cambios.</RecTabla>
+		<CreateTabla>Tabla creada correctamente</CreateTabla>
+		<CreateUsuario>Usuario creado correctamente</CreateUsuario>
+		<ElimUsuario1>Usuario </ElimUsuario1>
+		<ElimUsuario2> eliminado correctamente</ElimUsuario2>
+		<CambGuardado>Los cambios han sido almacenados correctamente.</CambGuardado>
+		<errorSeleccion1>Por favor, escoja una tabla para operar con ella.</errorSeleccion1>
+		<errorSeleccion2>Error en la selección de tabla</errorSeleccion2>
+	</ventanaprincipal>
+	<ventanaCreaTabla>
+		<ventana>Crear Tabla</ventana>
+		<layout1>Nombre</layout1>
+		<texto1>Introducir el nombre de la tabla</texto1>
+		<layout2>Campos</layout2>
+		<texto2>Introduzca los datos de los campos y pulse fijar campo para fijarlo y poder introducir el siguiente.</texto2>
+		<nombre>Nombre</nombre>
+		<tipo>Tipo</tipo>
+		<tam>Tamaño</tam>
+		<Restricciones>Restricciones</Restricciones>
+		<ClavePrim>Clave Primaria</ClavePrim>
+		<ClaveSec>Clave Secundaria</ClaveSec>
+		<ClaveExtern>Clave Externa</ClaveExtern>
+		<FijarCampo>Fijar Campo</FijarCampo>
+		<botonCancelar>Cancelar</botonCancelar>
+		<botonAceptar>Aceptar</botonAceptar>
+	</ventanaCreaTabla>
+	<ventanaCreaUsuario>
+		<ventana>Crear Usuario</ventana>
+		<layout1>Nombre</layout1>
+		<label1>Introducir el nombre del usuario</label1>
+		<label2>Introducir la contraseña del usuario</label2>
+		<label3>Seleccione los permisos del usuario</label3>
+		<permisos>Permisos</permisos>
+		<agregarPermiso>Agregar Permiso</agregarPermiso>
+		<cancelar>Cancelar</cancelar>
+		<aceptar>Aceptar</aceptar>
+	</ventanaCreaUsuario>
+  </es>
+</localizacion>

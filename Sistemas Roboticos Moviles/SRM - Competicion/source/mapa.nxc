@@ -1,0 +1,148 @@
+#define x 25	
+#define y 25
+#define dist_max 44
+#define rot -5
+#define num_medidas 10
+#define resta 3
+#define suma 4
+#define barridos 1
+#define FILENAME "salida.txt"
+#define FILESIZE 5000
+
+inline int factor(int n)
+{
+  int i;
+  int total=1;
+  for(i=1; i<=n; i++)
+    total=total*i;
+  return total;
+}
+
+inline float puiss(float nb, int deg)
+{
+  int i;
+  float total=1;
+  for(i=0; i<deg; i++)
+  {
+    total=total*nb;
+  }
+  return total;
+}
+
+inline float sin(float xa)
+{
+  int i;
+  float total=0;
+  for(i=0; i<3; i++)
+    total=total+( puiss(-1, i)*(puiss(xa, 2*i+1)))/factor(2*i+1);
+  return total;
+}
+
+inline float cos(float xa)
+{
+	return (sqrt(1-sin(xa)*sin(xa)));
+}
+
+task main(){
+	SetSensorLowspeed(S1);
+	int mapa[x][y];
+	int i=0;
+	int j=0;
+	for(i=0;i<x;i++)
+		for(j=0;j<y;j++) 
+			mapa[i][j]=0;
+	RotateMotor(OUT_A,20,44);
+	int max=0;
+	for(int w=0; w<barridos; w++)
+	{
+	for(i=0;i<=89;i+=5){
+		int medida=0;
+		for(j=0;j<num_medidas;j++){
+			medida+=SensorUS(S1);
+		}
+		medida/=10;
+		if(medida<120){
+			float alfamas;
+			float alfamenos;
+			int alfa;
+			int prueba=30;
+			float seno1=cos(prueba*RADIANS_PER_DEGREE);
+			NumOut(0, LCD_LINE3, seno1);
+			alfa = i+45;
+			alfamas = i+45+15;
+			alfamenos = i+45-15;
+			TextOut(0, LCD_LINE1, "Ángulo: ");
+			NumOut(55, LCD_LINE1, alfa);
+			alfamas*=RADIANS_PER_DEGREE;
+			alfamenos*=RADIANS_PER_DEGREE;
+			//float tangentemas;
+			//float tangentemenos;
+			float tangentemas = sin(alfamas)/cos(alfamas);
+			float tangentemenos = sin(alfamenos)/cos(alfamenos);
+			NumOut(0, LCD_LINE4, tangentemas);
+			NumOut(0, LCD_LINE5, tangentemenos);
+			for(int k=0;k<x;k++)
+				for(int w=0;w<y;w++){
+					int x1=(25-k)*4;
+					int y1=(w-12)*4;
+					float d1= sqrt(x1*x1 + y1*y1);
+					float t1= (x1/y1)/d1;
+					
+					TextOut(0, LCD_LINE2, "Medida: ");
+					NumOut(55, LCD_LINE2, medida);
+					if(alfa<=90)
+					{
+						if((t1<tangentemas) && (t1>tangentemenos))
+						{
+							if(d1>=medida)
+							{
+								mapa[k][w]+=suma;
+							}
+							else
+							{
+								mapa[k][w]-=resta;
+							}
+						}
+					}
+					else
+					{
+						if((t1>tangentemas) && (t1<tangentemenos))
+						{
+							TextOut(0, LCD_LINE6, "HA ENTRADO, MILAGRO!!! ");
+							if(d1>=medida)
+							{
+								mapa[k][w]+=suma;
+							}
+							else
+							{
+								mapa[k][w]-=resta;
+							}
+						}
+					}
+				}
+		}
+		RotateMotor(OUT_A,10,rot);
+	}
+	RotateMotor(OUT_A, 20, 89);
+	}
+	
+	byte handle;
+	const int file_size = FILESIZE;
+	unsigned int fichero= CreateFile(FILENAME,file_size,handle);
+	if(fichero==LDR_FILEEXISTS)
+		fichero=OpenFileAppend(FILENAME,file_size,handle);
+	if (fichero==LDR_SUCCESS){
+	   short bytesWritten;
+		for(i=0;i<x;i++){
+			string tmp = "";
+			for(j=0;j<y;j++){
+				tmp = StrCat(tmp," ",NumToStr(mapa[i][j]));
+				//PODEMOS ESCRIBIR CARACTERES ASCII EN FUNCIÓN DEL NUMERO (LOS CUADRADITOS)
+
+			 }
+			 WriteLnString(handle,tmp, bytesWritten);
+		}
+		CloseFile(handle);	  
+	}
+	//while(true);
+}

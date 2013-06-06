@@ -1,0 +1,120 @@
+(defun busca_pos_it (lista1 lista2 lista3)
+   (let (
+	(tam1 (length lista1)) 
+	(tam2 (length lista2))
+	)
+   (dotimes (pos1 tam1)
+	(dotimes (pos2 tam2)	 
+		(if (= (nth pos1 lista1) (nth pos2 lista2))
+	    		(setq lista3 (append lista3 (list pos2)))
+		)
+	)
+	(if (/= (length lista3) (+ 1 pos1))
+		(setq lista3 (append lista3 '(nil)))
+	)
+   )
+   )
+   lista3
+)
+
+(defun busca_pos_rec_aux (A B C n)
+  (if (= (length B) 0)
+	nil
+  	(if (= (first A) (first B))
+		n
+  		(busca_pos_rec_aux A (nthcdr 1 B) C (+ n 1))
+	)
+  )
+)
+
+(defun bloq_func(lista1 lista2 lista3)
+	(setq lista3 (append lista3 (cons (busca_pos_rec_aux lista1 lista2 lista3 0 ) nil)))
+	(busca_pos_rec (nthcdr 1 lista1) lista2 lista3 )
+)
+
+(defun busca_pos_rec (lista1 lista2 lista3)
+  (if (= (length lista1) 0) lista3
+	(bloq_func lista1 lista2 lista3)
+  )
+)
+
+(defun replica_letra (letra n)
+   (if (> n 1)
+	   (setq out2 (append (list letra) (replica_letra letra (- n 1))))
+      	   (setq out2 (list letra))
+   )
+   out2
+)
+
+(defun replicar (lista n)
+   (setq out nil)
+   (if (> (length lista) 0)
+	(setq out1 (replicar (nthcdr 1 lista) n))
+  	(setq out1 '())
+   )
+   (if (> (length lista) 0)
+   	(setq out (append (replica_letra (nth 0 lista) n) out1))
+	NIL
+   )
+   out
+)
+
+(defun prof_no_terminal(a b c)
+	(if (> a b)
+	   (setq c (append (list a) (prof_no_terminal (- a b) b c)))
+	   (setq c (list a))
+	)
+	c
+)
+
+(defun prof_terminal(a b c)
+	(setq c (append c (list a)))
+	(if (> a b)
+		(setq c (prof_terminal (- a b) b c))
+		NIL
+	)
+	c
+)
+
+(defun foo (a b &optional c d)
+	(list a b c d)
+)
+
+(defun ej1 ()
+	(setq lista1 '(2 3 1 5))
+	(setq lista2 '(1 2 3 4))
+	(setq lista3 '())
+	(setq lista3 (busca_pos_it lista1 lista2 lista3))
+	lista3
+	(setq lista3 '())
+	(setq lista3 (busca_pos_rec lista1 lista2 lista3))
+	lista3
+)
+
+(defun ej2 ()
+	(setq lista1 '(2 3 1 5))
+	(setq lista2 '(1 2 3 4))
+	(setq lista3 '())
+	(trace busca_pos_it)
+	(time (busca_pos_it lista1 lista2 lista3))
+	(untrace busca_pos_it)
+	(setq lista3 '())
+	(trace busca_pos_rec)
+	(time (busca_pos_rec lista1 lista2 lista3))
+	(untrace busca_pos_rec)
+)
+
+(defun ej3 ()
+	(replicar '(a b c) 3)
+)
+
+(defun ej4 ()
+	(prof_no_terminal 7 3 '())
+	(prof_terminal 7 3 '())
+)
+
+(defun ej5 ()
+	(foo 1 2)
+	(foo 1 2 3)
+	(foo 1 2 3 4)
+)

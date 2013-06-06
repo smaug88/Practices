@@ -1,0 +1,30 @@
+THelloworld
+v7
+r0
+t321378831.562831
+cCheck dependencies
+cExternalBuildToolExecution Helloworld
+
+N/usr/bin/make
+c000000004C4DDF8800000000000556E0
+t1280171912
+s349920
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies321378829#321378829#0(0"0(0#1#0"8602074432#0"0#
+
+CExternalBuildToolExecution Helloworld
+s321378829.866992
+e321378831.562654
+r1
+xExternalBuildToolExecution
+xHelloworld
+ocd source;                    \
+o	../nxt/nbc -O=../build/moving.rxe \
+o				-Z2 \
+o		        moving.nxc
+ocd build;  \
+o	../nxt/nxtcom -U moving.rxe
+lSLF07#2@23"Run external build tool321378829#321378831#0(142"cd source;                    \	../nxt/nbc -O=../build/moving.rxe \				-Z2 \		        moving.nxccd build;  \	../nxt/nxtcom -U moving.rxe6(13@32"cd source;                    \321378829#0#32#0(1@0"0(13@37"	../nxt/nbc -O=../build/moving.rxe \321378829#32#37#0(1@0"0(13@10"				-Z2 \321378829#69#10#0(1@0"0(13@21"		        moving.nxc321378829#79#21#0(1@0"0(13@13"cd build;  \321378831#100#13#0(1@0"0(13@29"	../nxt/nxtcom -U moving.rxe321378831#113#29#0(1@0"0(0#0#0"8603823552#109"    cd "/Users/albertomirelessuarez/Downloads/Helloworld Xcode Project"    setenv ACTION     /usr/bin/make0#
+

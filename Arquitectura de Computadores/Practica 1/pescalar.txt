@@ -1,0 +1,243 @@
+; Algoritmo de Multiplicación Rusa
+;	A * B = C
+; 	A -> r1
+;	B -> r2
+;	C -> r3
+
+	.text
+
+	ori r30,r0,0	; r30 (Puntero a la Pila)
+
+ 
+;x[]={31,32,33,32,31,32,33,32,31,32}; 
+;h[]={7,32,13,8,25,44,2,11,9,17}; 
+
+main:
+	ori r3, r0, 0		; solucion
+	ori r10, r0, 0x1F20	; primera pareja del vector x
+	ori r12, r0, 0x0720	; primera pareja del vector h
+	ori r11, r0, 1		; variable con un 1
+	ori r14, r0, 0xFF		; variable para obtener los 16 primeros bits
+	ori r13, r0, 0x8
+	nop
+
+bucle:
+	and r1, r10, r14		; obtenemos un valor de x
+	and r2, r12, r14		; obtenemos un valor de h
+	j mrusa			; multiplicamos
+
+sig:	
+	sra r10, r10, r13		; quitamos el valor de x
+	sra r12, r12, r13		; quitamos el valor de h
+	nop
+	beqz r10, siguientep1	; si hemos recorrido todo el vector salimos
+	nop
+	nop
+	j bucle
+	nop
+	
+	; Multiplicación iterativa
+mrusa:
+	nop
+	and r4, r2, r11
+	nop
+	nop
+	beqz r4, desplazar
+	nop
+	nop
+	add r3, r3, r1
+	
+	; Desplazamiento de los bits y control del bucle
+desplazar:
+	sra r2,r2,r11
+	sll r1,r1,r11
+	nop
+	nop
+	beqz r2, sig
+	nop
+	nop
+	j mrusa
+	nop
+	nop
+
+siguientep1: 
+	ori r10, r0, 0x2120	; primera pareja del vector x
+	ori r12, r0, 0x0D08	; primera pareja del vector h
+	ori r11, r0, 1		; variable con un 1
+
+bucle1:
+	and r1, r10, r14		; obtenemos un valor de x
+	and r2, r12, r14		; obtenemos un valor de h
+	j mrusa1		; multiplicamos
+
+sig1:	sra r10, r10, r13		; quitamos el valor de x
+	sra r12, r12, r13		; quitamos el valor de h
+	nop
+	beqz r10, siguientep2	; si hemos recorrido todo el vector salimos
+	nop
+	nop
+	j bucle1
+	nop
+	
+	; Multiplicación iterativa
+mrusa1:
+	nop
+	and r4, r2, r11
+	nop
+	nop
+	beqz r4, desplazar1
+	nop
+	nop
+	add r3, r3, r1
+	
+	; Desplazamiento de los bits y control del bucle
+desplazar1:
+	sra r2,r2,r11
+	sll r1,r1,r11
+	nop
+	nop
+	beqz r2, sig1
+	nop
+	nop
+	j mrusa1
+	nop
+	nop
+
+
+siguientep2: 
+	ori r10, r0, 0x1F20	; primera pareja del vector x
+	ori r12, r0, 0x192C	; primera pareja del vector h
+	ori r11, r0, 1		; variable con un 1
+
+bucle2:
+	and r1, r10, r14		; obtenemos un valor de x
+	and r2, r12, r14		; obtenemos un valor de h
+	j mrusa2		; multiplicamos
+
+sig2:	sra r10, r10, r13		; quitamos el valor de x
+	sra r12, r12, r13		; quitamos el valor de h
+	nop
+	beqz r10, siguientep3	; si hemos recorrido todo el vector salimos
+	nop
+	nop
+	j bucle2
+	nop
+	
+	; Multiplicación iterativa
+mrusa2:
+	nop
+	and r4, r2, r11
+	nop
+	nop
+	beqz r4, desplazar2
+	nop
+	nop
+	add r3, r3, r1
+	
+	; Desplazamiento de los bits y control del bucle
+desplazar2:
+	sra r2,r2,r11
+	sll r1,r1,r11
+	nop
+	nop
+	beqz r2, sig2
+	nop
+	nop
+	j mrusa2
+	nop
+	nop
+
+
+siguientep3: 
+	ori r10, r0, 0x2120	; primera pareja del vector x
+	ori r12, r0, 0x020B	; primera pareja del vector h
+	ori r11, r0, 1		; variable con un 1
+
+bucle3:
+	and r1, r10, r14		; obtenemos un valor de x
+	and r2, r12, r14		; obtenemos un valor de h
+	j mrusa3		; multiplicamos
+
+sig3:	sra r10, r10, r13		; quitamos el valor de x
+	sra r12, r12, r13		; quitamos el valor de h
+	nop
+	beqz r10, siguientep4	; si hemos recorrido todo el vector salimos
+	nop
+	nop
+	j bucle3
+	nop
+	
+	; Multiplicación iterativa
+mrusa3:
+	nop
+	and r4, r2, r11
+	nop
+	nop
+	beqz r4, desplazar3
+	nop
+	nop
+	add r3, r3, r1
+	
+	; Desplazamiento de los bits y control del bucle
+desplazar3:
+	sra r2,r2,r11
+	sll r1,r1,r11
+	nop
+	nop
+	beqz r2, sig3
+	nop
+	nop
+	j mrusa3
+	nop
+	nop
+
+siguientep4: 
+	ori r10, r0, 0x1F20	; primera pareja del vector x
+	ori r12, r0, 0x0911	; primera pareja del vector h
+	ori r11, r0, 1		; variable con un 1
+
+bucle4:
+	and r1, r10, r14		; obtenemos un valor de x
+	and r2, r12, r14		; obtenemos un valor de h
+	j mrusa4		; multiplicamos
+
+sig4:	sra r10, r10, r13		; quitamos el valor de x
+	sra r12, r12, r13		; quitamos el valor de h
+	nop
+	beqz r10, fuera	; si hemos recorrido todo el vector salimos
+	nop
+	nop
+	j bucle4
+	nop
+	
+	; Multiplicación iterativa
+mrusa4:
+	nop
+	and r4, r2, r11
+	nop
+	nop
+	beqz r4, desplazar4
+	nop
+	nop
+	add r3, r3, r1
+	
+	; Desplazamiento de los bits y control del bucle
+desplazar4:
+	sra r2,r2,r11
+	sll r1,r1,r11
+	nop
+	nop
+	beqz r2, sig4
+	nop
+	nop
+	j mrusa4
+	nop
+	nop
+
+fuera:
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop

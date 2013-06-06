@@ -1,0 +1,21 @@
+--
+-- DLX_PROG2.vhd
+--
+-- Programa para el DLX32p
+-- Se ha insertado nop para evitar las dependencias. Esta es la diferencia con DLX_PROG.vhd
+-- que es el que se ha utilizado para DLX32s monociclo.
+--
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use IEEE.std_logic_arith.all;
+use work.DLX_pack.all;
+
+package DLX_prog2 is
+  type ROM_TABLE is array (0 to -1) of ROM_WORD;
+
+  constant ROM: ROM_TABLE := ROM_TABLE'(
+
+      );
+
+end DLX_prog2;

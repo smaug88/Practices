@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, DGCActivity!</string>
+    <string name="app_name">DGC</string>
+    <string name="rotar">Rotación</string>
+    <string name="trasladar">Traslación</string>
+    <string name="escalar">Escalado</string>
+    <string name="cargar">Cargar</string>
+    <string name="opciones">Opciones</string>
+    <string name="ejes">Ejes</string>
+    <string name="zbuffer">Z-Buffer</string>
+    <string name="perspectiva">Perspectiva</string>
+    <string name="relleno">Relleno</string>
+    <string name="ejexy">Eje X-Y</string>
+    <string name="ejexz">Eje X-Z</string>
+    <string name="ejeyz">Eje Y-Z</string>
+    <string name="figura">Figura</string>
+    <string name="revolucion">Figura de revolución</string>
+    <string name="basico">Figura básica</string>
+    <string name="insertarFigura">Dibujar figura de Revolución</string>
+    <string name="uno">Un dedo</string>
+    <string name="dos">Dos dedos</string>
+    <string name="proyeccion">Proyección</string>
+    <string name="foco">Foco de Luz</string>
+	<string name="iluminacion">Iluminación</string>    
+</resources>

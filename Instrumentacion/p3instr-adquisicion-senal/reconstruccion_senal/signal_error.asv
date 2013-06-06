@@ -1,0 +1,6 @@
+function [error] = signal_error(A1, w1, p1, A2, w2, p2, t)
+    signal         = A1 * sin(w1*t + p1);
+    sampled_signal = A2 * sin(w2*t + p2);
+    abs_error = signal - sampled_signal;
+    mean
+end

@@ -1,0 +1,44 @@
+#define x=60
+#define y=30
+#define dist_max=44
+#define rot=??
+#define num_medidas
+#define resta=3
+#define suma=4
+
+task main(){
+	SetSensorLowspeed(S1);
+	int mapa[x][y];
+	int i,j;
+	for(i=0;i<x;i++)
+		for(j=0;j<y;j++) mapa[i][j]=0;
+	RotateMotor(OUT_A,20,89);
+	int max=0;
+	for(i=0;i<178;i++){
+		int medida=0;
+		for(j=0;j<num_medidas;j++){
+			medida+=SensorUS(S1);
+		}
+		medida/=num_medidas;
+		if(medida<dist_max){
+			int pos_x=cos(89-i)*medida;
+			int pos_y=sin(89-i)*medida;
+			int k;
+			for(j=0;j<x;j++){
+				k=(sin(89-i)/cos(89-i))*j;
+				if(x<pos_x) mapa[j][k]-=resta;
+				else{
+					mapa[j][k]+=suma;
+					if(mapa[j][k]>max) max=mapa[j][k];
+				}
+			}
+		}
+	}
+	max*=3/4;
+	for(i=0;i<x;i++)
+		for(j=0;j<y;j++) if(mapa[i][j]>=max)mapa[i][j];
+		else
+			mapa[i][j]=0;
+	GraphicArrayOut(x,y,mapa);
+	While(true);
+}

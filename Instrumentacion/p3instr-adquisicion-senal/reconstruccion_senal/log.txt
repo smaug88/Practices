@@ -1,0 +1,62 @@
+%-- 8/04/10 20:22 --%
+mkdir periodic_signal
+cd periodic_signal\
+edit generate_samples.m
+sampligfreq = 1000;
+samplingperiod = 1 / sampligfreq
+t = 0 : samplingperiod : nsamples * samplingperiod
+nsamples = 10;
+t = 0 : samplingperiod : nsamples * samplingperiod
+nsamples = 40;
+t = 0 : samplingperiod : nsamples * samplingperiod
+sin(t)
+plot(t, sin(t))
+t
+nsamples = 1000;
+t = 0 : samplingperiod : nsamples * samplingperiod
+plot(t, sin(t))
+nsamples = 5000;
+t = 0 : samplingperiod : nsamples * samplingperiod
+plot(t, sin(t))
+nsamples = 10000;
+t = 0 : samplingperiod : nsamples * samplingperiod
+plot(t, sin(t))
+edit test.m
+edit pstest.m
+clear
+nsamples = 10000;
+t = 0 : samplingperiod : nsamples * samplingperiod;
+plot(t, sin(t))
+clear
+sampligfreq = 1000;
+samplingperiod = 1 / sampligfreq;
+nsamples = 10000;
+t = 0 : samplingperiod : nsamples * samplingperiod;
+plot(t, sin(t))
+pstest
+doc plot
+pstest
+samples
+pstest
+clear
+pstest
+close(f)
+figure(f)
+edit psptest.m
+psptest(50, 2)
+psptest(50, 10)
+psptest(500, 10)
+psptest(100, 10)
+edit guess_params.m
+max(samples)
+doc find
+find(samples = max(samples))
+find(samples == max(samples))
+doc ==
+samples(4)
+plot(t, samples, '.-')
+size([1 2 3])
+length([1 2 3])
+doc &&
+ptest
+pstest

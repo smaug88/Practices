@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<localizacion>
+  <en>
+    <ventanaconexion>
+	    <botonConectOut>Connect</botonConectOut>
+	    <botonCancelOut>Cancel</botonCancelOut>
+      <textServer>Server</textServer>
+      <textPort>Port</textPort>
+      <textDatabase>Database</textDatabase>
+      <textUser>User</textUser>
+      <textPass>Password</textPass>
+      <errorBBDD1></errorBBDD1>
+      <errorUsuario1></errorUsuario1>
+      <errorServidor1></errorServidor1>
+      <errorBBDD2></errorBBDD2>
+      <errorUsuario2></errorUsuario2>
+      <errorServidor2></errorServidor2>
+    </ventanaconexion>
+  </en>
+  <es>
+    <ventanaconexion>
+	    <botonConectOut>Conectar</botonConectOut>
+	    <botonCancelOut>Cancelar</botonCancelOut>
+      <textServer>Servidor</textServer>
+      <textPort>Puerto</textPort>
+      <textDatabase>Base de Datos</textDatabase>
+      <textUser>Usuario</textUser>
+      <textPass>Contraseña</textPass>
+      <errorBBDD1>Por favor, inserte la Base de datos a la que se desea conectar.</errorBBDD1>
+      <errorUsuario1>Por favor, inserte el usuario con el que se desea conectar.</errorUsuario1>
+      <errorServidor1>Por favor, inserte la dirección del servidor al que desea conectar.</errorServidor1>
+      <errorBBDD2>Error con la base de datos</errorBBDD2>
+      <errorUsuario2>Error con el usuario</errorUsuario2>
+      <errorServidor2>Error con el servidor</errorServidor2>
+    </ventanaconexion>
+  </es>
+</localizacion>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent" android:weightSum="1" android:background="@drawable/fondo">
+    <TextView android:textAppearance="?android:attr/textAppearanceLarge" 
+    	android:layout_width="wrap_content" 
+    	android:layout_height="wrap_content" 
+    	android:id="@+id/textView1" 
+    	android:text="@string/keytext">
+    </TextView>
+    <LinearLayout android:id="@+id/linearLayout1" 
+    	android:layout_height="wrap_content" 
+    	android:layout_width="match_parent" 
+    	android:orientation="vertical" 
+    	android:layout_weight="0.11">
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/PassInputKey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Módulo"
+        android:inputType="numberDecimal" >
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/PassInputKey2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Exponente"
+        android:inputType="numberDecimal" >
+
+        <requestFocus />
+    </EditText>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.50"
+        android:orientation="vertical" >
+
+    </LinearLayout>
+    <Button android:layout_width="match_parent" 
+    	android:layout_height="wrap_content" 
+    	android:text="@string/choosetask" 
+    	android:id="@+id/PassInputButtonEncrypt">
+    </Button>
+    <Button android:layout_width="match_parent" 
+        android:layout_height="wrap_content" 
+        android:text="@string/Desencriptar" 
+        android:id="@+id/PassInputButtonDesencrypt"></Button>
+</LinearLayout>

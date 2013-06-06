@@ -1,0 +1,8 @@
+function mycallback(obj, eventdata)
+    %Obtenemos medicion
+    
+    %Calculo de distancia
+    %Opcional: Calculo del error
+    %(con +- error_max y polyval)
+    
+end

@@ -1,0 +1,103 @@
+%-- 30/04/10 9:00 --%
+54.4/5
+r2 = 0:0.0001:3.5721;
+length(r2)
+plot(r2, r2)
+doc plot3d
+doc plot3
+r2 = 0:0.0001:10;
+r4 = 0:0.0001:10;
+r1 = (r2*r4)/10.88;
+r1 = (r2.*r4)./10.88;
+plot3(r2,r4,r1)
+grid on
+axis square
+r2 = 0:0.0001:50;
+r4 = 0:0.0001:50;
+r1 = (r2.*r4)./10.88;
+plot3(r2,r4,r1)
+grid on
+axis square
+cd p:\instr\
+mkdir p4instr-2010-04-30
+cd p4instr-2010-04-30\
+edit graf.m
+doc implot
+r390 = 2.45;
+r3m90 = 18.37
+r30 = 10.88;
+syms r2
+ezplot('cos(x)')
+ezplot('(2.45)/(x+2.45) - 10.88/(x + 10.88)')
+grid on
+figure
+ezplot('abs((2.45)/(x+2.45) - 10.88/(x + 10.88))')
+grid on
+doc axis
+axis([0 5 0 0.25])
+axis([0 2 0 0.25])
+hold on
+ezplot('abs((18.37)/(x+18.37) - 10.88/(x + 10.88))')
+doc ezplot
+ezplot('abs((18.37)/(x+18.37) - 10.88/(x + 10.88))', 'r')
+hold off
+ezplot('abs((2.45)/(x+2.45) - 10.88/(x + 10.88))')
+grid on
+axis([0 2 0 0.25])
+figure
+ezplot('abs((18.37)/(x+18.37) - 10.88/(x + 10.88))')
+grid on
+axis([0 10 0 0.25])
+axis([0 5 0 0.25])
+figure
+ezplot('abs((10.88)/(x+10.88) - 10.88/(x + 10.88))')
+grid on
+doc ezplot3
+ezplot3('(2*x + y + z)^3 - 1/10 * x^2 * z^3 - y^2 * z^3')
+ezplot('abs((y)/(x+y) - 10.88/(x + 10.88))')
+ezplot('abs((y)/(x+y) - 10.88/(x + 10.88))', [0 10 2.45 18.37])
+figure
+ezplot3('abs((y)/(x+y) - 10.88/(x + 10.88))', [0 10 2.45 18.37])
+ezplot('abs((y)/(x+y) - 10.88/(x + 10.88))', [0 10 2.45 18.37])
+grid on
+axis([0 5 0 0.25])
+ezplot('(y)/(x+y) - 10.88/(x + 10.88)')
+figure
+ezplot('(y)/(x+y) - 10.88/(x + 10.88)')
+ezplot('abs((y)/(x+y) - 10.88/(x + 10.88))')
+grid on
+ezplot('(y)/(x+y) - 10.88/(x + 10.88)')
+grid on
+axis [0 5 0 0.25]
+axis 0 5 0 0.25
+graf
+doc ezplot
+figure
+graf
+close all
+graf
+help ezplot3
+graf
+ezsurf('sin(sqrt(x^2+y^2))/sqrt(x^2+y^2)',[-6*pi,6*pi])
+graf
+ezsurf('(2*x + y + z)^3 - 1/10 * x^2 * z^3 - y^2 * z^3')
+ezsurf('(2*x + y + z)^3 - 1/10 * x^2 * z^3 - y^2 * z^3', [-2, 2, -2, 2])
+doc ezsurf
+graf
+ezsurf('real(atan(x+i*y))')
+ezsurfc('real(atan(x+i*y))')
+ezmesh('real(atan(x+i*y))')
+ezsurfc('(y)/(x+y)')
+ezsurfc('10.88/(x + 10.88)')
+ezsurfc('(y)/(x+y)-10.88/(x + 10.88)')
+ezsurfc('abs((y)/(x+y)-10.88/(x + 10.88))')
+ezsurfc('abs((y)/(x+y)-10.88/(x + 10.88))', [0,50,2.45,18.37])
+ezsurf('(y)/(x+y) - 10.88/(x + 10.88)', [0, 50, 2.45, 18.37])
+graf
+f3 = figure;
+ezsurfc('abs((y)/(x+y)-10.88/(x + 10.88))', [0,50,2.45,18.37])
+%ezsurf('(y)/(x+y) - 10.88/(x + 10.88)', [0, 50, 2.45, 18.37])
+grid on
+%axis([0 5 0 0.25])
+axis([0 50 0 50 0 0.25])
+close all

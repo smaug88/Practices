@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="net.Cripto"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="10" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>"
+
+    <application
+        android:icon="@drawable/icon"
+        android:label="@string/AppName" >
+        <activity
+            android:label="@string/app_name"
+            android:name=".CriptoActivity" >
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Euclides.CriptoEuclideActivity"></activity>
+        <activity android:name=".Euclides.CriptoEuclideResultActivity"></activity>
+        <activity android:name=".DES.DESActivity"></activity>
+        <activity android:name=".DES.DESTextInput"></activity>
+        <activity android:name=".DES.DESOutputSelection"></activity>
+        <activity android:name=".KeyGen.KeyGenerator"></activity>
+        <activity android:name=".KeyGen.KeySaved"></activity>
+        <activity android:name=".DES.DESPassInput"></activity>
+        <activity android:name=".DES.DESTextOutput"></activity>
+        <activity android:name=".Common.FileInput"></activity>
+        <activity android:name=".RSA.RSAActivity"></activity>
+        <activity android:name=".RSA.RSAOutputSelection"></activity>
+        <activity android:name=".RSA.RSAPassInput"></activity>
+        <activity android:name=".RSA.RSATextInput"></activity>
+        <activity android:name=".RSA.RSATextOutput"></activity>
+    </application>
+
+</manifest>

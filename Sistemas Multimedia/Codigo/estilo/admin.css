@@ -1,0 +1,59 @@
+body
+{
+	background: none;
+	background-color:#099;
+}
+
+.zonas
+{
+	position: absolute;
+	left: 80px;
+	top: 50px;
+}
+
+.elementos
+{
+	position: absolute;
+	left: 200px;
+	top: 50px;
+}
+
+.botones
+{
+	position: relative;
+	top: 10px;
+}
+
+.contenido
+{
+	position: relative;
+	left: -5px;
+	top: 50px;
+}
+
+table
+{
+	background-color:#000;
+}
+
+tr
+{
+	background-color:#FFF;
+}
+
+td
+{
+	max-width:500px;
+}
+
+.identificacion
+{
+	position: absolute;
+	top: 30%;
+	left: 30%;
+}
+
+.error
+{
+	color: red;
+}

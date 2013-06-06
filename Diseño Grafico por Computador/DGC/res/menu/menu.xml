@@ -1,0 +1,76 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/trasladar" 
+        android:title="@string/trasladar" 
+        android:icon="@drawable/trasladar">
+        <menu>
+	        <item android:id="@+id/tras_uno"
+	              android:title="@string/uno" />
+	        <item android:id="@+id/tras_dos"
+	              android:title="@string/dos" />
+        </menu>
+    </item>
+    <item android:id="@+id/rotar" 
+        android:title="@string/rotar" 
+        android:icon="@drawable/rotar">
+        <menu>
+	        <item android:id="@+id/rot_uno"
+	              android:title="@string/uno" />
+	        <item android:id="@+id/rot_dos"
+	              android:title="@string/dos" />
+        </menu>
+    </item>
+    <item android:id="@+id/escalar" 
+        android:title="@string/escalar" 
+        android:icon="@drawable/escalar">
+        <menu>
+	        <item android:id="@+id/esc_uno"
+	              android:title="@string/uno" />
+	        <item android:id="@+id/esc_dos"
+	              android:title="@string/dos" />
+        </menu>
+    </item>
+    <item android:id="@+id/cargar" 
+        android:title="@string/cargar" 
+        android:icon="@drawable/cargar">
+        <menu>
+	        <item android:id="@+id/figura"
+	              android:title="@string/figura" />
+	        <item android:id="@+id/revolucion"
+	              android:title="@string/revolucion" />
+	        <item android:id="@+id/basico"
+	              android:title="@string/basico" />
+	        <item android:id="@+id/insertar"
+	        	  android:title="@string/insertarFigura"/>
+        </menu>
+    </item>
+    <item android:id="@+id/ejes" 
+        android:title="@string/ejes" 
+        android:icon="@drawable/ejes">
+        <menu>
+	        <item android:id="@+id/ejexy"
+	              android:title="@string/ejexy" />
+	        <item android:id="@+id/ejexz"
+	              android:title="@string/ejexz" />
+	        <item android:id="@+id/ejeyz"
+	              android:title="@string/ejeyz" />
+        </menu>
+    </item>
+    <item android:id="@+id/opciones" 
+        android:title="@string/opciones" 
+        android:icon="@drawable/opciones">
+        <menu>
+	        <item android:id="@+id/zbuffer"
+	              android:title="@string/zbuffer" />
+	        <item android:id="@+id/perspectiva"
+	              android:title="@string/perspectiva" />
+	        <item android:id="@+id/relleno"
+	              android:title="@string/relleno" />
+	        <item android:id="@+id/proyeccion"
+	              android:title="@string/proyeccion" />
+	        <item android:id="@+id/foco"
+	              android:title="@string/foco" />
+	        <item android:id="@+id/iluminacion"
+	              android:title="@string/iluminacion"/> 	          
+        </menu>
+    </item>
+</menu>

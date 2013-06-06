@@ -1,0 +1,103 @@
+// !$*UTF8*$!
+{
+	523DB3CF13ACA28800558634 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	523DB3D013ACA28800558634 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	527633E213AF42650095CA82 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 5B19633909F4002D0041D50B /* Makefile */;
+		name = "Makefile: 14";
+		rLen = 11;
+		rLoc = 259;
+		rType = 0;
+		vrLen = 589;
+		vrLoc = 0;
+	};
+	527633E313AF42650095CA82 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F2CE173113840B1F00E927C0 /* competicion.nxc */;
+		name = "competicion.nxc: 159";
+		rLen = 0;
+		rLoc = 3472;
+		rType = 0;
+		vrLen = 660;
+		vrLoc = 2812;
+	};
+	527633E413AF42650095CA82 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = F2CE173113840B1F00E927C0 /* competicion.nxc */;
+		name = "competicion.nxc: 159";
+		rLen = 0;
+		rLoc = 3472;
+		rType = 0;
+		vrLen = 660;
+		vrLoc = 2812;
+	};
+	5B19633909F4002D0041D50B /* Makefile */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {693, 403}}";
+			sepNavSelRange = "{259, 11}";
+			sepNavVisRange = "{0, 589}";
+		};
+	};
+	5BB3CD8509AA56AD00B01DCE /* Project object */ = {
+		activeBuildConfigurationName = Release;
+		activeTarget = 5BFFA23709AA57D9008DF6E9 /* Helloworld */;
+		codeSenseManager = 523DB3D013ACA28800558634 /* Code sense */;
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					515,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 330252016;
+			PBXWorkspaceStateSaveDate = 330252016;
+		};
+		perUserProjectItems = {
+			527633E213AF42650095CA82 /* PBXTextBookmark */ = 527633E213AF42650095CA82 /* PBXTextBookmark */;
+			527633E313AF42650095CA82 /* PBXTextBookmark */ = 527633E313AF42650095CA82 /* PBXTextBookmark */;
+			527633E413AF42650095CA82 /* PBXTextBookmark */ = 527633E413AF42650095CA82 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 523DB3CF13ACA28800558634 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	5BFFA23709AA57D9008DF6E9 /* Helloworld */ = {
+		activeExec = 0;
+	};
+	F2CE173113840B1F00E927C0 /* competicion.nxc */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {693, 2184}}";
+			sepNavSelRange = "{3472, 0}";
+			sepNavVisRange = "{2812, 660}";
+		};
+	};
+}

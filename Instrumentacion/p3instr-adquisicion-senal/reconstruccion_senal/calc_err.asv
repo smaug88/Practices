@@ -1,0 +1,18 @@
+% calc_err.m
+% Calculate error
+
+load samples
+error = [];
+for count = 1:length(samples)
+    
+    [A w p] = guess_params3(samples(count).t, samples(count).sampled_signal);
+    [abserr meanerr relerr] = signal_error(A, w, p, samples(count).amplitude, samples(count).angfreq, samples(count).phase, 0:0.01:8*pi);
+    err_struc         = struct;
+    err_struc.abserr  = abserr;
+    err_struc.meanerr = meanerr;
+    err_struc.relerr  = relerr;
+    error = [error err_struc];
+    
+end
+
+% find(abs([error(:).relerr]) > 0.01)

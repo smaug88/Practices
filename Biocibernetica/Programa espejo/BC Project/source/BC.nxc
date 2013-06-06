@@ -1,0 +1,126 @@
+// PAR√ÅMETROS
+#define potencia 34 // potencia del motor
+#define iteraciones 10 // n√∫mero de iteraciones en las lecturas
+#define SERVERBOX 1
+#define NXTBOX 0
+
+// DEFINICIONES
+#define EYE_VALUE	SENSOR_2
+
+// VARIABLES GLOBALES
+mutex motor;
+int pos;
+int grado_act;
+
+inline int lectura()
+{
+	int i, salida=0;
+	for(i=0; i<iteraciones; i++)
+	{
+		salida += EYE_VALUE;
+	}
+	salida /= iteraciones;
+	return salida;
+}
+
+inline void dispara(){
+  PlayTone(200,200);
+	OnFwd(OUT_B,20);
+	Wait(9000);
+}
+
+inline void apaga(){
+	OnRev(OUT_B,50);
+	Wait(100);
+	Off(OUT_B);
+}
+
+sub ve_a_pos(int destino){
+	
+	if(destino==pos) return;
+	if(destino<pos){
+		for(int i=0;i<pos-destino;i++)
+		{
+			OnRev(OUT_A, potencia-8);
+			int luz_old = lectura();
+			int luz;
+			while(true)
+			{
+				string salida = NumToStr(luz_old);
+				salida = StrCat("Luz ant = ", salida);
+				TextOut(0, LCD_LINE1, salida);
+				luz = lectura();
+				salida = NumToStr(luz);
+				salida = StrCat("Luz act = ", salida);
+				TextOut(0, LCD_LINE2, salida);
+				if(luz_old+100 <= luz)
+				{
+					PlayTone(100,100);
+					Off(OUT_A);
+					Wait(1000);
+					break;
+				}
+				luz_old = luz;
+				Wait(10);
+			}	
+		}
+	}
+	else
+	{
+		for(int i=0;i<destino-pos;i++)
+		{
+			OnFwd(OUT_A, potencia);
+			int luz_old = lectura();
+			int luz;
+			while(true)
+			{
+				string salida = NumToStr(luz_old);
+				salida = StrCat("Luz ant = ", salida);
+				TextOut(0, LCD_LINE1, salida);
+				luz = lectura();
+				salida = NumToStr(luz);
+				salida = StrCat("Luz act = ", salida);
+				TextOut(0, LCD_LINE2, salida);
+				if(luz_old+100 <= luz)
+				{
+					PlayTone(100,100);
+					Off(OUT_A);
+					Wait(1000);
+					break;
+				}
+				luz_old = luz;
+				Wait(10);
+			}	
+		}
+	}
+	pos=destino;
+}
+
+sub rota_Espejo(int grado_pos)
+{
+	ResetRotationCount(OUT_B);
+	if(grado_act==grado_pos)
+		return;
+	int angulo=(grado_pos-grado_act);
+	RotateMotor(OUT_B,20,angulo*(-90));
+	grado_act=grado_pos;
+	
+}
+
+task main() {
+	SetSensorType(S2, SENSOR_TYPE_LIGHT_ACTIVE);
+	SetSensorMode(S2, SENSOR_MODE_RAW);
+	grado_act = 0;
+	pos=0;
+	ResetSensor(S2);
+	while(true){	
+		string msg;
+		while( ReceiveMessage(NXTBOX,true,msg));
+		ResetScreen();
+		SendMessage(SERVERBOX, "0");
+		ve_a_pos(msg[0]);
+		rota_Espejo(msg[1]);
+	
+		SendMessage(SERVERBOX, "FINIQUITADO");
+	}	
+}

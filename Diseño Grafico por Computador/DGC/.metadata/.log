@@ -1,0 +1,99 @@
+!SESSION 2012-02-29 12:39:47.009 -----------------------------------------------
+eclipse.buildId=M20110909-1335
+java.version=1.6.0_26
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=es_ES
+Framework arguments:  -keyring /Users/macbookpro/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -keyring /Users/macbookpro/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2012-02-29 12:40:06.067
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY com.android.ide.eclipse.ddms 4 0 2012-02-29 12:40:06.437
+!MESSAGE DDMS files not found: /Applications/eclipse/Eclipse.app/Contents/MacOS/platform-tools/adb /Applications/eclipse/Eclipse.app/Contents/MacOS/tools/hprof-conv /Applications/eclipse/Eclipse.app/Contents/MacOS/tools/traceview 
+
+!ENTRY org.eclipse.ui 4 4 2012-02-29 12:41:24.869
+!MESSAGE Invalid preference page path: XML Syntax
+!SESSION 2012-03-08 08:40:00.057 -----------------------------------------------
+eclipse.buildId=M20110909-1335
+java.version=1.6.0_26
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=es_ES
+Framework arguments:  -keyring /Users/macbookpro/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -keyring /Users/macbookpro/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2012-03-08 08:40:13.120
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-03-08 08:41:06.904
+!MESSAGE Failed to load properties file for project 'DGC'
+
+!ENTRY org.eclipse.ui 4 4 2012-03-08 08:41:19.947
+!MESSAGE Invalid preference page path: XML Syntax
+!SESSION 2012-03-08 08:41:24.588 -----------------------------------------------
+eclipse.buildId=M20110909-1335
+java.version=1.6.0_26
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=es_ES
+Framework arguments:  -keyring /Users/macbookpro/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -keyring /Users/macbookpro/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.ui 4 4 2012-03-08 08:41:32.085
+!MESSAGE Could not create view: 'org.eclipse.ui.internal.introview'.
+
+!ENTRY org.eclipse.ui 4 0 2012-03-08 08:41:34.300
+!MESSAGE Problems occurred restoring workbench.
+!SUBENTRY 1 unknown 0 0 2012-03-08 08:41:34.300
+!MESSAGE OK
+!SUBENTRY 1 unknown 0 0 2012-03-08 08:41:34.300
+!MESSAGE OK
+!SUBENTRY 1 unknown 0 0 2012-03-08 08:41:34.300
+!MESSAGE OK
+!SUBENTRY 1 unknown 0 0 2012-03-08 08:41:34.300
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.ui 4 0 2012-03-08 08:41:34.300
+!MESSAGE Unable to restore perspective: Workspace - Java.
+!SUBENTRY 2 org.eclipse.ui 0 0 2012-03-08 08:41:34.300
+!MESSAGE Problems occurred restoring perspective.
+!SUBENTRY 3 org.eclipse.ui 0 0 2012-03-08 08:41:34.300
+!MESSAGE 
+!SUBENTRY 2 unknown 0 0 2012-03-08 08:41:34.300
+!MESSAGE OK
+!SUBENTRY 2 unknown 0 0 2012-03-08 08:41:34.300
+!MESSAGE OK
+!SUBENTRY 2 unknown 0 0 2012-03-08 08:41:34.300
+!MESSAGE OK
+!SUBENTRY 2 unknown 0 0 2012-03-08 08:41:34.300
+!MESSAGE OK
+!SUBENTRY 2 unknown 0 0 2012-03-08 08:41:34.301
+!MESSAGE OK
+!SUBENTRY 2 unknown 0 0 2012-03-08 08:41:34.301
+!MESSAGE OK
+!SUBENTRY 2 unknown 0 0 2012-03-08 08:41:34.301
+!MESSAGE OK
+!SUBENTRY 2 org.eclipse.ui 4 0 2012-03-08 08:41:34.301
+!MESSAGE Could not find view: org.eclipse.ui.internal.introview
+!SUBENTRY 1 unknown 0 0 2012-03-08 08:41:34.301
+!MESSAGE OK
+
+!ENTRY org.eclipse.core.net 1 0 2012-03-08 08:41:34.328
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-03-08 08:41:34.629
+!MESSAGE projectOpenedWithWorkspace: failed to find manifest package for project DGC
+
+!ENTRY org.eclipse.ui 4 4 2012-03-08 08:42:03.150
+!MESSAGE Invalid preference page path: XML Syntax
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2012-03-08 08:43:36.221
+!MESSAGE 
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Resource '/DGC/res' does not exist.
+	at org.eclipse.core.internal.resources.Resource.checkExists(Resource.java:320)
+	at org.eclipse.core.internal.resources.Resource.checkAccessible(Resource.java:194)
+	at org.eclipse.core.internal.resources.Container.members(Container.java:266)
+	at org.eclipse.core.internal.resources.Container.members(Container.java:249)
+	at com.android.ide.eclipse.adt.internal.sdk.Sdk$6.run(Sdk.java:1196)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.core.resources 4 368 2012-03-08 08:43:36.223
+!MESSAGE Resource '/DGC/res' does not exist.

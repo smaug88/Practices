@@ -1,0 +1,22 @@
+global inicio fin incremento medias polinomio_interpol
+
+f = figure();
+plot(inicio:incremento:fin, medias)
+saveas(f, 'curva_calib_medias', 'jpg');
+
+polinomio_interpol = [];
+y = 1:5;
+
+for cont = 1:5
+    polinomio_interpol(cont) = polyfit(inicio:incremento:fin, medias', cont);
+    y(cont) = polyval(polinomio_interpol(cont), inicio:incremento:fin);
+    
+    f = figure();
+    plot(inicio:incremento:fin, y(cont))
+    saveas(f, sprintf('curva_calib_interpol_grad%i', cont), 'jpg');
+end
+
+
+p1 = polyfit(inicio:incremento:fin, medias', 1);
+y1 = polyval(p1, inicio:incremento:fin);
+plot(inicio:incremento:fin, y1)

@@ -1,0 +1,40 @@
+
+task Move() {
+	for(int i=0; i<4; i++)
+	{
+		ResetTachoCount(OUT_A);
+		ResetTachoCount(OUT_C);
+		//RotateMotorEx(OUT_AC,40,2056,0,true,true); //Perimetro rueda 17,5
+		RotateMotorEx(OUT_AC,40,3017,0,true,true);
+		ResetTachoCount(OUT_A);
+		ResetTachoCount(OUT_C);
+		Wait(200);
+		//RotateMotorEx(OUT_AC,20,160,-100,true,true); //Perimetro rueda 17,5
+		RotateMotorEx(OUT_AC,40,332,-100,true,true);
+		Wait(200);
+	}
+}
+
+
+task main() {
+
+	SetSensorLowspeed(S1);
+	while(SensorUS(S1)>20); 
+	Precedes(Move);
+}
+
+
+//11,4
+
+
+
+//ORUGA
+
+//	5 cm
+//	7 cm ->eje entre las ruedas
+//	Diámetro rueda->3,8
+//  Perímetro rueda 23,87
+//  Vueltas 1 metro 3015,58
+// Vueltas rotación 520
+
+

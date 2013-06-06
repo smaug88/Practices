@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="AppName">Cripto</string> 
+	<string name="TextViewEuclideNumbers">Introduzca dos enteros y seleccione el método que desea aplicar:</string>
+	<string name="ButtonMainEuclide">Euclides</string>
+	<string name="ButtonEuclideExtended">Euclides Extendido</string>
+	<string name="ButtonEuclideInverted">Euclides Inverso</string>
+	<string name="TextViewMainMessage">Bienvenido a la practica de Criptografia\nRealizada por:\n\nGabriel Fernandez Díaz\nDavid Morales Saez\n\nPara la ULPGC 2011 2012\n\nA continuacian puede escoger que practica desea utilizar:</string>
+	<string name="ButtonMainDES">DES</string>
+	<string name="ButtonMainRSA">RSA</string>
+	<string name="ButtonMainKey">Generador de Claves</string>
+	<string name="nnew">Nuevo</string>
+	<string name="select">Seleccionar</string>
+	<string name="file_name">Nombre</string>
+	<string name="cancel">Cancelar</string>
+	<string name="create">Crear</string>
+	<string name="no_data">Sin Datos</string>
+	<string name="cant_read_folder">Carpeta no accesible</string>
+	<string name="location">Localizacion</string>
+	<string name="ButtonSiguientePaso">Insertar Texto</string>
+    <string name="InsertText">Inserte el Texto</string>
+    <string name="SelectFile">Escoja el Archivo</string>
+    <string name="OutputText">Resultado por pantalla</string>
+    <string name="OutputFile">Resultado en un fichero</string>
+    <string name="InputExplain">Escoja el sistema de entrada al sistema criptografico DES:</string>
+    <string name="InputExplainRSA">Escoja el sistema de entrada al sistema criptografico RSA:</string>
+    <string name="KeyExplain">Sistema generador automatico de claves.\n \nEscoja si desea insertar los valores primos para calcular la clave o si desea que sean valores aleatorios:</string>
+    <string name="KeyRandomChoose">Valores aleatorios</string>
+    <string name="OutputExplains">Escoja el sistema de salida al sistema criptografico DES:</string>
+    <string name="inserttext">Continue</string>
+	<string name="keytext">Inserte la clave a utilizar</string>
+	<string name="choosetask">Encriptar</string>
+	<string name="Desencriptar">Desencriptar</string>
+	<string name="Prime1">Primer numero primo</string>
+	<string name="Prime2">Segundo numero primo</string>
+</resources>

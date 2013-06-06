@@ -1,0 +1,126 @@
+
+
+***********************************************************************
+Fatal NI connect error 12514, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=orion.dis.ulpgc.es)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=labd2.orion.dis.ulpgc.es)(CID=(PROGRAM=C:\Documents and Settings\Dani\mis documentos\visual studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.vshost.exe)(HOST=ACER-9B2C6D510E)(USER=Dani))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 21-DIC-2011 20:13:26
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12564
+    TNS-12564: TNS:conexión rechazada
+    ns secondary err code: 0
+    nt main err code: 0
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12514, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=orion.dis.ulpgc.es)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=labd2.orion.dis.ulpgc.es)(CID=(PROGRAM=C:\Documents and Settings\Dani\mis documentos\visual studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.vshost.exe)(HOST=ACER-9B2C6D510E)(USER=Dani))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 21-DIC-2011 20:14:33
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12564
+    TNS-12564: TNS:conexión rechazada
+    ns secondary err code: 0
+    nt main err code: 0
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12514, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=orion.dis.ulpgc.es)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=labd2.orion.dis.ulpgc.es)(CID=(PROGRAM=C:\Documents and Settings\Dani\mis documentos\visual studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.vshost.exe)(HOST=ACER-9B2C6D510E)(USER=Dani))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 21-DIC-2011 20:16:06
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12564
+    TNS-12564: TNS:conexión rechazada
+    ns secondary err code: 0
+    nt main err code: 0
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12514, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=orion.dis.ulpgc.es)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=labd2.orion.dis.ulpgc.es)(CID=(PROGRAM=C:\Documents and Settings\Dani\mis documentos\visual studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.vshost.exe)(HOST=ACER-9B2C6D510E)(USER=Dani))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 21-DIC-2011 20:17:10
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12564
+    TNS-12564: TNS:conexión rechazada
+    ns secondary err code: 0
+    nt main err code: 0
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12514, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=orion.dis.ulpgc.es)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=labd2.orion.dis.ulpgc.es)(CID=(PROGRAM=C:\Documents and Settings\Dani\mis documentos\visual studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.vshost.exe)(HOST=ACER-9B2C6D510E)(USER=Dani))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 22-DIC-2011 10:40:41
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12564
+    TNS-12564: TNS:conexión rechazada
+    ns secondary err code: 0
+    nt main err code: 0
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12514, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=orion.dis.ulpgc.es)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=labd2.orion.dis.ulpgc.es)(CID=(PROGRAM=C:\Documents and Settings\Dani\mis documentos\visual studio 2010\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.vshost.exe)(HOST=ACER-9B2C6D510E)(USER=Dani))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 22-DIC-2011 13:20:20
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12564
+    TNS-12564: TNS:conexión rechazada
+    ns secondary err code: 0
+    nt main err code: 0
+    nt secondary err code: 0
+    nt OS err code: 0
+
+
+***********************************************************************
+Fatal NI connect error 12514, connecting to:
+ (DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=orion.dis.ulpgc.es)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=labd2.orion.dis.ulpgc.es)(CID=(PROGRAM=C:\Documents and Settings\Alberto\Escritorio\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.vshost.exe)(HOST=ALBERTO-7B4B07D)(USER=Alberto))))
+
+  VERSION INFORMATION:
+	TNS for 32-bit Windows: Version 10.2.0.1.0 - Production
+	Windows NT TCP/IP NT Protocol Adapter for 32-bit Windows: Version 10.2.0.1.0 - Production
+  Time: 22-DIC-2011 16:50:34
+  Tracing not turned on.
+  Tns error struct:
+    ns main err code: 12564
+    TNS-12564: TNS:conexión rechazada
+    ns secondary err code: 0
+    nt main err code: 0
+    nt secondary err code: 0
+    nt OS err code: 0

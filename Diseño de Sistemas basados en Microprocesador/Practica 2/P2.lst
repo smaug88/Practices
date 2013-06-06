@@ -1,0 +1,302 @@
+MP2COD 4.01, COFF to COD File Converter
+Copyright (c) 2005 Microchip Technology Inc.
+Listing File Generated: Thu Apr 28 12:40:01 2011
+
+
+Address  Value    Disassembly              Source                                                                           File
+-------  -------  -----------------------  -------------------------------------------------------------------------------  -----
+                                           #include "p16f84.inc"                                                            F:\DSBM\P2\lcd.asm
+                                                   LIST                                                                     C:\Archivos de programa\Microchip\MPASM Suite\p16f84.inc
+                                           ; P16F84.INC  Standard Header File, Version 2.00    Microchip Technology, Inc.   C:\Archivos de programa\Microchip\MPASM Suite\p16f84.inc
+                                                   LIST                                                                     C:\Archivos de programa\Microchip\MPASM Suite\p16f84.inc
+                                                                                                                            F:\DSBM\P2\lcd.asm
+                                           #define ENABLE       bsf PORTA,2        ;Activa E                                F:\DSBM\P2\lcd.asm
+                                           #define DISABLE      bcf PORTA,2        ;Desactiva                               F:\DSBM\P2\lcd.asm
+                                           #define LEER         bsf PORTA,1        ;Pone LCD en Modo RD                     F:\DSBM\P2\lcd.asm
+                                           #define ESCRIBIR     bcf PORTA,1        ;Pone LCD en Modo WR                     F:\DSBM\P2\lcd.asm
+                                           #define OFF_COMANDO  bcf PORTA,0        ;Desactiva RS (modo comando)             F:\DSBM\P2\lcd.asm
+                                           #define ON_COMANDO   bsf PORTA,0        ;Activa RS                               F:\DSBM\P2\lcd.asm
+                                                                                                                            F:\DSBM\P2\lcd.asm
+                                           GLOBAL DISPLAY_CONF, BORRA_Y_HOME, LCD_DATO,LCD_REG, LCD_INI                     F:\DSBM\P2\lcd.asm
+                                                                                                                            F:\DSBM\P2\lcd.asm
+                                           LCDX_S	equ	00h	;Portb es salida en el pic                                        F:\DSBM\P2\lcd.asm
+                                           LCDB_E	equ	0ffh	;Portb es entrada en el pic                                      F:\DSBM\P2\lcd.asm
+                                                                                                                            F:\DSBM\P2\lcd.asm
+                                                                                                                            F:\DSBM\P2\lcd.asm
+                                           lcd_data	udata_ovr                                                               F:\DSBM\P2\lcd.asm
+                                           Lcd_Temp_1	res	1	;Para la espera del LCD.                                        F:\DSBM\P2\lcd.asm
+                                           Lcd_Temp_2	res	1	;Para la espera del LCD.                                        F:\DSBM\P2\lcd.asm
+                                                                                                                            F:\DSBM\P2\lcd.asm
+                                                                                                                            F:\DSBM\P2\lcd.asm
+                                           lcd	code                                                                         F:\DSBM\P2\lcd.asm
+                                           ;_-_-_-_-_-_-_-_-_-_-_-_-_ Rutinas de impresión en el LCD -_-_-_-_-_-_-_-_-_-_-_-_-_- F:\DSBM\P2\lcd.asm
+                                           ;                                                                                F:\DSBM\P2\lcd.asm
+                                           ;**************************************************************************      F:\DSBM\P2\lcd.asm
+                                           ;UP_LCD: Configuración PIC para el LCD.                                          F:\DSBM\P2\lcd.asm
+                                           ;                                                                                F:\DSBM\P2\lcd.asm
+                                           UP_LCD  	                                                                        F:\DSBM\P2\lcd.asm
+00003c   1683     BSF       0x3,0x5        				bsf     STATUS,RP0      ;Banco 1                                             F:\DSBM\P2\lcd.asm
+00003d   0186     CLRF      0x6                            clrf    PORTB           ;RB <0-7> salidas digitales              F:\DSBM\P2\lcd.asm
+00003e   0185     CLRF      0x5                            clrf	PORTA           ;RA <0-7> salidas digitales                 F:\DSBM\P2\lcd.asm
+00003f   1283     BCF       0x3,0x5                        bcf     STATUS,RP0      ;Banco 0                                 F:\DSBM\P2\lcd.asm
+000040   1005     BCF       0x5,0x0                        OFF_COMANDO             ;RS=0                                    F:\DSBM\P2\lcd.asm
+000041   1105     BCF       0x5,0x2                        DISABLE                 ;E=0                                     F:\DSBM\P2\lcd.asm
+000042   0008     RETURN                                   return                                                           F:\DSBM\P2\lcd.asm
+                                           ;                                                                                F:\DSBM\P2\lcd.asm
+                                           ;**************************************************************************      F:\DSBM\P2\lcd.asm
+                                           ;LCD_BUSY: Lectura del Flag Busy y la dirección.                                 F:\DSBM\P2\lcd.asm
+                                           ;                                                                                F:\DSBM\P2\lcd.asm
+000043   1485     BSF       0x5,0x1        LCD_BUSY        LEER                    ;Pone el LCD en Modo RD                  F:\DSBM\P2\lcd.asm
+000044   1683     BSF       0x3,0x5                        bsf     STATUS,RP0                                               F:\DSBM\P2\lcd.asm
+000045   30ff     MOVLW     0xff                           movlw   H'FF'                                                    F:\DSBM\P2\lcd.asm
+000046   0086     MOVWF     0x6                            movwf   PORTB           ;Puerta B como entrada                   F:\DSBM\P2\lcd.asm
+000047   1283     BCF       0x3,0x5                        bcf     STATUS,RP0      ;Selecciona el banco 0                   F:\DSBM\P2\lcd.asm
+000048   1505     BSF       0x5,0x2                        ENABLE                  ;Activa el LCD                           F:\DSBM\P2\lcd.asm
+000049   0000     NOP                                      nop                                                              F:\DSBM\P2\lcd.asm
+00004a   1b86     BTFSC     0x6,0x7                        btfsc   PORTB,7         ;Chequea bit de Busy                     F:\DSBM\P2\lcd.asm
+00004b   284a     GOTO      0x4a                           goto    $-1                                                      F:\DSBM\P2\lcd.asm
+00004c   1105     BCF       0x5,0x2                        DISABLE                 ;Desactiva LCD                           F:\DSBM\P2\lcd.asm
+00004d   1683     BSF       0x3,0x5                        bsf     STATUS,RP0                                               F:\DSBM\P2\lcd.asm
+00004e   0186     CLRF      0x6                            clrf    PORTB           ;Puerta B salida                         F:\DSBM\P2\lcd.asm
+00004f   1283     BCF       0x3,0x5                        bcf     STATUS,RP0                                               F:\DSBM\P2\lcd.asm
+000050   1085     BCF       0x5,0x1                        ESCRIBIR                ;Pone LCD en modo WR                     F:\DSBM\P2\lcd.asm
+000051   0008     RETURN                                   return                                                           F:\DSBM\P2\lcd.asm
+                                                                                                                            F:\DSBM\P2\lcd.asm
+                                           ;                                                                                F:\DSBM\P2\lcd.asm
+                                           ;**************************************************************************      F:\DSBM\P2\lcd.asm
+                                           ;LCD_E: Pulso de Enable                                                          F:\DSBM\P2\lcd.asm
+                                           ;                                                                                F:\DSBM\P2\lcd.asm
+000052   1505     BSF       0x5,0x2        LCD_E           ENABLE                  ;Activa E                                F:\DSBM\P2\lcd.asm
+000053   0000     NOP                                      nop                                                              F:\DSBM\P2\lcd.asm
+000054   1105     BCF       0x5,0x2                        DISABLE                 ;Desactiva E                             F:\DSBM\P2\lcd.asm
+000055   0000     NOP                      		nop                                                                            F:\DSBM\P2\lcd.asm
+                                           	;	ENABLE                                                                        F:\DSBM\P2\lcd.asm
+000056   0008     RETURN                                   return                                                           F:\DSBM\P2\lcd.asm
+                                           ;                                                                                F:\DSBM\P2\lcd.asm
+                                           ;**************************************************************************      F:\DSBM\P2\lcd.asm
+                                           ;LCD_DATO: Escritura de datos en DDRAM o CGRAM                                   F:\DSBM\P2\lcd.asm
+                                           ;                                                                                F:\DSBM\P2\lcd.asm
+000057   203c     CALL      0x3c           LCD_DATO        call UP_LCD		;Configura los puertos                              F:\DSBM\P2\lcd.asm
+000058   0086     MOVWF     0x6                            movwf   PORTB           ;Valor ASCII a sacar por portb           F:\DSBM\P2\lcd.asm
+000059   2043     CALL      0x43                           call    LCD_BUSY        ;Espera a que se libere el LCD           F:\DSBM\P2\lcd.asm
+00005a   1405     BSF       0x5,0x0                        ON_COMANDO              ;Activa RS (modo dato).                  F:\DSBM\P2\lcd.asm
+00005b   2852     GOTO      0x52                           goto    LCD_E           ;Genera pulso de E                       F:\DSBM\P2\lcd.asm
+                                                                                                                            F:\DSBM\P2\lcd.asm
+                                           ;**************************************************************************      F:\DSBM\P2\lcd.asm
+                                           ;LCD_REG: Escritura de comandos del LCD                                          F:\DSBM\P2\lcd.asm
+                                           ;W=Código de comando para el LCD                                                 F:\DSBM\P2\lcd.asm
+                                           ;W ==> portb                                                                     F:\DSBM\P2\lcd.asm
+                                           ;                                                                                F:\DSBM\P2\lcd.asm
+00005c   203c     CALL      0x3c           LCD_REG         call UP_LCD		;Configura los puertos                              F:\DSBM\P2\lcd.asm
+00005d   0086     MOVWF     0x6                            movwf   PORTB           ;Código de comando.                      F:\DSBM\P2\lcd.asm
+00005e   2043     CALL      0x43                           call    LCD_BUSY        ;LCD libre?.                             F:\DSBM\P2\lcd.asm
+00005f   2852     GOTO      0x52                           goto    LCD_E           ;SI.Genera pulso de E.                   F:\DSBM\P2\lcd.asm
+                                                                                                                            F:\DSBM\P2\lcd.asm
+000060   1005     BCF       0x5,0x0        LCD_REG_2       OFF_COMANDO             ;Desactiva RS (modo comando)             F:\DSBM\P2\lcd.asm
+000061   0086     MOVWF     0x6                            movwf   PORTB           ;Código de comando.                      F:\DSBM\P2\lcd.asm
+000062   2852     GOTO      0x52                           goto    LCD_E           ;SI.Genera pulso de E.                   F:\DSBM\P2\lcd.asm
+                                           ;                                                                                F:\DSBM\P2\lcd.asm
+                                           ;**************************************************************************      F:\DSBM\P2\lcd.asm
+                                           ;LCD_INI_2: inicialización del LCD                                               F:\DSBM\P2\lcd.asm
+                                           ;                                                                                F:\DSBM\P2\lcd.asm
+                                           LCD_INI                                                                          F:\DSBM\P2\lcd.asm
+000063   203c     CALL      0x3c           LCD_INI_2	call UP_LCD			;Configura los puertos                                   F:\DSBM\P2\lcd.asm
+000064   3038     MOVLW     0x38           		movlw	b'00111000'                                                              F:\DSBM\P2\lcd.asm
+000065   2060     CALL      0x60           		call	LCD_REG_2		;Código de instrucción                                         F:\DSBM\P2\lcd.asm
+000066   207b     CALL      0x7b           		call	LCD_DELAY		;Temporiza                                                     F:\DSBM\P2\lcd.asm
+000067   3038     MOVLW     0x38           		movlw	b'00111000'                                                              F:\DSBM\P2\lcd.asm
+000068   2060     CALL      0x60           		call	LCD_REG_2		;Código de instrucción                                         F:\DSBM\P2\lcd.asm
+000069   3001     MOVLW     0x1            		movlw	d'1'                                                                     F:\DSBM\P2\lcd.asm
+00006a   207a     CALL      0x7a           		call	LCD_DELAY_2		;Temporiza                                                   F:\DSBM\P2\lcd.asm
+00006b   3038     MOVLW     0x38           		movlw	b'00111000'                                                              F:\DSBM\P2\lcd.asm
+00006c   2060     CALL      0x60           		call	LCD_REG_2		;Código de instrucción                                         F:\DSBM\P2\lcd.asm
+00006d   3001     MOVLW     0x1            		movlw	d'1'                                                                     F:\DSBM\P2\lcd.asm
+00006e   207a     CALL      0x7a           		call	LCD_DELAY_2		;Temporiza                                                   F:\DSBM\P2\lcd.asm
+                                                                                                                            F:\DSBM\P2\lcd.asm
+                                           ;                                                                                F:\DSBM\P2\lcd.asm
+                                           ;**************************************************************************      F:\DSBM\P2\lcd.asm
+                                           ;BORRA_Y_HOME: Borra el display y retorna el cursor a la posición 0              F:\DSBM\P2\lcd.asm
+                                           ;                                                                                F:\DSBM\P2\lcd.asm
+00006f   3001     MOVLW     0x1            BORRA_Y_HOME    movlw   b'00000001'     ;Borra LCD y Home.                       F:\DSBM\P2\lcd.asm
+000070   205c     CALL      0x5c                           call    LCD_REG                                                  F:\DSBM\P2\lcd.asm
+000071   0008     RETURN                                   return                                                           F:\DSBM\P2\lcd.asm
+                                           ;                                                                                F:\DSBM\P2\lcd.asm
+                                           ;**************************************************************************      F:\DSBM\P2\lcd.asm
+                                           ;DISPLAY_ON_CUR_OFF: Control ON/OFF del display y cursor.                        F:\DSBM\P2\lcd.asm
+                                           ;Activa Display desactiva cursor.                                                F:\DSBM\P2\lcd.asm
+                                                                                                                            F:\DSBM\P2\lcd.asm
+000072   203c     CALL      0x3c           DISPLAY_CONF    call UP_LCD                                                      F:\DSBM\P2\lcd.asm
+000073   3038     MOVLW     0x38                           movlw   b'00111000'     ;LCD de 2 lineas, caracter 5x7.          F:\DSBM\P2\lcd.asm
+000074   205c     CALL      0x5c                           call    LCD_REG	                                                 F:\DSBM\P2\lcd.asm
+000075   300c     MOVLW     0xc                            movlw   b'00001100'     ;LCD on,cursor off.                      F:\DSBM\P2\lcd.asm
+000076   205c     CALL      0x5c                           call    LCD_REG                                                  F:\DSBM\P2\lcd.asm
+000077   3006     MOVLW     0x6                            movlw   b'00000110'     ;LCD autoincremento sin desplazamiento.  F:\DSBM\P2\lcd.asm
+000078   205c     CALL      0x5c                           call    LCD_REG                                                  F:\DSBM\P2\lcd.asm
+000079   0008     RETURN                                   return                                                           F:\DSBM\P2\lcd.asm
+                                                                                                                            F:\DSBM\P2\lcd.asm
+                                           ;                                                                                F:\DSBM\P2\lcd.asm
+                                           ;**************************************************************************      F:\DSBM\P2\lcd.asm
+                                           ;LCD_DELAY: Rutina de temporización de unos 5 mS para W=d'16'                    F:\DSBM\P2\lcd.asm
+                                           ;LCD_DELAY_2: Rutina de temporización a la que le pasamos el parámetro en W      F:\DSBM\P2\lcd.asm
+                                           ;                                                                                F:\DSBM\P2\lcd.asm
+                                                                                                                            F:\DSBM\P2\lcd.asm
+00007a   287c     GOTO      0x7c           LCD_DELAY_2:	goto	Delay_start	                                                   F:\DSBM\P2\lcd.asm
+00007b   300a     MOVLW     0xa            LCD_DELAY:      movlw	.10                                                        F:\DSBM\P2\lcd.asm
+00007c   008c     MOVWF     0xc            Delay_start     movwf	Lcd_Temp_1                                                 F:\DSBM\P2\lcd.asm
+00007d   018d     CLRF      0xd                            clrf	Lcd_Temp_2                                                  F:\DSBM\P2\lcd.asm
+00007e   0b8d     DECFSZ    0xd,0x1        LCD_DELAY_1:	decfsz	Lcd_Temp_2,F                                                 F:\DSBM\P2\lcd.asm
+00007f   287e     GOTO      0x7e           		goto	LCD_DELAY_1                                                               F:\DSBM\P2\lcd.asm
+000080   0b8c     DECFSZ    0xc,0x1        		decfsz	Lcd_Temp_1,F                                                            F:\DSBM\P2\lcd.asm
+000081   287e     GOTO      0x7e           		goto	LCD_DELAY_1                                                               F:\DSBM\P2\lcd.asm
+000082   0008     RETURN                   		return                                                                         F:\DSBM\P2\lcd.asm
+                                           	end                                                                             F:\DSBM\P2\lcd.asm
+                                           		List 	p=16f84                                                                  F:\DSBM\P2\P2_84.asm
+                                           		include	"P16F84.INC"                                                           F:\DSBM\P2\P2_84.asm
+                                                   LIST                                                                     C:\Archivos de programa\Microchip\MPASM Suite\P16F84.INC
+                                           ; P16F84.INC  Standard Header File, Version 2.00    Microchip Technology, Inc.   C:\Archivos de programa\Microchip\MPASM Suite\P16F84.INC
+                                                   LIST                                                                     C:\Archivos de programa\Microchip\MPASM Suite\P16F84.INC
+                                                           include "lcd.inc"                                                F:\DSBM\P2\P2_84.asm
+                                           ;*******************************                                                 F:\DSBM\P2\lcd.inc
+                                           ;LCD.INC                                                                         F:\DSBM\P2\lcd.inc
+                                           ;ARCHIVO DE CABECERA DE LCD.LIB                                                  F:\DSBM\P2\lcd.inc
+                                           ;*******************************                                                 F:\DSBM\P2\lcd.inc
+                                                                                                                            F:\DSBM\P2\lcd.inc
+                                           EXTERN DISPLAY_CONF, BORRA_Y_HOME, LCD_DATO,LCD_REG, LCD_INI                     F:\DSBM\P2\lcd.inc
+                                                                                                                            F:\DSBM\P2\lcd.inc
+                                           ;*********************************                                               F:\DSBM\P2\lcd.inc
+                                           ;LCD_INI: Inicializa el display. Imprescindible ejecutar antes                   F:\DSBM\P2\lcd.inc
+                                           ;         de usar el resto de las rutinas. Sin parametros.                       F:\DSBM\P2\lcd.inc
+                                           ;DISPLAY_CONF: Inicializa el display a dos lineas, cursor des-                   F:\DSBM\P2\lcd.inc
+                                           ;         activado, autoincremento.                                              F:\DSBM\P2\lcd.inc
+                                           ;BORRA_Y_HOME: Borra la pantalla y vuelve el punto de entrada a                  F:\DSBM\P2\lcd.inc
+                                           ;         cero.                                                                  F:\DSBM\P2\lcd.inc
+                                           ;LCD_REG: Envía como comando el contenido de w                                   F:\DSBM\P2\lcd.inc
+                                           ;LCD_DATO: Envía como dato el contenido de w                                     F:\DSBM\P2\lcd.inc
+                                           ;**********************************                                              F:\DSBM\P2\lcd.inc
+                                           ;Estas rutinas modifican el estado de los puertos. Usan dos                      F:\DSBM\P2\lcd.inc
+                                           ;registros de memoria                                                            F:\DSBM\P2\lcd.inc
+                                                                                                                            F:\DSBM\P2\lcd.inc
+                                                                                                                            F:\DSBM\P2\lcd.inc
+                                                                                                                            F:\DSBM\P2\P2_84.asm
+002007   3ffb     ADDLW     0xfb           __CONFIG _WDT_OFF & _RC_OSC                                                      F:\DSBM\P2\P2_84.asm
+                                                                                                                            F:\DSBM\P2\P2_84.asm
+                                                                                                                            F:\DSBM\P2\P2_84.asm
+                                           Iter	equ	0x0d                                                                    F:\DSBM\P2\P2_84.asm
+                                           Iter2	equ	0x0e                                                                   F:\DSBM\P2\P2_84.asm
+                                                                                                                            F:\DSBM\P2\P2_84.asm
+                                           		org 	0x00                                                                      F:\DSBM\P2\P2_84.asm
+000000   2825     GOTO      0x25           		goto	Inicio                                                                    F:\DSBM\P2\P2_84.asm
+                                                                                                                            F:\DSBM\P2\P2_84.asm
+                                                                                                                            F:\DSBM\P2\P2_84.asm
+                                           		org		0x05                                                                      F:\DSBM\P2\P2_84.asm
+000005   0782     ADDWF     0x2,0x1        Menu1	addwf	PCL, F                                                               F:\DSBM\P2\P2_84.asm
+000006   3474     RETLW     0x74           		retlw	't'                                                                      F:\DSBM\P2\P2_84.asm
+000007   3478     RETLW     0x78           		retlw	'x'                                                                      F:\DSBM\P2\P2_84.asm
+000008   3474     RETLW     0x74           		retlw	't'                                                                      F:\DSBM\P2\P2_84.asm
+000009   3431     RETLW     0x31           		retlw	'1'                                                                      F:\DSBM\P2\P2_84.asm
+00000a   3420     RETLW     0x20           		retlw	' '                                                                      F:\DSBM\P2\P2_84.asm
+00000b   3469     RETLW     0x69           		retlw	'i'                                                                      F:\DSBM\P2\P2_84.asm
+00000c   347a     RETLW     0x7a           		retlw	'z'                                                                      F:\DSBM\P2\P2_84.asm
+00000d   3420     RETLW     0x20           		retlw	' '                                                                      F:\DSBM\P2\P2_84.asm
+00000e   3474     RETLW     0x74           		retlw	't'                                                                      F:\DSBM\P2\P2_84.asm
+00000f   3478     RETLW     0x78           		retlw	'x'                                                                      F:\DSBM\P2\P2_84.asm
+000010   3474     RETLW     0x74           		retlw	't'                                                                      F:\DSBM\P2\P2_84.asm
+000011   3431     RETLW     0x31           		retlw	'1'                                                                      F:\DSBM\P2\P2_84.asm
+000012   3420     RETLW     0x20           		retlw	' '                                                                      F:\DSBM\P2\P2_84.asm
+000013   3464     RETLW     0x64           		retlw	'd'                                                                      F:\DSBM\P2\P2_84.asm
+000014   3465     RETLW     0x65           		retlw	'e'                                                                      F:\DSBM\P2\P2_84.asm
+                                           		; Cabe 18 caracteres                                                           F:\DSBM\P2\P2_84.asm
+                                           		                                                                               F:\DSBM\P2\P2_84.asm
+                                                                                                                            F:\DSBM\P2\P2_84.asm
+000015   0782     ADDWF     0x2,0x1        Menu2	addwf	PCL, F                                                               F:\DSBM\P2\P2_84.asm
+000016   3474     RETLW     0x74           		retlw	't'                                                                      F:\DSBM\P2\P2_84.asm
+000017   3478     RETLW     0x78           		retlw	'x'                                                                      F:\DSBM\P2\P2_84.asm
+000018   3474     RETLW     0x74           		retlw	't'                                                                      F:\DSBM\P2\P2_84.asm
+000019   3432     RETLW     0x32           		retlw	'2'                                                                      F:\DSBM\P2\P2_84.asm
+00001a   3420     RETLW     0x20           		retlw	' '                                                                      F:\DSBM\P2\P2_84.asm
+00001b   3469     RETLW     0x69           		retlw	'i'                                                                      F:\DSBM\P2\P2_84.asm
+00001c   347a     RETLW     0x7a           		retlw	'z'                                                                      F:\DSBM\P2\P2_84.asm
+00001d   3420     RETLW     0x20           		retlw	' '                                                                      F:\DSBM\P2\P2_84.asm
+00001e   3474     RETLW     0x74           		retlw	't'                                                                      F:\DSBM\P2\P2_84.asm
+00001f   3478     RETLW     0x78           		retlw	'x'                                                                      F:\DSBM\P2\P2_84.asm
+000020   3474     RETLW     0x74           		retlw	't'                                                                      F:\DSBM\P2\P2_84.asm
+000021   3432     RETLW     0x32           		retlw	'2'                                                                      F:\DSBM\P2\P2_84.asm
+000022   3420     RETLW     0x20           		retlw	' '                                                                      F:\DSBM\P2\P2_84.asm
+000023   3464     RETLW     0x64           		retlw	'd'                                                                      F:\DSBM\P2\P2_84.asm
+000024   3465     RETLW     0x65           		retlw	'e'                                                                      F:\DSBM\P2\P2_84.asm
+                                                                                                                            F:\DSBM\P2\P2_84.asm
+                                           Inicio                                                                           F:\DSBM\P2\P2_84.asm
+                                                                                                                            F:\DSBM\P2\P2_84.asm
+                                           ;		call LCD_INI                                                                  F:\DSBM\P2\P2_84.asm
+                                                                                                                            F:\DSBM\P2\P2_84.asm
+                                           ;		call DISPLAY_CONF                                                             F:\DSBM\P2\P2_84.asm
+                                                                                                                            F:\DSBM\P2\P2_84.asm
+000025   3000     MOVLW     0x0            		movlw 0         	                                                              F:\DSBM\P2\P2_84.asm
+000026   088d     MOVF      0xd,0x1        		movf Iter,1                                                                    F:\DSBM\P2\P2_84.asm
+                                                                                                                            F:\DSBM\P2\P2_84.asm
+                                           ;		movlw 'h'                                                                     F:\DSBM\P2\P2_84.asm
+                                           ;		call LCD_DATO		                                                               F:\DSBM\P2\P2_84.asm
+                                           ;		goto Segundo                                                                  F:\DSBM\P2\P2_84.asm
+                                                                                                                            F:\DSBM\P2\P2_84.asm
+                                           ;     	movlw b'11000000'                                                         F:\DSBM\P2\P2_84.asm
+                                           ;		call LCD_REG                                                                  F:\DSBM\P2\P2_84.asm
+                                                                                                                            F:\DSBM\P2\P2_84.asm
+                                           Imprime                                                                          F:\DSBM\P2\P2_84.asm
+                                                                                                                            F:\DSBM\P2\P2_84.asm
+000027   080d     MOVF      0xd,0x0        		movf Iter,0                                                                    F:\DSBM\P2\P2_84.asm
+                                                                                                                            F:\DSBM\P2\P2_84.asm
+000028   2005     CALL      0x5            		call Menu1                                                                     F:\DSBM\P2\P2_84.asm
+                                                                                                                            F:\DSBM\P2\P2_84.asm
+                                           ; 		call LCD_DATO                                                                F:\DSBM\P2\P2_84.asm
+                                           	                                                                                F:\DSBM\P2\P2_84.asm
+000029   0a8d     INCF      0xd,0x1        		incf Iter,1                                                                    F:\DSBM\P2\P2_84.asm
+                                           		                                                                               F:\DSBM\P2\P2_84.asm
+                                           		;movlw 15                                                                      F:\DSBM\P2\P2_84.asm
+00002a   300e     MOVLW     0xe                    movlw 0x0e                                                               F:\DSBM\P2\P2_84.asm
+                                                                                                                            F:\DSBM\P2\P2_84.asm
+00002b   020d     SUBWF     0xd,0x0        		subwf Iter,0                                                                   F:\DSBM\P2\P2_84.asm
+                                           		                                                                               F:\DSBM\P2\P2_84.asm
+                                                                                                                            F:\DSBM\P2\P2_84.asm
+00002c   1903     BTFSC     0x3,0x2        		btfsc STATUS, Z                                                                F:\DSBM\P2\P2_84.asm
+                                           		                                                                               F:\DSBM\P2\P2_84.asm
+00002d   282f     GOTO      0x2f           		goto Segundo                                                                   F:\DSBM\P2\P2_84.asm
+                                           		;goto Aqui                                                                     F:\DSBM\P2\P2_84.asm
+                                                   ; Imprimimos las segunda línea                                           F:\DSBM\P2\P2_84.asm
+                                                                                                                            F:\DSBM\P2\P2_84.asm
+00002e   2827     GOTO      0x27           		goto Imprime                                                                   F:\DSBM\P2\P2_84.asm
+                                                                                                                            F:\DSBM\P2\P2_84.asm
+                                           Segundo                                                                          F:\DSBM\P2\P2_84.asm
+00002f   3000     MOVLW     0x0            		movlw 0         	                                                              F:\DSBM\P2\P2_84.asm
+000030   088e     MOVF      0xe,0x1        		movf Iter2,1                                                                   F:\DSBM\P2\P2_84.asm
+                                                                                                                            F:\DSBM\P2\P2_84.asm
+                                           ;		movlw b'10000000'                                                             F:\DSBM\P2\P2_84.asm
+                                           ;		call LCD_REG                                                                  F:\DSBM\P2\P2_84.asm
+                                                                                                                            F:\DSBM\P2\P2_84.asm
+                                           		                                                                               F:\DSBM\P2\P2_84.asm
+                                           Imprime2                                                                         F:\DSBM\P2\P2_84.asm
+000031   080e     MOVF      0xe,0x0        		movf Iter2,0                                                                   F:\DSBM\P2\P2_84.asm
+                                                                                                                            F:\DSBM\P2\P2_84.asm
+000032   2015     CALL      0x15           		call Menu2                                                                     F:\DSBM\P2\P2_84.asm
+                                                                                                                            F:\DSBM\P2\P2_84.asm
+                                           ; 		call LCD_DATO                                                                F:\DSBM\P2\P2_84.asm
+                                           		                                                                               F:\DSBM\P2\P2_84.asm
+                                                                                                                            F:\DSBM\P2\P2_84.asm
+000033   0a8e     INCF      0xe,0x1        		incf Iter2,1                                                                   F:\DSBM\P2\P2_84.asm
+                                           		                                                                               F:\DSBM\P2\P2_84.asm
+                                           		;movlw 15                                                                      F:\DSBM\P2\P2_84.asm
+000034   300e     MOVLW     0xe                    movlw 0x0e                                                               F:\DSBM\P2\P2_84.asm
+                                                                                                                            F:\DSBM\P2\P2_84.asm
+000035   020e     SUBWF     0xe,0x0        		subwf Iter2,0                                                                  F:\DSBM\P2\P2_84.asm
+                                           		                                                                               F:\DSBM\P2\P2_84.asm
+                                                                                                                            F:\DSBM\P2\P2_84.asm
+000036   1903     BTFSC     0x3,0x2        		btfsc STATUS, Z                                                                F:\DSBM\P2\P2_84.asm
+                                           		                                                                               F:\DSBM\P2\P2_84.asm
+000037   2839     GOTO      0x39           		goto Aqui                                                                      F:\DSBM\P2\P2_84.asm
+                                                                                                                            F:\DSBM\P2\P2_84.asm
+                                                                                                                            F:\DSBM\P2\P2_84.asm
+000038   2831     GOTO      0x31           		goto Imprime2                                                                  F:\DSBM\P2\P2_84.asm
+                                           		                                                                               F:\DSBM\P2\P2_84.asm
+000039   2839     GOTO      0x39           Aqui	goto Aqui                                                                   F:\DSBM\P2\P2_84.asm
+                                                                                                                            F:\DSBM\P2\P2_84.asm
+                                           		end                                                                            F:\DSBM\P2\P2_84.asm
+                                                                                                                            F:\DSBM\P2\P2_84.asm

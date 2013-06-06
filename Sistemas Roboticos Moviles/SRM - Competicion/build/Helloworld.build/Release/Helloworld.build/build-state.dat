@@ -1,0 +1,263 @@
+THelloworld
+v7
+r0
+t330252831.643569
+cCheck dependencies
+cExternalBuildToolExecution Helloworld
+
+N/usr/bin/make
+c000000004A11964700000000000556C0
+t1242666567
+s349888
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies330252829#330252829#0(0"0(0#1#0"8600710240#0"0#
+
+CExternalBuildToolExecution Helloworld
+s330252829.734061
+e330252831.643450
+r1
+xExternalBuildToolExecution
+xHelloworld
+ocd source;                    \
+o	../nxt/nbc -O=../build/competicion.rxe \
+o				-Z2 \
+o		        competicion.nxc
+o# Status: Current file = "../build/competicion.nxc"
+o# Status: NXC compilation begins
+o# Status: Compiling for firmware version 128, NBC/NXC enhanced = FALSE
+o# Status: Running NXC preprocessor
+o# Status: Include path = ../build/;../nxt/;/usr/local/include/nbc/
+o# Status: Processing include: NBCCommon.h
+o# Status: NXC init program
+o# Status: Current file = "NXCDefs.h"
+o# Status: NXC parse program code
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: SetSensorType
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: SetSensorMode
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: ClearSensor
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: ResetSensor
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: SetSensor
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: SetSensorTouch
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: SetSensorLight
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: SetSensorSound
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: SetSensorLowspeed
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: SetSensorUltrasonic
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: SetSensorEMeter
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: SetSensorTemperature
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: SetSensorColorFull
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: SetSensorColorRed
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: SetSensorColorGreen
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: SetSensorColorBlue
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: SetSensorColorNone
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: ClearScreen
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: ClearLine
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: SetDisplayFont
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: SetDisplayDisplay
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: SetDisplayEraseMask
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: SetDisplayFlags
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: SetDisplayTextLinesCenterFlags
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: SetDisplayUpdateMask
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: PlaySound
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: PlayTones
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: Wait
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: Yield
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: StopAllTasks
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: PowerDown
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: SleepNow
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: RebootInFirmwareMode
+o# Status: NXC processing global declarations
+o# Status: NXC processing function block: SensorHTGyro
+o# Status: NXC processing function block: SensorHTMagnet
+o# Status: NXC processing function block: SensorHTEOPD
+o# Status: NXC processing procedure block: SetSensorHTEOPD
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: SetSensorHTGyro
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: SetSensorHTMagnet
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: SetSensorMSPressure
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: SetSensorMSDROD
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: SetSensorNXTSumoEyes
+o# Status: NXC processing global declarations
+o# Status: NXC processing function block: SensorMSPressure
+o# Status: NXC processing function block: SensorNXTSumoEyes
+o# Status: NXC processing function block: sqrt
+o# Status: NXC processing function block: bcd2dec
+o# Status: NXC processing function block: fclose
+o# Status: NXC processing function block: remove
+o# Status: NXC processing function block: rename
+o# Status: NXC processing function block: fgetc
+o# Status: NXC processing function block: fgets
+o# Status: NXC processing function block: feof
+o# Status: NXC processing procedure block: set_fopen_size
+o# Status: NXC processing global declarations
+o# Status: NXC processing function block: fopen
+o# Status: NXC processing function block: fflush
+o# Status: NXC processing function block: fputc
+o# Status: NXC processing function block: fputs
+o# Status: NXC processing function block: atoi
+o# Status: NXC processing function block: atol
+o# Status: NXC processing function block: labs
+o# Status: NXC processing function block: atof
+o# Status: NXC processing function block: strtod
+o# Status: NXC processing function block: strtol
+o# Status: NXC processing function block: strtoul
+o# Status: NXC processing function block: div
+o# Status: NXC processing function block: ldiv
+o# Status: NXC processing function block: Pos
+o# Status: NXC processing function block: ByteArrayToStr
+o# Status: NXC processing procedure block: ByteArrayToStrEx
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: StrToByteArray
+o# Status: NXC processing global declarations
+o# Status: NXC processing function block: Copy
+o# Status: NXC processing function block: MidStr
+o# Status: NXC processing function block: RightStr
+o# Status: NXC processing function block: LeftStr
+o# Status: NXC processing function block: strlen
+o# Status: NXC processing function block: strcat
+o# Status: NXC processing function block: strncat
+o# Status: NXC processing function block: strcpy
+o# Status: NXC processing function block: strncpy
+o# Status: NXC processing function block: strcmp
+o# Status: NXC processing function block: strncmp
+o# Status: NXC processing function block: isupper
+o# Status: NXC processing function block: islower
+o# Status: NXC processing function block: isalpha
+o# Status: NXC processing function block: isdigit
+o# Status: NXC processing function block: isalnum
+o# Status: NXC processing function block: isspace
+o# Status: NXC processing function block: iscntrl
+o# Status: NXC processing function block: isprint
+o# Status: NXC processing function block: isgraph
+o# Status: NXC processing function block: ispunct
+o# Status: NXC processing function block: isxdigit
+o# Status: NXC processing function block: toupper
+o# Status: NXC processing function block: tolower
+o# Status: NXC processing procedure block: glInit
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: glSet
+o# Status: NXC processing global declarations
+o# Status: NXC processing function block: glBeginObject
+o# Status: NXC processing procedure block: glEndObject
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: glObjectAction
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: glAddVertex
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: glBegin
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: glEnd
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: glBeginRender
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: glCallObject
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: glFinishRender
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: glSetAngleX
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: glAddToAngleX
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: glSetAngleY
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: glAddToAngleY
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: glSetAngleZ
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: glAddToAngleZ
+o# Status: NXC processing global declarations
+o# Status: NXC processing function block: glSin32768
+o# Status: NXC processing function block: glCos32768
+o# Status: NXC processing function block: glBox
+o# Status: NXC processing function block: glCube
+o# Status: NXC processing function block: glPyramid
+o# Status: Current file = "../build/competicion.nxc"
+o# Status: NXC processing function block: lectura
+o# Status: NXC processing procedure block: busca_angulo
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: busca_linea_ini
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: ve_a_lata
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: golpea
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: salir
+o# Status: NXC processing global declarations
+o# Status: NXC processing procedure block: main
+o# Status: NXC processing global declarations
+o# Status: NXC generate trailer
+o# Status: NXC code generation finished
+o# Status: NBC compilation begins
+o# Status: Compiling for firmware version 128, NBC/NXC enhanced = FALSE
+o# Status: Loading NBC system files
+o# Status: Running NBC Preprocessor
+o# Status: Include path = ../build/;../nxt/;/usr/local/include/nbc/
+o# Status: Processing include: NBCCommon.h
+o# Status: Compiling NBC source code
+o# Status: Finished compiling NBC source code
+o# Status: Finalizing dependencies
+o# Status: Optimizing at level 2
+o# Status: Build codespace references
+o# Status: Optimize mutexes
+o# Status: Compact the codespace
+o# Status: Remove unused labels
+o# Status: Run codespace optimizations
+o# Status: Optimizing clump: main
+o# Status: Optimizing clump: busca_angulo
+o# Status: Optimizing clump: busca_linea_ini
+o# Status: Optimizing clump: ve_a_lata
+o# Status: Optimizing clump: golpea
+o# Status: Optimizing clump: salir
+o# Status: Compact the codespace after optimizations
+o# Status: Compact the dataspace
+o# Status: Sort the dataspace
+o# Status: Generate raw dataspace data
+o# Status: Fill clump and codespace arrays
+o# Status: Update executable file header
+o# Status: Write file header to executable
+o# Status: Write dataspace to executable
+o# Status: Write clump data to executable
+o# Status: Write code to executable
+o# Status: Write optimized source to compiler output
+o# Status: Finished
+ocd build;  \
+o	../nxt/nxtcom -U competicion.rxe
+lSLF07#2@23"Run external build tool330252829#330252831#0(11366"cd source;                    \	../nxt/nbc -O=../build/competicion.rxe \				-Z2 \		        competicion.nxc# Status: Current file = "../build/competicion.nxc"# Status: NXC compilation begins# Status: Compiling for firmware version 128, NBC/NXC enhanced = FALSE# Status: Running NXC preprocessor# Status: Include path = ../build/;../nxt/;/usr/local/include/nbc/# Status: Processing include: NBCCommon.h# Status: NXC init program# Status: Current file = "NXCDefs.h"# Status: NXC parse program code# Status: NXC processing global declarations# Status: NXC processing procedure block: SetSensorType# Status: NXC processing global declarations# Status: NXC processing procedure block: SetSensorMode# Status: NXC processing global declarations# Status: NXC processing procedure block: ClearSensor# Status: NXC processing global declarations# Status: NXC processing procedure block: ResetSensor# Status: NXC processing global declarations# Status: NXC processing procedure block: SetSensor# Status: NXC processing global declarations# Status: NXC processing procedure block: SetSensorTouch# Status: NXC processing global declarations# Status: NXC processing procedure block: SetSensorLight# Status: NXC processing global declarations# Status: NXC processing procedure block: SetSensorSound# Status: NXC processing global declarations# Status: NXC processing procedure block: SetSensorLowspeed# Status: NXC processing global declarations# Status: NXC processing procedure block: SetSensorUltrasonic# Status: NXC processing global declarations# Status: NXC processing procedure block: SetSensorEMeter# Status: NXC processing global declarations# Status: NXC processing procedure block: SetSensorTemperature# Status: NXC processing global declarations# Status: NXC processing procedure block: SetSensorColorFull# Status: NXC processing global declarations# Status: NXC processing procedure block: SetSensorColorRed# Status: NXC processing global declarations# Status: NXC processing procedure block: SetSensorColorGreen# Status: NXC processing global declarations# Status: NXC processing procedure block: SetSensorColorBlue# Status: NXC processing global declarations# Status: NXC processing procedure block: SetSensorColorNone# Status: NXC processing global declarations# Status: NXC processing procedure block: ClearScreen# Status: NXC processing global declarations# Status: NXC processing procedure block: ClearLine# Status: NXC processing global declarations# Status: NXC processing procedure block: SetDisplayFont# Status: NXC processing global declarations# Status: NXC processing procedure block: SetDisplayDisplay# Status: NXC processing global declarations# Status: NXC processing procedure block: SetDisplayEraseMask# Status: NXC processing global declarations# Status: NXC processing procedure block: SetDisplayFlags# Status: NXC processing global declarations# Status: NXC processing procedure block: SetDisplayTextLinesCenterFlags# Status: NXC processing global declarations# Status: NXC processing procedure block: SetDisplayUpdateMask# Status: NXC processing global declarations# Status: NXC processing procedure block: PlaySound# Status: NXC processing global declarations# Status: NXC processing procedure block: PlayTones# Status: NXC processing global declarations# Status: NXC processing procedure block: Wait# Status: NXC processing global declarations# Status: NXC processing procedure block: Yield# Status: NXC processing global declarations# Status: NXC processing procedure block: StopAllTasks# Status: NXC processing global declarations# Status: NXC processing procedure block: PowerDown# Status: NXC processing global declarations# Status: NXC processing procedure block: SleepNow# Status: NXC processing global declarations# Status: NXC processing procedure block: RebootInFirmwareMode# Status: NXC processing global declarations# Status: NXC processing function block: SensorHTGyro# Status: NXC processing function block: SensorHTMagnet# Status: NXC processing function block: SensorHTEOPD# Status: NXC processing procedure block: SetSensorHTEOPD# Status: NXC processing global declarations# Status: NXC processing procedure block: SetSensorHTGyro# Status: NXC processing global declarations# Status: NXC processing procedure block: SetSensorHTMagnet# Status: NXC processing global declarations# Status: NXC processing procedure block: SetSensorMSPressure# Status: NXC processing global declarations# Status: NXC processing procedure block: SetSensorMSDROD# Status: NXC processing global declarations# Status: NXC processing procedure block: SetSensorNXTSumoEyes# Status: NXC processing global declarations# Status: NXC processing function block: SensorMSPressure# Status: NXC processing function block: SensorNXTSumoEyes# Status: NXC processing function block: sqrt# Status: NXC processing function block: bcd2dec# Status: NXC processing function block: fclose# Status: NXC processing function block: remove# Status: NXC processing function block: rename# Status: NXC processing function block: fgetc# Status: NXC processing function block: fgets# Status: NXC processing function block: feof# Status: NXC processing procedure block: set_fopen_size# Status: NXC processing global declarations# Status: NXC processing function block: fopen# Status: NXC processing function block: fflush# Status: NXC processing function block: fputc# Status: NXC processing function block: fputs# Status: NXC processing function block: atoi# Status: NXC processing function block: atol# Status: NXC processing function block: labs# Status: NXC processing function block: atof# Status: NXC processing function block: strtod# Status: NXC processing function block: strtol# Status: NXC processing function block: strtoul# Status: NXC processing function block: div# Status: NXC processing function block: ldiv# Status: NXC processing function block: Pos# Status: NXC processing function block: ByteArrayToStr# Status: NXC processing procedure block: ByteArrayToStrEx# Status: NXC processing global declarations# Status: NXC processing procedure block: StrToByteArray# Status: NXC processing global declarations# Status: NXC processing function block: Copy# Status: NXC processing function block: MidStr# Status: NXC processing function block: RightStr# Status: NXC processing function block: LeftStr# Status: NXC processing function block: strlen# Status: NXC processing function block: strcat# Status: NXC processing function block: strncat# Status: NXC processing function block: strcpy# Status: NXC processing function block: strncpy# Status: NXC processing function block: strcmp# Status: NXC processing function block: strncmp# Status: NXC processing function block: isupper# Status: NXC processing function block: islower# Status: NXC processing function block: isalpha# Status: NXC processing function block: isdigit# Status: NXC processing function block: isalnum# Status: NXC processing function block: isspace# Status: NXC processing function block: iscntrl# Status: NXC processing function block: isprint# Status: NXC processing function block: isgraph# Status: NXC processing function block: ispunct# Status: NXC processing function block: isxdigit# Status: NXC processing function block: toupper# Status: NXC processing function block: tolower# Status: NXC processing procedure block: glInit# Status: NXC processing global declarations# Status: NXC processing procedure block: glSet# Status: NXC processing global declarations# Status: NXC processing function block: glBeginObject# Status: NXC processing procedure block: glEndObject# Status: NXC processing global declarations# Status: NXC processing procedure block: glObjectAction# Status: NXC processing global declarations# Status: NXC processing procedure block: glAddVertex# Status: NXC processing global declarations# Status: NXC processing procedure block: glBegin# Status: NXC processing global declarations# Status: NXC processing procedure block: glEnd# Status: NXC processing global declarations# Status: NXC processing procedure block: glBeginRender# Status: NXC processing global declarations# Status: NXC processing procedure block: glCallObject# Status: NXC processing global declarations# Status: NXC processing procedure block: glFinishRender# Status: NXC processing global declarations# Status: NXC processing procedure block: glSetAngleX# Status: NXC processing global declarations# Status: NXC processing procedure block: glAddToAngleX# Status: NXC processing global declarations# Status: NXC processing procedure block: glSetAngleY# Status: NXC processing global declarations# Status: NXC processing procedure block: glAddToAngleY# Status: NXC processing global declarations# Status: NXC processing procedure block: glSetAngleZ# Status: NXC processing global declarations# Status: NXC processing procedure block: glAddToAngleZ# Status: NXC processing global declarations# Status: NXC processing function block: glSin32768# Status: NXC processing function block: glCos32768# Status: NXC processing function block: glBox# Status: NXC processing function block: glCube# Status: NXC processing function block: glPyramid# Status: Current file = "../build/competicion.nxc"# Status: NXC processing function block: lectura# Status: NXC processing procedure block: busca_angulo# Status: NXC processing global declarations# Status: NXC processing procedure block: busca_linea_ini# Status: NXC processing global declarations# Status: NXC processing procedure block: ve_a_lata# Status: NXC processing global declarations# Status: NXC processing procedure block: golpea# Status: NXC processing global declarations# Status: NXC processing procedure block: salir# Status: NXC processing global declarations# Status: NXC processing procedure block: main# Status: NXC processing global declarations# Status: NXC generate trailer# Status: NXC code generation finished# Status: NBC compilation begins# Status: Compiling for firmware version 128, NBC/NXC enhanced = FALSE# Status: Loading NBC system files# Status: Running NBC Preprocessor# Status: Include path = ../build/;../nxt/;/usr/local/include/nbc/# Status: Processing include: NBCCommon.h# Status: Compiling NBC source code# Status: Finished compiling NBC source code# Status: Finalizing dependencies# Status: Optimizing at level 2# Status: Build codespace references# Status: Optimize mutexes# Status: Compact the codespace# Status: Remove unused labels# Status: Run codespace optimizations# Status: Optimizing clump: main# Status: Optimizing clump: busca_angulo# Status: Optimizing clump: busca_linea_ini# Status: Optimizing clump: ve_a_lata# Status: Optimizing clump: golpea# Status: Optimizing clump: salir# Status: Compact the codespace after optimizations# Status: Compact the dataspace# Status: Sort the dataspace# Status: Generate raw dataspace data# Status: Fill clump and codespace arrays# Status: Update executable file header# Status: Write file header to executable# Status: Write dataspace to executable# Status: Write clump data to executable# Status: Write code to executable# Status: Write optimized source to compiler output# Status: Finishedcd build;  \	../nxt/nxtcom -U competicion.rxe239(13@32"cd source;                    \330252829#0#32#0(1@0"0(13@42"	../nxt/nbc -O=../build/competicion.rxe \330252829#32#42#0(1@0"0(13@10"				-Z2 \330252829#74#10#0(1@0"0(13@26"		        competicion.nxc330252829#84#26#0(1@0"0(13@52"# Status: Current file = "../build/competicion.nxc"330252829#110#52#0(1@0"0(13@33"# Status: NXC compilation begins330252829#162#33#0(1@0"0(13@71"# Status: Compiling for firmware version 128, NBC/NXC enhanced = FALSE330252829#195#71#0(1@0"0(13@35"# Status: Running NXC preprocessor330252829#266#35#0(1@0"0(13@67"# Status: Include path = ../build/;../nxt/;/usr/local/include/nbc/330252829#301#67#0(1@0"0(13@42"# Status: Processing include: NBCCommon.h330252829#368#42#0(1@0"0(13@27"# Status: NXC init program330252829#410#27#0(1@0"0(13@37"# Status: Current file = "NXCDefs.h"330252829#437#37#0(1@0"0(13@33"# Status: NXC parse program code330252829#474#33#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#507#45#0(1@0"0(13@56"# Status: NXC processing procedure block: SetSensorType330252829#552#56#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#608#45#0(1@0"0(13@56"# Status: NXC processing procedure block: SetSensorMode330252829#653#56#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#709#45#0(1@0"0(13@54"# Status: NXC processing procedure block: ClearSensor330252829#754#54#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#808#45#0(1@0"0(13@54"# Status: NXC processing procedure block: ResetSensor330252829#853#54#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#907#45#0(1@0"0(13@52"# Status: NXC processing procedure block: SetSensor330252829#952#52#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#1004#45#0(1@0"0(13@57"# Status: NXC processing procedure block: SetSensorTouch330252829#1049#57#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#1106#45#0(1@0"0(13@57"# Status: NXC processing procedure block: SetSensorLight330252829#1151#57#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#1208#45#0(1@0"0(13@57"# Status: NXC processing procedure block: SetSensorSound330252829#1253#57#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#1310#45#0(1@0"0(13@60"# Status: NXC processing procedure block: SetSensorLowspeed330252829#1355#60#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#1415#45#0(1@0"0(13@62"# Status: NXC processing procedure block: SetSensorUltrasonic330252829#1460#62#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#1522#45#0(1@0"0(13@58"# Status: NXC processing procedure block: SetSensorEMeter330252829#1567#58#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#1625#45#0(1@0"0(13@63"# Status: NXC processing procedure block: SetSensorTemperature330252829#1670#63#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#1733#45#0(1@0"0(13@61"# Status: NXC processing procedure block: SetSensorColorFull330252829#1778#61#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#1839#45#0(1@0"0(13@60"# Status: NXC processing procedure block: SetSensorColorRed330252829#1884#60#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#1944#45#0(1@0"0(13@62"# Status: NXC processing procedure block: SetSensorColorGreen330252829#1989#62#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#2051#45#0(1@0"0(13@61"# Status: NXC processing procedure block: SetSensorColorBlue330252829#2096#61#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#2157#45#0(1@0"0(13@61"# Status: NXC processing procedure block: SetSensorColorNone330252829#2202#61#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#2263#45#0(1@0"0(13@54"# Status: NXC processing procedure block: ClearScreen330252829#2308#54#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#2362#45#0(1@0"0(13@52"# Status: NXC processing procedure block: ClearLine330252829#2407#52#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#2459#45#0(1@0"0(13@57"# Status: NXC processing procedure block: SetDisplayFont330252829#2504#57#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#2561#45#0(1@0"0(13@60"# Status: NXC processing procedure block: SetDisplayDisplay330252829#2606#60#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#2666#45#0(1@0"0(13@62"# Status: NXC processing procedure block: SetDisplayEraseMask330252829#2711#62#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#2773#45#0(1@0"0(13@58"# Status: NXC processing procedure block: SetDisplayFlags330252829#2818#58#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#2876#45#0(1@0"0(13@73"# Status: NXC processing procedure block: SetDisplayTextLinesCenterFlags330252829#2921#73#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#2994#45#0(1@0"0(13@63"# Status: NXC processing procedure block: SetDisplayUpdateMask330252829#3039#63#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#3102#45#0(1@0"0(13@52"# Status: NXC processing procedure block: PlaySound330252829#3147#52#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#3199#45#0(1@0"0(13@52"# Status: NXC processing procedure block: PlayTones330252829#3244#52#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#3296#45#0(1@0"0(13@47"# Status: NXC processing procedure block: Wait330252829#3341#47#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#3388#45#0(1@0"0(13@48"# Status: NXC processing procedure block: Yield330252829#3433#48#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#3481#45#0(1@0"0(13@55"# Status: NXC processing procedure block: StopAllTasks330252829#3526#55#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#3581#45#0(1@0"0(13@52"# Status: NXC processing procedure block: PowerDown330252829#3626#52#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#3678#45#0(1@0"0(13@51"# Status: NXC processing procedure block: SleepNow330252829#3723#51#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#3774#45#0(1@0"0(13@63"# Status: NXC processing procedure block: RebootInFirmwareMode330252829#3819#63#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#3882#45#0(1@0"0(13@54"# Status: NXC processing function block: SensorHTGyro330252829#3927#54#0(1@0"0(13@56"# Status: NXC processing function block: SensorHTMagnet330252829#3981#56#0(1@0"0(13@54"# Status: NXC processing function block: SensorHTEOPD330252829#4037#54#0(1@0"0(13@58"# Status: NXC processing procedure block: SetSensorHTEOPD330252829#4091#58#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#4149#45#0(1@0"0(13@58"# Status: NXC processing procedure block: SetSensorHTGyro330252829#4194#58#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#4252#45#0(1@0"0(13@60"# Status: NXC processing procedure block: SetSensorHTMagnet330252829#4297#60#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#4357#45#0(1@0"0(13@62"# Status: NXC processing procedure block: SetSensorMSPressure330252829#4402#62#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#4464#45#0(1@0"0(13@58"# Status: NXC processing procedure block: SetSensorMSDROD330252829#4509#58#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#4567#45#0(1@0"0(13@63"# Status: NXC processing procedure block: SetSensorNXTSumoEyes330252829#4612#63#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#4675#45#0(1@0"0(13@58"# Status: NXC processing function block: SensorMSPressure330252829#4720#58#0(1@0"0(13@59"# Status: NXC processing function block: SensorNXTSumoEyes330252829#4778#59#0(1@0"0(13@46"# Status: NXC processing function block: sqrt330252829#4837#46#0(1@0"0(13@49"# Status: NXC processing function block: bcd2dec330252829#4883#49#0(1@0"0(13@48"# Status: NXC processing function block: fclose330252829#4932#48#0(1@0"0(13@48"# Status: NXC processing function block: remove330252829#4980#48#0(1@0"0(13@48"# Status: NXC processing function block: rename330252829#5028#48#0(1@0"0(13@47"# Status: NXC processing function block: fgetc330252829#5076#47#0(1@0"0(13@47"# Status: NXC processing function block: fgets330252829#5123#47#0(1@0"0(13@46"# Status: NXC processing function block: feof330252829#5170#46#0(1@0"0(13@57"# Status: NXC processing procedure block: set_fopen_size330252829#5216#57#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#5273#45#0(1@0"0(13@47"# Status: NXC processing function block: fopen330252829#5318#47#0(1@0"0(13@48"# Status: NXC processing function block: fflush330252829#5365#48#0(1@0"0(13@47"# Status: NXC processing function block: fputc330252829#5413#47#0(1@0"0(13@47"# Status: NXC processing function block: fputs330252829#5460#47#0(1@0"0(13@46"# Status: NXC processing function block: atoi330252829#5507#46#0(1@0"0(13@46"# Status: NXC processing function block: atol330252829#5553#46#0(1@0"0(13@46"# Status: NXC processing function block: labs330252829#5599#46#0(1@0"0(13@46"# Status: NXC processing function block: atof330252829#5645#46#0(1@0"0(13@48"# Status: NXC processing function block: strtod330252829#5691#48#0(1@0"0(13@48"# Status: NXC processing function block: strtol330252829#5739#48#0(1@0"0(13@49"# Status: NXC processing function block: strtoul330252829#5787#49#0(1@0"0(13@45"# Status: NXC processing function block: div330252829#5836#45#0(1@0"0(13@46"# Status: NXC processing function block: ldiv330252829#5881#46#0(1@0"0(13@45"# Status: NXC processing function block: Pos330252829#5927#45#0(1@0"0(13@56"# Status: NXC processing function block: ByteArrayToStr330252829#5972#56#0(1@0"0(13@59"# Status: NXC processing procedure block: ByteArrayToStrEx330252829#6028#59#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#6087#45#0(1@0"0(13@57"# Status: NXC processing procedure block: StrToByteArray330252829#6132#57#0(1@0"0(13@45"# Status: NXC processing global declarations330252829#6189#45#0(1@0"0(13@46"# Status: NXC processing function block: Copy330252829#6234#46#0(1@0"0(13@48"# Status: NXC processing function block: MidStr330252829#6280#48#0(1@0"0(13@50"# Status: NXC processing function block: RightStr330252829#6328#50#0(1@0"0(13@49"# Status: NXC processing function block: LeftStr330252829#6378#49#0(1@0"0(13@48"# Status: NXC processing function block: strlen330252829#6427#48#0(1@0"0(13@48"# Status: NXC processing function block: strcat330252829#6475#48#0(1@0"0(13@49"# Status: NXC processing function block: strncat330252829#6523#49#0(1@0"0(13@48"# Status: NXC processing function block: strcpy330252829#6572#48#0(1@0"0(13@49"# Status: NXC processing function block: strncpy330252829#6620#49#0(1@0"0(13@48"# Status: NXC processing function block: strcmp330252829#6669#48#0(1@0"0(13@49"# Status: NXC processing function block: strncmp330252829#6717#49#0(1@0"0(13@49"# Status: NXC processing function block: isupper330252829#6766#49#0(1@0"0(13@49"# Status: NXC processing function block: islower330252829#6815#49#0(1@0"0(13@49"# Status: NXC processing function block: isalpha330252829#6864#49#0(1@0"0(13@49"# Status: NXC processing function block: isdigit330252829#6913#49#0(1@0"0(13@49"# Status: NXC processing function block: isalnum330252829#6962#49#0(1@0"0(13@49"# Status: NXC processing function block: isspace330252829#7011#49#0(1@0"0(13@49"# Status: NXC processing function block: iscntrl330252829#7060#49#0(1@0"0(13@49"# Status: NXC processing function block: isprint330252829#7109#49#0(1@0"0(13@49"# Status: NXC processing function block: isgraph330252829#7158#49#0(1@0"0(13@49"# Status: NXC processing function block: ispunct330252829#7207#49#0(1@0"0(13@50"# Status: NXC processing function block: isxdigit330252830#7256#50#0(1@0"0(13@49"# Status: NXC processing function block: toupper330252830#7306#49#0(1@0"0(13@49"# Status: NXC processing function block: tolower330252830#7355#49#0(1@0"0(13@49"# Status: NXC processing procedure block: glInit330252830#7404#49#0(1@0"0(13@45"# Status: NXC processing global declarations330252830#7453#45#0(1@0"0(13@48"# Status: NXC processing procedure block: glSet330252830#7498#48#0(1@0"0(13@45"# Status: NXC processing global declarations330252830#7546#45#0(1@0"0(13@55"# Status: NXC processing function block: glBeginObject330252830#7591#55#0(1@0"0(13@54"# Status: NXC processing procedure block: glEndObject330252830#7646#54#0(1@0"0(13@45"# Status: NXC processing global declarations330252830#7700#45#0(1@0"0(13@57"# Status: NXC processing procedure block: glObjectAction330252830#7745#57#0(1@0"0(13@45"# Status: NXC processing global declarations330252830#7802#45#0(1@0"0(13@54"# Status: NXC processing procedure block: glAddVertex330252830#7847#54#0(1@0"0(13@45"# Status: NXC processing global declarations330252830#7901#45#0(1@0"0(13@50"# Status: NXC processing procedure block: glBegin330252830#7946#50#0(1@0"0(13@45"# Status: NXC processing global declarations330252830#7996#45#0(1@0"0(13@48"# Status: NXC processing procedure block: glEnd330252830#8041#48#0(1@0"0(13@45"# Status: NXC processing global declarations330252830#8089#45#0(1@0"0(13@56"# Status: NXC processing procedure block: glBeginRender330252830#8134#56#0(1@0"0(13@45"# Status: NXC processing global declarations330252830#8190#45#0(1@0"0(13@55"# Status: NXC processing procedure block: glCallObject330252830#8235#55#0(1@0"0(13@45"# Status: NXC processing global declarations330252830#8290#45#0(1@0"0(13@57"# Status: NXC processing procedure block: glFinishRender330252830#8335#57#0(1@0"0(13@45"# Status: NXC processing global declarations330252830#8392#45#0(1@0"0(13@54"# Status: NXC processing procedure block: glSetAngleX330252830#8437#54#0(1@0"0(13@45"# Status: NXC processing global declarations330252830#8491#45#0(1@0"0(13@56"# Status: NXC processing procedure block: glAddToAngleX330252830#8536#56#0(1@0"0(13@45"# Status: NXC processing global declarations330252830#8592#45#0(1@0"0(13@54"# Status: NXC processing procedure block: glSetAngleY330252830#8637#54#0(1@0"0(13@45"# Status: NXC processing global declarations330252830#8691#45#0(1@0"0(13@56"# Status: NXC processing procedure block: glAddToAngleY330252830#8736#56#0(1@0"0(13@45"# Status: NXC processing global declarations330252830#8792#45#0(1@0"0(13@54"# Status: NXC processing procedure block: glSetAngleZ330252830#8837#54#0(1@0"0(13@45"# Status: NXC processing global declarations330252830#8891#45#0(1@0"0(13@56"# Status: NXC processing procedure block: glAddToAngleZ330252830#8936#56#0(1@0"0(13@45"# Status: NXC processing global declarations330252830#8992#45#0(1@0"0(13@52"# Status: NXC processing function block: glSin32768330252830#9037#52#0(1@0"0(13@52"# Status: NXC processing function block: glCos32768330252830#9089#52#0(1@0"0(13@47"# Status: NXC processing function block: glBox330252830#9141#47#0(1@0"0(13@48"# Status: NXC processing function block: glCube330252830#9188#48#0(1@0"0(13@51"# Status: NXC processing function block: glPyramid330252830#9236#51#0(1@0"0(13@52"# Status: Current file = "../build/competicion.nxc"330252830#9287#52#0(1@0"0(13@49"# Status: NXC processing function block: lectura330252830#9339#49#0(1@0"0(13@55"# Status: NXC processing procedure block: busca_angulo330252830#9388#55#0(1@0"0(13@45"# Status: NXC processing global declarations330252830#9443#45#0(1@0"0(13@58"# Status: NXC processing procedure block: busca_linea_ini330252830#9488#58#0(1@0"0(13@45"# Status: NXC processing global declarations330252830#9546#45#0(1@0"0(13@52"# Status: NXC processing procedure block: ve_a_lata330252830#9591#52#0(1@0"0(13@45"# Status: NXC processing global declarations330252830#9643#45#0(1@0"0(13@49"# Status: NXC processing procedure block: golpea330252830#9688#49#0(1@0"0(13@45"# Status: NXC processing global declarations330252830#9737#45#0(1@0"0(13@48"# Status: NXC processing procedure block: salir330252830#9782#48#0(1@0"0(13@45"# Status: NXC processing global declarations330252830#9830#45#0(1@0"0(13@47"# Status: NXC processing procedure block: main330252830#9875#47#0(1@0"0(13@45"# Status: NXC processing global declarations330252830#9922#45#0(1@0"0(13@31"# Status: NXC generate trailer330252830#9967#31#0(1@0"0(13@39"# Status: NXC code generation finished330252830#9998#39#0(1@0"0(13@33"# Status: NBC compilation begins330252830#10037#33#0(1@0"0(13@71"# Status: Compiling for firmware version 128, NBC/NXC enhanced = FALSE330252830#10070#71#0(1@0"0(13@35"# Status: Loading NBC system files330252830#10141#35#0(1@0"0(13@35"# Status: Running NBC Preprocessor330252830#10176#35#0(1@0"0(13@67"# Status: Include path = ../build/;../nxt/;/usr/local/include/nbc/330252830#10211#67#0(1@0"0(13@42"# Status: Processing include: NBCCommon.h330252830#10278#42#0(1@0"0(13@36"# Status: Compiling NBC source code330252831#10320#36#0(1@0"0(13@45"# Status: Finished compiling NBC source code330252831#10356#45#0(1@0"0(13@34"# Status: Finalizing dependencies330252831#10401#34#0(1@0"0(13@32"# Status: Optimizing at level 2330252831#10435#32#0(1@0"0(13@37"# Status: Build codespace references330252831#10467#37#0(1@0"0(13@27"# Status: Optimize mutexes330252831#10504#27#0(1@0"0(13@32"# Status: Compact the codespace330252831#10531#32#0(1@0"0(13@31"# Status: Remove unused labels330252831#10563#31#0(1@0"0(13@38"# Status: Run codespace optimizations330252831#10594#38#0(1@0"0(13@33"# Status: Optimizing clump: main330252831#10632#33#0(1@0"0(13@41"# Status: Optimizing clump: busca_angulo330252831#10665#41#0(1@0"0(13@44"# Status: Optimizing clump: busca_linea_ini330252831#10706#44#0(1@0"0(13@38"# Status: Optimizing clump: ve_a_lata330252831#10750#38#0(1@0"0(13@35"# Status: Optimizing clump: golpea330252831#10788#35#0(1@0"0(13@34"# Status: Optimizing clump: salir330252831#10823#34#0(1@0"0(13@52"# Status: Compact the codespace after optimizations330252831#10857#52#0(1@0"0(13@32"# Status: Compact the dataspace330252831#10909#32#0(1@0"0(13@29"# Status: Sort the dataspace330252831#10941#29#0(1@0"0(13@38"# Status: Generate raw dataspace data330252831#10970#38#0(1@0"0(13@42"# Status: Fill clump and codespace arrays330252831#11008#42#0(1@0"0(13@40"# Status: Update executable file header330252831#11050#40#0(1@0"0(13@42"# Status: Write file header to executable330252831#11090#42#0(1@0"0(13@40"# Status: Write dataspace to executable330252831#11132#40#0(1@0"0(13@41"# Status: Write clump data to executable330252831#11172#41#0(1@0"0(13@35"# Status: Write code to executable330252831#11213#35#0(1@0"0(13@52"# Status: Write optimized source to compiler output330252831#11248#52#0(1@0"0(13@19"# Status: Finished330252831#11300#19#0(1@0"0(13@13"cd build;  \330252831#11319#13#0(1@0"0(13@34"	../nxt/nxtcom -U competicion.rxe330252831#11332#34#0(1@0"0(0#0#0"32088439405871216#104"    cd "/Users/macbookpro/Dropbox/David-Alberto/SRM - Competicion"    setenv ACTION     /usr/bin/make0#
+

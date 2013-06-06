@@ -1,0 +1,83 @@
+% Define los parámetros del muestreo
+
+T = pi/2 : pi/2 : 8*pi; % Periodo de la señal
+freq = 1 ./ T;           % Frecuencia de la señal
+Nsamples = 30;          % Número de muestras
+Tm = T / Nsamples;      % Periodo de muestreo de la señal
+
+t = cell(length(T), 1); % length = length(T)
+for count = 1 : length(T)
+    % [0, 2T] => muestrea 2 ciclos de la señal
+    t{count} = 0 : Tm(count) : 2*T(count);
+end
+
+% Muestrea las señales de prueba
+
+samples = []; % length = length(0 : pi/6 : 11*pi/6) * length(T)
+for phase = 0 : pi/6 : 11*pi/6
+    for count = 1 : length(T)
+        signal_struc = struct;
+        
+        signal_struc.sampled_signal = sin( T(count) * t{count} + phase);
+        signal_struc.period         = T(count);
+        signal_struc.phase          = phase;
+        
+        samples = [samples signal_struc];
+    end
+end
+clear signal_struc
+NUM_SIGNALS = length(samples);
+
+tmp = cell(NUMSIGNALS, 1); % length = NUMSIGNALS
+signal_params1 = cell2struct(tmp, [])
+signal_params2 = []; % length = NUMSIGNALS
+clear tmp
+
+for count = 1 : NUM_SIGNALS
+    % Representa la gráfica de las señales de prueba
+    f = figure('Visible', 'off');
+    plot(t{count}, samples(count).sampled_signal, '.')
+    filename = sprintf('graficas/%d_grafica_senal_T%f_p%f', count, samples(count).period, samples(count).phase);
+    saveas(f, filename, 'jpg');
+    close(f);
+    
+    signal_params1(count) = struct('A', 0, 'w', 0, 'p', 0);
+    signal_params2(count) = struct('A', 0, 'w', 0, 'p', 0);
+    
+    % Reconstruye las señales
+    [A1 w1 p1] = guess_params1(t{count}, samples(count).sampled_signal);
+    [A2 w2 p2] = guess_params2(t{count}, samples(count).sampled_signal);
+    signal_params1.A = A1;
+    signal_params1.w = w1;
+    signal_params1.p = p1;
+    signal_params2.A = A2;
+    signal_params2.w = w2;
+    signal_params2.p = p2;
+    
+    % Representa las gráficas de las señales reconstruidas
+    f = figure('Visible', 'off');
+    hold on
+    plot(t{count}, A1 * sin (w1 * t + p1), 'r.-')
+    plot(t{count}, A2 * sin (w2 * t + p2), 'g.-')
+    hold off
+    filename = sprintf('graficas/%d_grafica_reconstruida_T%f_p%f', count, samples(count).period, samples(count).phase);
+    saveas(f, filename, 'jpg');
+    close(f);
+    
+    % Representa la gráfica de la señal y las gráficas de las señales
+    % reconstruidas
+    f = figure('Visible', 'off');
+    hold on
+    plot(t{count}, A1 * sin (w1 * t + p1), 'r.-')
+    plot(t{count}, A2 * sin (w2 * t + p2), 'g.-')
+    plot(t{count}, samples(count).sampled_signal, '.')
+    hold off
+    filename = sprintf('graficas/%d_grafica_todas_T%f_p%f', count, samples(count).period, samples(count).phase);
+    saveas(f, filename, 'jpg');
+    close(f);
+end
+clear f A1 w1 p1 A2 w2 p2
+
+save('signal_sampling_params.mat', 'T', 'freq', 'Nsamples', 'Tm')
+save('samples.mat', 'samples')
+save('guessed_signal_params.mat', 'signal_params1', 'signal_params2')

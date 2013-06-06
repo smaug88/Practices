@@ -1,0 +1,88 @@
+.Parte_superior
+{
+	position: relative;
+	top: 100px;
+	left: 10%;
+	right: 10%;
+	width: 80%;
+}
+
+.texto1
+{
+	position: relative;
+	left: 15%;
+	width: 35%;
+	vertical-align: central;
+	background-color:#c8e3a0;
+	border: solid;
+	border-color:#000;
+	border-width:2px;
+	font-family:Calibri;
+	text-align: justify;
+	text-justify: auto;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-indent: 40px;
+	float: left;
+}
+
+.foto1
+{
+	position: relative;
+	right: 10%;
+	width: 35%;
+	float: right;
+	vertical-align: central;
+}
+
+.foto1 img
+{
+	width: 70%;
+}
+
+.salto
+{
+	clear: both;
+}
+
+.Parte_inferior
+{
+	position: relative;
+	top: 100px;
+	left: 10%;
+	right: 10%;
+	width: 80%;
+	height: 70%;
+}
+
+.texto2
+{
+	position: relative;
+	right: 10%;
+	width: 35%;
+	background-color:#c8e3a0;
+	border: solid;
+	border-color:#000;
+	border-width:2px;
+	font-family:Calibri;
+	text-justify: auto;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-indent: 40px;
+	float: right;
+	vertical-align: central;
+}
+
+.foto2
+{
+	position: relative;
+	right: -25%;
+	width: 35%;
+	float: left;
+	vertical-align: central;
+}
+
+.foto2 img
+{
+	width: 70%;
+}

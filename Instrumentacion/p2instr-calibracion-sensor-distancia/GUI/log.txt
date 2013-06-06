@@ -1,0 +1,148 @@
+%-- 19/03/10 8:26 --%
+help timer
+pwd
+inicializa
+load errores
+load medias
+load mediciones
+errores
+mediciones
+errores
+error_max(mediciones, medias)
+errores_max = error_max(mediciones, medias)
+max(errores_max)
+interpola
+v = medias-y5
+size(medias)
+size(errores_max)
+v = medias-y5'
+v = abs(medias-y5')
+max(v)
+v4 = abs(medias-y4')
+max(v4)
+v3 = abs(medias-y3')
+max(v3)
+mean(v4)
+mean(v5)
+mean(v)
+figuras
+interpola
+doc figure
+interopla
+interpola
+interpola+
+interpola
+medias
+size(medias)
+v6 = abs(medias-y6')
+max(v6)
+max/v4)
+max(v4)
+mean(v6)
+plot(v6)
+plot(y6)
+plot(y5)
+plot(y6)
+plot(y4)
+F = figure
+help subplot
+subplot(1,1,1), plot(y4)
+subplot(1,1,1), plot(y5)
+subplot(1,1,1), plot(y4)
+subplot(1,3,1), plot(y4)
+subplot(1,2,1), plot(y4)
+subplot(2,1,1), plot(y4)
+subplot(2,1,1), plot(y6)
+doc subplot
+F = figure
+doc subplot
+y5
+medias
+comp = rand(22,2)
+comp(:,1) = medias
+comp(:,2) = y5'
+F = figure
+plot comp
+plot (comp)
+comp(:,2) = y6'
+plot (comp)
+comp(:,2) = y4'
+plot (comp)
+comp(:,2) = y6'
+plot (comp)
+p5(0.5543)
+help polyval
+doc polyfit
+interpola
+interpolaç
+interpola
+polyval(pcal, 0.22)
+doc polyval
+polyval(pcal, 1.5)
+polyval(pcal, medias')
+error_max(ans)
+error_max(ans, medias)
+error_max(ans', medias')
+max(ans)
+polyval(pcal, medias')
+max = error_max(ans', medias')
+max(ans)
+polyval(pcal, medias')
+max(ans)
+clear max
+max(ans)
+polinomio = polyval(pcal, medias')
+max(abs(polinomio-medias))
+max(abs(polinomio'-medias'))
+max(abs(polinomio-medias'))
+max(abs(polinomio-(inicio:incremento:fin))
+max(abs(polinomio-(inicio:incremento:fin)))
+error_max_cal = max(abs(polinomio-(inicio:incremento:fin)))
+interpola
+polinomio4 = polyval(pcal4, medias')
+max(abs(polinomio4-(inicio:incremento:fin)))
+interpola
+polinomio8 = polyval(pcal8, medias')
+polinomio7 = polyval(pcal7, medias')
+max(abs(polinomio7-(inicio:incremento:fin)))
+interpola
+polinomio8 = polyval(pcal8, medias')
+polinomio9 = polyval(pcal9, medias')
+max(abs(polinomio8-(inicio:incremento:fin)))
+max(abs(polinomio9-(inicio:incremento:fin)))
+errores
+errores_max
+errores_max'
+
+%-- 19/03/10 9:36 --%
+pwd
+doc timer
+t = timer('TimerFcn',@mycallback, 'Period', 5.0, 'ExecutionMode', 'fixedSpacing');
+edit mycallback.m
+start(t)
+mycallback
+t = timer('TimerFcn',@mycallback, 'Period', 5.0, 'ExecutionMode', 'fixedSpacing');
+start(t)
+stop(t)
+guide
+mycallback
+save(pcal8)ç
+save(pcal8)
+save('pcal8.mat', pcal8)
+interpola
+clear
+inicializa
+interpola
+clear
+inicializa
+load medias
+load mediciones
+interpola
+save('pcal8.mat', pcal8)
+save(pcal8, 'pcal8')
+save('pcal8.mat', pcal8)
+save('pcal8.mat', 'pcal8')
+xxxx
+doc sprintf
+doc timer
+edit log.txt

@@ -1,0 +1,14 @@
+inicializa.m   - Define las variables globales usadas por las funciones
+adquiere.m     - 
+mide.m         - Script para realizar varias mediciones con el LabJack y generar una nube de puntos
+genera_nube.m  - 
+muestra_figs.m - 
+oculta_figs.m  - 
+limpia.m       - 
+
+Orden de ejecución:
+	1) inicializa.m para definir las variables.
+	2) mide.m para realizar varias mediciones (se ejecuta varias veces).
+    3) muestra_figs.m para mostrar todas las figuras creadas.
+    4) oculta_figs.m para ocultar todas las figuras creadas (sin cerrarlas).
+    5) limpia.m para eliminar todas las variables creadas por los scripts.

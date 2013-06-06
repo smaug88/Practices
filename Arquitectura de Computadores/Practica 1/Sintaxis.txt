@@ -1,0 +1,229 @@
+
+<COMENTARIO>
+
+La CABECERA1 y CABECERA2 contienen el inicio del fichero vhd que implementa la memoria ROM
+donde está contenido el programa que se ejecutará en el procesador DLX32p.
+
+El FIN contiene, análogamente a la CABECERA, el final del mismo fichero.
+
+La PALABRA_ROM indica como representar las palabras que se almacenan en la ROM de programa
+para almacenar los códigos de operación de las instrucciones. Su formato es:
+INICIO
+FIN
+Se trata del inicio y fin del formato que encierra a cada instrucción máquina.
+
+Las OPERACIONES son una listas de los nombres de las operaciones, con el siguiente formato:
+NOMBRE_OPERACIÓN:TIPO_DE_OPERACIÓN:CÓDIGO_DE_OPERACIÓN
+Donde TIPO_DE_OPERACIÓN = {R,I,J,B,M,O}, cuyo significado es:
+	R --> Operación Registro-Registro (tiene 3 operandos que son registros)
+	I --> Operación Registro-Inmediato (tiene 2 operandos que son registros y 1 inmediato)
+	J --> Operación de Salto Incondicional (tiene 1 operando inmediato, que puede ser etiqueta)
+	B --> Operación de Salto Condicional (tiene 1 operando de registro y 1 inmediato, que puede ser etiqueta)
+	L --> Operación de Acceso a Memoria (tiene 1 operando de registro y direccionamiento a memoria)
+	S --> Operación de Acceso a Memoria (tiene direccionamiento a memoria y 1 operando de registro)
+	O --> Se indica que no tiene operandos o bien no está soportada
+
+Hay un total de 160 instrucciones (128 + 32), pero la lista que se generará en el programa será menor
+como consecuencia de instrucciones no definidas (undef_*) que podrán tener igual nombre, pues pueden
+ser de opcode, alucode, fpcode.
+
+</COMENTARIO>
+
+<CABECERA1>
+--
+-- DLX_PROG2.vhd
+--
+-- Programa para el DLX32p
+-- Se ha insertado nop para evitar las dependencias. Esta es la diferencia con DLX_PROG.vhd
+-- que es el que se ha utilizado para DLX32s monociclo.
+--
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
+use IEEE.std_logic_arith.all;
+use work.DLX_pack.all;
+
+package DLX_prog2 is
+  type ROM_TABLE is array (0 to 
+</CABECERA1>
+
+<CABECERA2>
+) of ROM_WORD;
+
+  constant ROM: ROM_TABLE := ROM_TABLE'(
+
+</CABECERA2>
+
+<FIN>
+      );
+
+end DLX_prog2;
+</FIN>
+
+<PALABRA_ROM>
+      ROM_WORD'("
+")
+</PALABRA_ROM>
+
+<OPERACIONES>
+special:O:000000
+fparith:O:000001
+j:J:000010
+jal:J:000011
+beqz:B:000100
+bnez:B:000101
+bfpt:B:000110
+bfpf:B:000111
+addi:I:001000
+addui:I:001001
+subi:I:001010
+subui:I:001011
+andi:I:001100
+ori:I:001101
+xori:I:001110
+lhi:I:001111
+rfe:O:010000
+trap:J:010001
+jr:B:010010
+jalr:B:010011
+slli:I:010100
+undef_15:O:010101
+srli:I:010110
+srai:I:010111
+seqi:I:011000
+snei:I:011001
+slti:I:011010
+sgti:I:011011
+slei:I:011100
+sgei:I:011101
+undef_1E:O:011110
+undef_1F:O:011111
+lb:L:100000
+lh:L:100001
+undef_22:O:100010
+lw:L:100011
+lbu:L:100100
+lhu:L:100101
+lf:L:100110
+ld:L:100111
+sb:S:101000
+sh:S:101001
+undef_2A:O:101010
+sw:S:101011
+undef_2C:O:101100
+undef_2D:O:101101
+sf:S:101110
+sd:S:101111
+sequi:I:110000
+sneui:I:110001
+sltui:I:110010
+sgtui:I:110011
+sleui:I:110100
+sgeui:I:110101
+undef_36:O:110110
+undef_37:O:110111
+undef_38:O:111000
+undef_39:O:111001
+undef_3A:O:111010
+undef_3B:O:111011
+undef_3C:O:111100
+undef_3D:O:111101
+undef_3E:O:111110
+undef_3F:O:111111
+nop:O:000000
+undef_01:O:000001
+undef_02:O:000010
+undef_03:O:000011
+sll:R:000100
+undef_05:O:000101
+srl:R:000110
+sra:R:000111
+undef_08:O:001000
+undef_09:O:001001
+undef_0A:O:001010
+undef_0B:O:001011
+undef_0C:O:001100
+undef_0D:O:001101
+undef_0E:O:001110
+undef_0F:O:001111
+sequ:O:010000
+sneu:O:010001
+sltu:O:010010
+sgtu:O:010011
+sleu:O:010100
+sgeu:O:010101
+undef_16:O:010110
+undef_17:O:010111
+undef_18:O:011000
+undef_19:O:011001
+undef_1A:O:011010
+undef_1B:O:011011
+undef_1C:O:011100
+undef_1D:O:011101
+undef_1E:O:011110
+undef_1F:O:011111
+add:R:100000
+addu:R:100001
+sub:R:100010
+subu:R:100011
+and:R:100100
+or:R:100101
+xor:R:100110
+undef_27:O:100111
+seq:R:101000
+sne:R:101001
+slt:R:101010
+sgt:R:101011
+sle:R:101100
+sge:R:101101
+undef_2E:O:101110
+undef_2F:O:101111
+movi2s:O:110000
+movs2i:O:110001
+movf:O:110010
+movd:O:110011
+movfp2i:O:110100
+movi2fp:O:110101
+undef_36:O:110110
+undef_37:O:110111
+undef_38:O:111000
+undef_39:O:111001
+undef_3A:O:111010
+undef_3B:O:111011
+undef_3C:O:111100
+undef_3D:O:111101
+undef_3E:O:111110
+undef_3F:O:111111
+addf:R:00000
+subf:R:00001
+multf:R:00010
+divf:R:00011
+addd:R:00100
+subd:R:00101
+multd:R:00110
+divd:R:00111
+cvtf2d:O:01000
+cvtf2i:O:01001
+cvtd2f:O:01010
+cvtd2i:O:01011
+cvti2f:O:01100
+cvti2d:O:01101
+mult:R:01110
+div:R:01111
+eqf:R:10000
+nef:R:10001
+ltf:R:10010
+gtf:R:10011
+lef:R:10100
+gef:R:10101
+multu:R:10110
+divu:R:10111
+eqd:R:11000
+ned:R:11001
+ltd:R:11010
+gtd:R:11011
+led:R:11100
+ged:R:11101
+undef_1E:O:11110
+undef_1F:O:11111
+</OPERACIONES>

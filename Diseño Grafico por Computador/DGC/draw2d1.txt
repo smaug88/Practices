@@ -1,0 +1,348 @@
+package net.dgc;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.lang.Math;
+
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.util.Log;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.View.OnTouchListener;
+
+public class Draw2d extends View implements OnTouchListener {
+	private static final String TAG = "DrawView";
+
+	List<Point> points = new ArrayList<Point>();
+	Paint paint = new Paint();
+	private float oldX = 0;
+	private float oldY = 0;
+	private float dirX = 0;
+	private float dirY = 0;
+
+	private float movX = 0;
+	private float movY = 0;
+	private float rotX = 0;
+	private float rotY = 0;
+	private float[] Vertices;
+	private float[] M = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 };
+	final private float[] VerticesInit = new float[] { 100, 100, 0, 100, 200,
+			0, 200, 200, 0, 200, 100, 0, 100, 100, 100, 100, 200, 100, 200,
+			200, 100, 200, 100, 100 };
+	private short[] Indexs = new short[] { 0, 1, 1, 2, 2, 3, 3, 0,
+
+	0, 4, 1, 5, 2, 6, 3, 7,
+
+	4, 5, 5, 6, 6, 7, 7, 4
+
+	};
+	private ArrayList<Float> Vertices2 = new ArrayList<Float>();
+	private ArrayList<Integer> Indice2= new ArrayList<Integer>();
+
+	private boolean loadFigure(String ruta) {
+		try {
+			Log.i("DGC", "Cargando figura");
+			InputStream file = new FileInputStream(ruta);
+			if (file != null) {
+				InputStreamReader inputreader = new InputStreamReader(file);
+				BufferedReader buffreader = new BufferedReader(inputreader);
+				String line;
+				line = buffreader.readLine();
+				int Num = Integer.parseInt(line);
+				Log.i("DGC", "Cargando figura");
+				Log.i("DGC", "Puntos:" + Num);
+				while(Num!= 0){
+					line = buffreader.readLine();
+					//Log.i("DGC", "Line:" +line);
+					if(line.isEmpty()){
+						Log.e("DGC", "Faltan puntos! " +Num);
+						return false;
+					}
+					int Aux= line.indexOf(' ');
+					int Aux2= line.indexOf(' ', Aux+1);
+					String Temp = line.substring(0,Aux);
+					Vertices2.add(Float.valueOf(Temp));
+					Temp = line.substring(Aux+1,Aux2-1);
+					Vertices2.add(Float.valueOf(Temp));
+					Temp = line.substring(Aux2+1,line.length()-1);
+					Vertices2.add(Float.valueOf(Temp));
+					Num--;
+				}
+				line = buffreader.readLine();
+				Num = Integer.parseInt(line);
+				Log.i("DGC", "Poligonos:" + Num);
+				while(Num!= 0){
+					line = buffreader.readLine();
+					//Log.i("DGC", "Pol:" +line);
+					if(line.isEmpty()){
+						Log.e("DGC", "Faltan puntos! " +Num);
+						return false;
+					}
+					int Aux= line.indexOf(' ');
+					int Aux2= line.indexOf(' ', Aux+1);
+					String Temp = line.substring(0,Aux);
+					Indice2.add(Integer.valueOf(Temp));
+					Temp = line.substring(Aux+1,Aux2);
+					Indice2.add(Integer.valueOf(Temp));
+					Temp = line.substring(Aux2+1,line.length());
+					Indice2.add(Integer.valueOf(Temp));
+					Num--;
+				}
+				
+				
+				//while (line != null) {
+					//texto = texto + line;
+					//line = buffreader.readLine();
+				//}
+			
+			file.close();
+			return true;
+			}else{
+				Log.i("DGC", "No se encontro  el fichero");
+				
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+
+	}
+
+	private void drawLines(Canvas canvas) {
+		int i = 0;
+		while (i < Indexs.length) {
+			canvas.drawLine(Vertices[Indexs[i] * 3],
+					Vertices[(Indexs[i] * 3) + 1], Vertices[Indexs[i + 1] * 3],
+					Vertices[(Indexs[i + 1] * 3) + 1], paint);
+			Log.i("DGC", "Linea : " + Vertices[Indexs[i] * 3] + " "
+					+ Vertices[(Indexs[i] * 3) + 1] + " "
+					+ Vertices[Indexs[i + 1] * 3] + " "
+					+ Vertices[(Indexs[i + 1] * 3) + 1]);
+			// Log.i("DGC", "Linea Original : " + VerticesInit[Indexs[i]*3] +" "
+			// +VerticesInit[(Indexs[i]*3)+1]+ " " +
+			// VerticesInit[Indexs[i+1]*3]+ " "
+			// +VerticesInit[(Indexs[i+1]*3)+1]);
+			i += 2;
+		}
+	}
+	
+	private void drawTriangles(Canvas canvas) {
+		int i = 0;
+		while (i < Indice2.size()){
+			canvas.drawLine(Vertices2.get(Indice2.get(i)*3), Vertices2.get(Indice2.get(i)*3+1),
+							 Vertices2.get(Indice2.get(i+1)*3), Vertices2.get(Indice2.get(i+1)*3+1), paint);
+			
+			canvas.drawLine(Vertices2.get(Indice2.get(i+1)*3), Vertices2.get(Indice2.get(i+1)*3+1),
+					 Vertices2.get(Indice2.get(i+2)*3), Vertices2.get(Indice2.get(i+2)*3+1), paint);
+			
+			canvas.drawLine(Vertices2.get(Indice2.get(i+2)*3), Vertices2.get(Indice2.get(i+2)*3+1),
+					 Vertices2.get(Indice2.get(i)*3), Vertices2.get(Indice2.get(i)*3+1), paint);
+			
+			// Log.i("DGC", "Linea Original : " + VerticesInit[Indexs[i]*3] +" "
+			// +VerticesInit[(Indexs[i]*3)+1]+ " " +
+			// VerticesInit[Indexs[i+1]*3]+ " "
+			// +VerticesInit[(Indexs[i+1]*3)+1]);
+			i += 3;
+		}
+	}
+	private void rotate(double angle, int X, int Y, int Z) {
+		// Por ahora por separado
+		// Eje X
+		float[] VertTemp = Vertices.clone();
+
+		float c = (float) Math.cos(Math.toRadians(angle));
+		float s = (float) Math.sin(Math.toRadians(angle));
+
+		for (int i = 0; i < Vertices.length; i += 3) {
+			Vertices[i] = (float) ((X * X * (1 - c) + c) * VertTemp[i]
+					+ (X * Y * (1 - c) - Z * s) * VertTemp[i + 1] + (X * Z
+					* (1 - c) + Y * s)
+					* VertTemp[i + 2]);
+			Vertices[i + 1] = (float) ((Y * X * (1 - c) + Z * s) * VertTemp[i]
+					+ (Y * Y * (1 - c) + c) * VertTemp[i + 1] + (Y * Z
+					* (1 - c) - X * s)
+					* VertTemp[i + 2]);
+			Vertices[i + 2] = (float) ((X * Z * (1 - c) - Y * s) * VertTemp[i]
+					+ (Y * Z * (1 - c) + X * s) * VertTemp[i + 1] + (Z * Z
+					* (1 - c) + c)
+					* VertTemp[i + 2]);
+		}
+	}
+
+	private void lookAt(float eyeX, float eyeY, float eyeZ, float centerX,
+			float centerY, float centerZ, float upX, float upY, float upZ) {
+		// Formación de la matriz de perspectiva segun:
+		// http://pyopengl.sourceforge.net/documentation/manual/gluLookAt.3G.htm
+		//
+
+		float[] F = { centerX - eyeX, centerY - eyeY, centerZ - eyeZ };
+		float[] Up = { upX, upY, upZ };
+		float NormF = (float) Math
+				.sqrt(F[0] * F[0] + F[1] * F[1] + F[2] * F[2]);
+		float NormUp = (float) Math.sqrt(Up[0] * Up[0] + Up[1] * Up[1] + Up[2]
+				* Up[2]);
+		for (int i = 0; i < 3; i++) {
+			F[i] = F[i] / NormF;
+			Up[i] = Up[i] / NormUp;
+		}
+		float[] s = { 0, 0, 0 };
+		float[] u = { 0, 0, 0 };
+		for (int i = 0; i < 3; i++)
+			s[i] = F[i] * Up[i];
+		for (int i = 0; i < 3; i++)
+			u[i] = s[i] * F[i];
+		M[0] = s[0];
+		M[1] = s[1];
+		M[2] = s[2];
+		M[0] = u[0];
+		M[1] = u[1];
+		M[2] = u[2];
+		M[0] = -F[0];
+		M[1] = -F[1];
+		M[2] = -F[2];
+
+	}
+
+	private void perspectiva() {
+		float[] VertTemp = Vertices.clone();
+		for (int i = 0; i < Vertices.length; i += 3) {
+			Vertices[i] = M[0] * Vertices[i] + M[1] * Vertices[i] + M[2]
+					* Vertices[i];
+			Vertices[i + 1] = M[4] * Vertices[i + 1] + M[5] * Vertices[i + 1]
+					+ M[6] * Vertices[i + 1];
+			Vertices[i + 2] = M[8] * Vertices[i + 2] + M[9] * Vertices[i + 2]
+					+ M[10] * Vertices[i + 2];
+			/*
+			 * Vertices[i] = M[0]* Vertices[i] + M[4]* Vertices[i] + M[8]*
+			 * Vertices[i]; Vertices[i+1] = M[1]* Vertices[i+1] + M[5]*
+			 * Vertices[i+1] + M[9]* Vertices[i+1]; Vertices[i+2] = M[2]*
+			 * Vertices[i+2] + M[6]* Vertices[i+2] + M[10]* Vertices[i+2];
+			 */
+		}
+	}
+
+	private void translate(float X, float Y, float Z) {
+
+		for (int i = 0; i < Vertices.length; i += 3) {
+			Vertices[i] += X;
+			Vertices[i + 1] += Y;
+			Vertices[i + 2] += Z;
+		}
+	}
+
+	private float[] center() {
+		float X = 0;
+		float Y = 0;
+		float Z = 0;
+		int N = 0;
+		for (int i = 0; i < Vertices.length; i += 3) {
+			X += Vertices[i];
+			Y += Vertices[i + 1];
+			Z += Vertices[i + 2];
+			N++;
+		}
+		if (N != 0) {
+			X = X / N;
+			Y = Y / N;
+			Z = Z / N;
+		}
+		return new float[] { X, Y, Z };
+
+	}
+
+	public void rotateFigure(float x, float y) {
+		rotX += x / 100;
+		rotY += y / 100;
+		rotX = rotX % 360;
+		rotY = rotY % 360;
+		Log.i("DGC", "Rotating  X: " + movX + " Y : " + movY);
+	}
+
+	public void moveFigure(float x, float y) {
+		movX += x / 100;
+		movY += y / 100;
+		Log.i("DGC", "Moving  X: " + x + " Y : " + y);
+		Log.i("DGC", "Mov  " + movX + "," + movY);
+	}
+
+	public Draw2d(Context context) {
+		super(context);
+		setFocusable(true);
+		setFocusableInTouchMode(true);
+
+		this.setOnTouchListener(this);
+
+		paint.setColor(Color.WHITE);
+		paint.setAntiAlias(true);
+		lookAt(0f, 0f, -5, 0f, 0f, 0f, 0f, 1.0f, 0.0f);
+		loadFigure("/sdcard/data/Android.dat");
+		invalidate();
+	}
+
+	@Override
+	public void onDraw(Canvas canvas) {
+		// for (Point point : points) {
+		// canvas.drawCircle(point.x, point.y, 5, paint);
+
+		// Log.d(TAG, "Painting: "+point);
+		// }
+		Vertices = VerticesInit.clone();
+		float[] C = center();
+
+		translate(-C[0], -C[1], -C[2]);
+		//rotate(rotX, 0, 1, 0);
+		//rotate(rotY, 1, 0, 0);
+		//translate(C[0], C[1], C[2]);
+		//translate(canvas.getWidth() / 2 - C[0], canvas.getHeight() / 2 - C[1],0);
+		//translate(movX, movY, 0);
+		// perspectiva();
+		//drawLines(canvas);
+		drawTriangles(canvas);
+	}
+
+	public boolean onTouch(View view, MotionEvent event) {
+		// if(event.getAction() != MotionEvent.ACTION_DOWN)
+		// return super.onTouchEvent(event);
+		/*
+		 * Point point = new Point(); point.x = event.getX(); point.y =
+		 * event.getY(); points.add(point); Log.d(TAG, "point: " + point);
+		 */
+
+		if ((event.getAction() == MotionEvent.ACTION_DOWN)) {
+			oldX = event.getX();
+			oldY = event.getY();
+		}
+		if (event.getPointerCount() != 1) {
+			rotateFigure(event.getX(1) * event.getXPrecision() - oldX,
+					event.getY(1) * event.getYPrecision() - oldY);
+		} else {
+			moveFigure(event.getX() * event.getXPrecision() - oldX,
+					event.getY() * event.getYPrecision() - oldY);
+		}
+		invalidate();
+
+		return true;
+	}
+}
+
+class Point {
+	float x, y;
+
+	@Override
+	public String toString() {
+		return x + ", " + y;
+	}
+}

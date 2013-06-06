@@ -1,0 +1,51 @@
+; Algoritmo de Multiplicación Rusa
+;	A * B = C
+; 	A -> r1
+;	B -> r2
+;	C -> r3
+
+	.text
+
+	ori r30,r0,0	; r30 (Puntero a la Pila)
+	
+main:
+	ori r11, r0, 1
+	; Inicializamos A
+	ori r1, r0, 6
+	; Inicializamos B
+	ori r2, r0, 11
+	; Inicializamos C
+	ori r3, r0, 0
+	
+	; Multiplicación iterativa
+mrusa:
+	nop
+	and r4, r2, r11
+	nop
+	nop
+	beqz r4, desplazar
+	nop
+	nop
+	add r3, r3, r1
+	
+	; Desplazamiento de los bits y control del bucle
+desplazar:
+	sra r2,r2,r11
+	sll r1,r1,r11
+	nop
+	nop
+	beqz r2, fuera
+	nop
+	nop
+	j mrusa
+	
+fuera:
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	nop
+	add r3, r3,r0

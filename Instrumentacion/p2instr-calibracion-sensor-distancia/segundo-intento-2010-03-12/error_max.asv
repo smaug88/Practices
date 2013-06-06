@@ -1,0 +1,9 @@
+function [error] = error_max(medidas)
+    for indice = 1 : length (medidas)
+        maximo = max(medidas(indice));
+        minimo = min(medidas(indice));
+        distancia=1:2;
+        distancia(1) = abs(media - maximo);
+        distancia(2) = abs(medi
+    
+end

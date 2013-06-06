@@ -1,0 +1,158 @@
+#define iteraciones 6
+#define potencia 50
+#define EYE_VALUE	SENSOR_1
+#define contador_dist 1400
+#define Te_has_pasado 1400
+#define B1 SENSOR_2
+#define B2 SENSOR_3
+#define factor_rot 3
+#define maximo 350
+
+bool acierto;
+int ganados;
+
+inline int lectura()
+{
+	int i, salida=0;
+	for(i=0; i<iteraciones; i++)
+	{
+		salida += EYE_VALUE;
+	}
+	salida /= iteraciones;
+	return salida;
+}
+
+sub busca_angulo()
+{
+    ResetAllTachoCounts(OUT_AB);
+    OnFwdSync(OUT_AB, potencia, -100);
+    Wait(200);
+    while(lectura()<maximo);
+    Off(OUT_AB);
+    OnRevSync(OUT_AB, potencia, 100);
+    Wait(500);
+    while(lectura()<maximo);
+    int tacho2 = MotorTachoCount(OUT_A);
+    if(tacho2>500)
+    {
+        RotateMotorEx(OUT_AB, potencia, 180+tacho2, -100, true, true);
+        ResetAllTachoCounts(OUT_AB);
+        OnFwdSync(OUT_AB, potencia, -100);
+        while(lectura()<maximo);
+        Off(OUT_AB);
+        Wait(1000);
+        OnRevSync(OUT_AB, potencia, 100);
+        Wait(500);
+        while(lectura()<maximo);
+        tacho2 = MotorTachoCount(OUT_A);
+        RotateMotorEx(OUT_AB, potencia, tacho2/factor_rot, -100, true, true);
+    }
+    else
+        RotateMotorEx(OUT_AB, potencia, tacho2/factor_rot, -100, true, true);
+}
+
+sub busca_linea_ini()
+{
+    int x;
+    ResetAllTachoCounts(OUT_AB);
+    RotateMotorEx(OUT_AB, potencia, 230, -100, true, true);
+    OnFwdSync(OUT_AB, potencia, 0);
+    while(lectura()<maximo);
+    // NOTA: HAY QUE AVANZAR UN POCO
+    OnFwd(OUT_AB, potencia);
+    Wait(500);
+    // Nos posicionamos haciendo la bisectriz de la lÌnea
+    // Giramos a la izquierda hasta encontrar la lÌnea
+    busca_angulo();
+
+}
+
+sub ve_a_lata()
+{
+   ResetAllTachoCounts(OUT_AB);
+   // Buscamos la siguiente lÌnea
+   OnFwdSync(OUT_AB, potencia+10, 0);
+   while(MotorTachoCount(OUT_A)<contador_dist)
+   {
+      if(lectura()>maximo)
+           break;
+   }
+   Wait(200);
+   if(MotorTachoCount(OUT_A)>Te_has_pasado)
+   {
+    // Giramos 180∫
+    RotateMotorEx(OUT_AB, potencia, 215*2, 100, true, true);
+    // Encuentra la linea exterior
+    OnFwdSync(OUT_AB, potencia+10, 0);
+    while(lectura()>maximo);
+    Off(OUT_AB);
+    // Hacemos la bisectriz y nos alieamos
+    busca_angulo();
+    ResetAllTachoCounts(OUT_AB);
+    // Buscamos la siguiente lÌnea
+    OnFwdSync(OUT_AB, potencia, 100);
+    while(lectura()<maximo)
+   }
+   busca_angulo();
+}
+
+sub golpea()
+{
+   ResetAllTachoCounts(OUT_AB);
+   OnRevSync(OUT_AB, potencia, 0);
+   Wait(300);
+   OnFwdSync(OUT_AB, potencia-10, 100);
+   Wait(300);
+   Off(OUT_AB);
+   OnRev(OUT_C, potencia);
+   while(true)
+   {
+      if(B1==1)
+      {
+         acierto = true;
+         break;
+      }
+      if(B2==1)
+      {
+         acierto = false;
+         break;
+      }
+   }
+   OnFwd(OUT_C, potencia);
+   Wait(1000);
+   if(acierto)
+      PlayTone(200, 400);
+   Off(OUT_C);
+}
+
+sub salir()
+{
+    OnRevSync(OUT_AB, potencia, 0);
+    while(lectura()<maximo);
+    Wait(1000);
+    while(lectura()<maximo);
+    Wait(1000);
+    Off(OUT_AB);
+    RotateMotorEx(OUT_AB, potencia, 230, -100, true, true);
+    if(acierto)
+    {
+        OnRev(OUT_C, potencia);
+        while(!B2);
+        OnFwd(OUT_C, potencia);
+        Wait(1000);
+        Off(OUT_C);
+        ganados++;
+        // Ponemos musica de victoria
+    }
+    RotateMotorEx(OUT_AB, potencia, 200, 100, true, true);
+}
+
+task main() {
+	 SetSensorType(S1, SENSOR_TYPE_LIGHT_ACTIVE);
+     SetSensorTouch(S2);
+     SetSensorTouch(S3);
+     busca_linea_ini();
+     ve_a_lata();
+     golpea();
+     salir();
+}
